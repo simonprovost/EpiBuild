@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ThreeAxisSensor from 'expo-sensors/build/ThreeAxisSensor';
 
 export default class App extends React.Component {
   render() {
@@ -19,3 +20,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+// class Button extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {};
+//     }
+
+//     sendServerInformation = () => {
+//     }
+
+//     render() {
+//         <Button onClick={() => this.sendServerInformation()}>
+//             Launch tests
+//         </Button>
+//     }
+// }
