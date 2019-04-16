@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/EpiBuild.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/unitTestLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/AntDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/AntDesign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Entypo.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Entypo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/EvilIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/EvilIcons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Feather.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Feather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/FontAwesome.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/FontAwesome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/FontAwesome5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/FontAwesome5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Foundation.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Foundation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Ionicons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Ionicons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/MaterialCommunityIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/MaterialCommunityIcons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/MaterialIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/MaterialIcons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Octicons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Octicons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/SimpleLineIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/SimpleLineIcons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Zocial.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/Zocial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSet.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSetFromFontello.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSetFromFontello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSetFromIcoMoon.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/createIconSetFromIcoMoon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/AntDesign.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Entypo.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/EvilIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Feather.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/FontAwesome.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/FontAwesome5_Brands.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/FontAwesome5_Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/FontAwesome5_Solid.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Foundation.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/MaterialCommunityIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/MaterialIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Octicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/SimpleLineIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/fonts/Zocial.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/iconFontSources.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/node_modules/.bin/fa5-upgrade" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/node_modules/.bin/generate-icon" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/AntDesign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/BUILDING_FEATHER.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Entypo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/EvilIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/FONTAWESOME5.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Feather.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/FontAwesome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/FontAwesome5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/FontAwesome5Pro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/AntDesign.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Entypo.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/EvilIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Feather.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Foundation.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/MaterialIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Octicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/SimpleLineIcons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Zocial.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Foundation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Ionicons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/MaterialCommunityIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/MaterialIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Octicons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNIMigration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/SimpleLineIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Zocial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bin/add-font-assets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bin/fa5-upgrade.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bin/generate-fontawesome5-metadata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bin/generate-icon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bin/generate-material-icons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/fonts.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/AntDesign.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Entypo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/EvilIcons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Feather.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/FontAwesome.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/FontAwesome5Free.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/FontAwesome5Free_meta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/FontAwesome5Pro.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/FontAwesome5Pro_meta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Foundation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Ionicons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/MaterialIcons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Octicons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/SimpleLineIcons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Zocial.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/create-icon-set-from-fontawesome5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/create-icon-set-from-fontello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/create-icon-set-from-icomoon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/create-icon-set.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/ensure-native-module-available.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/generate-icon-set-from-css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/icon-button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/react-native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/react-native.osx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/tab-bar-item-ios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/lib/toolbar-android.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/templates/bundled-icon-set.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/templates/separated-icon-set.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/AntDesign.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/AntDesign.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Entypo.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Entypo.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/EvilIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/EvilIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Brands.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Brands.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Solid.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/FontAwesome5_Solid.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Foundation.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Foundation.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Ionicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Ionicons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/MaterialCommunityIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/MaterialCommunityIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/MaterialIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/MaterialIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Octicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Octicons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/SimpleLineIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/SimpleLineIcons.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Zocial.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/fonts/Zocial.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/website/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/vector-icons/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/vector-icons/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/glob-parent/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#614#687#0" />
+                <element signature="e#815#863#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/unitTestLogo.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5502">
+              <caret line="262" column="23" selection-start-line="262" selection-start-column="23" selection-end-line="262" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80577">
+              <caret line="3850" column="39" selection-start-line="3850" selection-start-column="39" selection-end-line="3850" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>DashboardScreen</find>
+      <find>Dash</find>
+      <find>screens</find>
+      <find>createBottomTabNavigator</find>
+      <find>DashboardTabNavigator</find>
+      <find>epibuild</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/screens/HomeScreen.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/screens/unitTests.js" />
+        <option value="$PROJECT_DIR$/screens/rules.js" />
+        <option value="$PROJECT_DIR$/screens/norminette.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="y" value="-2" />
+    <option name="width" value="960" />
+    <option name="height" value="1082" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EpiBuild" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EpiBuild" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EpiBuild" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/node_modules" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="App.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.App.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="" />
+      <created>1555334143921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555334143921</updated>
+      <workItem from="1555334147737" duration="37000" />
+      <workItem from="1555334203990" duration="18584000" />
+      <workItem from="1555400697675" duration="18054000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="36675000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-2" width="960" height="1082" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25720385" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4600639" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29925454" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cloneTest/React-Navigation-2.0-Tutorial/App.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/graceful-fs/polyfills.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="284" column="19" selection-start-line="284" selection-start-column="19" selection-end-line="284" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/anymatch/node_modules/braces/lib/utils.js" />
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/HomeScreen.js" />
+    <entry file="file://$PROJECT_DIR$/screens/LoginScreen.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5502">
+          <caret line="262" column="23" selection-start-line="262" selection-start-column="23" selection-end-line="262" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80577">
+          <caret line="3850" column="39" selection-start-line="3850" selection-start-column="39" selection-end-line="3850" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/unitTests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/norminette.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/rules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/unitTestLogo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#614#687#0" />
+            <element signature="e#815#863#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
