@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet} from 'react-native';
-import Icon from '@expo/vector-icons/Ionicons';
+import { Icon } from 'react-native-elements';
 import {Rules} from './components/rules'
 import {Norminette} from './components/norminette'
 import {UnitTests} from './components/unitTests'
@@ -38,17 +38,55 @@ export default App;
 LUCAS ICI
  */
 const Tabs = createMaterialTopTabNavigator({
-    Test: Rules,
-    Norminette: Norminette,
-    UnitTests: UnitTests
-},{
+    Rules: {
+        screen: Rules,
+        navigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ tintColor }) => {
+                return <Icon 
+                    name='ios-hammer'
+                    type='ionicon'
+                    color='#000000'
+                />
+            },
+        }),
+        showIcon: true
+    },
+    Norminette: {
+        screen: Norminette,
+        navigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ tintColor }) => {
+                return <Icon 
+                    name='ios-code'
+                    type='ionicon'
+                    color='#000000'
+                />
+            },
+        }),
+        showIcon: true
+    },
+    'Unit Tests': {
+        screen: UnitTests,
+        navigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ tintColor }) => {
+                return <Icon 
+                    name='ios-flask'
+                    type='ionicon'
+                    color='#000000'
+                />
+            },
+        }),
+        showIcon: true
+    },
+} ,{
     showIcon: true,
     tabBarPosition: 'bottom',
     tabBarOptions: {
+        showIcon: true,
         activeTintColor: '#000',
         inactiveTintColor: '#696969',
         style: {
             backgroundColor: '#fff',
+            borderWidth:1,
         },
         indicatorStyle: {
             backgroundColor: '#ff6900',
@@ -106,7 +144,8 @@ const DashboardStackNavigator = createStackNavigator(
               <Icon
                   style={{ paddingLeft: 10 }}
                   onPress={() => navigation.openDrawer()}
-                  name="md-menu"
+                  name="ios-menu"
+                  type='ionicon'
                   size={30}
               />
           )

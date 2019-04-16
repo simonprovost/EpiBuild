@@ -1,6 +1,7 @@
 import {Button, Text, View} from "react-native";
 import {sendServerInformation} from "../App"
 import React, { Component } from 'react';
+import { Icon } from 'react-native-elements';
 
 export class Rules extends Component {
   render() {
