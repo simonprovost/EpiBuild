@@ -9,6 +9,7 @@ export class Norminette extends Component {
         <Text>Norminette</Text>
 
         <View style={{ height: 100, marginTop: 10, width: 50}}>
+
           <Button
               onPress={() => sendServerInformation("Norminette running...")}
               title="Run"

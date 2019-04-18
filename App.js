@@ -1,25 +1,53 @@
 import React, { Component } from 'react';
-import {StyleSheet} from 'react-native';
-import { Icon } from 'react-native-elements';
+import {Button, StyleSheet, StatusBar, View, Text} from 'react-native';
+import {
+    MaterialTopTabBar,
+    SafeAreaView,
+    createAppContainer,
+    createMaterialTopTabNavigator,
+    } from 'react-navigation';
+
+import {Header, Icon} from 'react-native-elements';
 import {Rules} from './components/rules'
 import {Norminette} from './components/norminette'
 import {UnitTests} from './components/unitTests'
-
-
-import {
-  createSwitchNavigator,
-  createAppContainer,
-  createDrawerNavigator,
-  createBottomTabNavigator,
-  createStackNavigator,
-  createMaterialTopTabNavigator,
-} from 'react-navigation';
+import * as Constants from "react-native-paper";
 
 class App extends Component {
   render() {
-    return <AppContainer />;
+
+    return (
+      <React.Fragment>
+        <Header
+            leftComponent={{ text: 'EpiBuild', style: {
+              color: 'gray',
+                marginLeft:10,
+                fontSize: 22,
+                width: 100
+            }}}
+            rightComponent={{ icon: 'home', color: 'gray' }}
+            containerStyle={{
+              backgroundColor:'#f8f8f8',
+              alignItems: 'center',
+              elevation: 25,
+            }}
+        />
+       <AppContainer/>
+      </React.Fragment>
+    );
   }
 }
+
+
+const stylesHeader = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+});
+export default App;
+
 
 export const sendServerInformation = (message) => {
   alert(
@@ -31,145 +59,129 @@ export const sendServerInformation = (message) => {
   );
 };
 
-export default App;
+class MaterialTopTabBarWrapper extends React.Component {
+   render() {
+  const { index } = this.props.navigationState;
+  const color =
+    index === 0 ? "#FF1493" : index === 1 ? "#FFA500" : index === 2 ? "#7FFFD4" : "#FFD700";
 
-
-/*
-LUCAS ICI
- */
-const Tabs = createMaterialTopTabNavigator({
-    Rules: {
-        screen: Rules,
-        navigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ tintColor }) => {
-                return <Icon 
-                    name='ios-hammer'
-                    type='ionicon'
-                    color='#000000'
-                />
-            },
-        }),
-        showIcon: true
-    },
-    Norminette: {
-        screen: Norminette,
-        navigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ tintColor }) => {
-                return <Icon 
-                    name='ios-code'
-                    type='ionicon'
-                    color='#000000'
-                />
-            },
-        }),
-        showIcon: true
-    },
-    'Unit Tests': {
-        screen: UnitTests,
-        navigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ tintColor }) => {
-                return <Icon 
-                    name='ios-flask'
-                    type='ionicon'
-                    color='#000000'
-                />
-            },
-        }),
-        showIcon: true
-    },
-} ,{
-    showIcon: true,
-    tabBarPosition: 'bottom',
-    tabBarOptions: {
-        showIcon: true,
-        activeTintColor: '#000',
-        inactiveTintColor: '#696969',
-        style: {
-            backgroundColor: '#fff',
-            borderWidth:1,
-        },
-        indicatorStyle: {
-            backgroundColor: '#ff6900',
-            top: 0,
-        },
-    }
-});
-
-/*const DashboardTabNavigator = createBottomTabNavigator(
-  {
-    Rules,
-    UnitTests,
-    Norminette,
-  },
-  {
-    swipeEnabled: true,
-    tabBarOptions : {
-      activeTintColor: '#FFA500',
-      style: {
-          backgroundColor: '#F0F0F0',
-      }
-    },
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes[navigation.state.index];
-        return {
-          headerTitle: 'EpiBuild: ' + routeName,
-          headerBackTitle : null,
-
-          headerStyle: {
-            backgroundColor: '#E8E8E8',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            width : 500,
-          },
-        };
-      }
-    }
-);*/
-
-const DashboardStackNavigator = createStackNavigator(
-  {
-    DashboardTabNavigator: Tabs
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => {
-      return {
-          headerTitle: 'EpiBuild',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            width : 500,
-          },
-          headerLeft: (
-              <Icon
-                  style={{ paddingLeft: 10 }}
-                  onPress={() => navigation.openDrawer()}
-                  name="ios-menu"
-                  type='ionicon'
-                  size={30}
-              />
-          )
-      };
-    }
+    return (
+      <SafeAreaView
+        forceInset={{ top: 'never', horizontal: 'never', bottom: 'never' }}>
+        <MaterialTopTabBar
+          {...this.props}
+          activeTintColor={color}
+          indicatorStyle={{ backgroundColor: color, top:0 }}
+          style={{ backgroundColor: "#fff" }}
+          inactiveTintColor={'gray'}
+        />
+      </SafeAreaView>
+    );
   }
+}
+
+class GenericTabScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>
+          {this.props.navigation.state.routeName}
+        </Text>
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+        <StatusBar barStyle="light-content" />
+      </View>
+    );
+  }
+}
+
+let actualColor = '#FF1493';
+
+
+let Tabs = createMaterialTopTabNavigator(
+  {
+      Rules: {
+          screen: Rules,
+          navigationOptions: ({ navigation }) => ({
+              tabBarIcon: ({ tintColor }) => {
+                  return <Icon
+                      name='ios-hammer'
+                      type='ionicon'
+                      color='#000000'
+                  />
+              },
+          }),
+          showIcon: true
+      },
+      Norminette: {
+          screen: Norminette,
+          navigationOptions: ({ navigation }) => ({
+              tabBarIcon: ({ tintColor }) => {
+                  return <Icon
+                      name='ios-code'
+                      type='ionicon'
+                      color='#000000'
+                  />
+              },
+          }),
+          showIcon: true
+      },
+      'Unit Tests': {
+          screen: UnitTests,
+          navigationOptions: ({ navigation }) => ({
+              tabBarIcon: ({ tintColor }) => {
+                  return <Icon
+                      name='ios-flask'
+                      type='ionicon'
+                      color='#000000'
+                  />
+              },
+          }),
+          showIcon: true
+      },
+      Settings: {
+          screen: UnitTests,
+          navigationOptions: ({ navigation }) => ({
+              tabBarIcon: ({ tintColor }) => {
+                  return <Icon
+                      name='ios-settings'
+                      type='ionicon'
+                      color='#000000'
+                  />
+              },
+          }),
+          showIcon: true
+      },
+  },
+    {
+        showIcon: true,
+        tabBarPosition: 'bottom',
+        tabBarOptions: {
+            showIcon: true,
+            activeTintColor: '#000',
+            inactiveTintColor: '#696969',
+            style: {
+                backgroundColor: '#fff',
+            },
+            indicatorStyle: {
+                backgroundColor: actualColor,
+            },
+        },
+        tabBarComponent: MaterialTopTabBarWrapper,
+    }
 );
 
-const AppDrawerNavigator = createDrawerNavigator({
-  Dashboard: {
-    screen: DashboardStackNavigator
-  }
-});
+const AppContainer = createAppContainer(Tabs);
 
-const AppSwitchNavigator = createSwitchNavigator({
-  Dashboard: { screen: AppDrawerNavigator }
-});
-
-const AppContainer = createAppContainer(AppSwitchNavigator);
-
-const styles = StyleSheet.create({
+let styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+  },
+  paragraph: {
+    fontSize: 18,
+  },
 });
