@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, StyleSheet, StatusBar, View, Text} from 'react-native';
+import {Button, StyleSheet, View, Text} from 'react-native';
 import {
     MaterialTopTabBar,
     SafeAreaView,
@@ -12,6 +12,7 @@ import {Rules} from './components/rules'
 import {Norminette} from './components/norminette'
 import {UnitTests} from './components/unitTests'
 import * as Constants from "react-native-paper";
+import { grey } from 'ansi-colors';
 
 class App extends Component {
   render() {
@@ -159,6 +160,7 @@ let Tabs = createMaterialTopTabNavigator(
         showIcon: true,
         tabBarPosition: 'bottom',
         tabBarOptions: {
+            pressColor: '#F5F5F5',
             showIcon: true,
             activeTintColor: '#000',
             inactiveTintColor: '#696969',
