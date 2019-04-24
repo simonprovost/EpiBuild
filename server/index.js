@@ -7,10 +7,7 @@ const root = '/api/v1';
 app.get(root + '/getMakefileRulesExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getMakefileRulesExecution');
 
-    // const user = req.body.user;
-    // const projectname = req.body.projectName;
-
-    const output = shell.exec("echo test");
+    const output = shell.exec("echo Simon jtm t tro bo");
 
     res.json({
         output: output.stdout,
@@ -21,19 +18,29 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
 app.post(root + '/getTestsRunExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getTestsRunExecution');
 
+    const output = shell.exec("echo test");
+
     const user = req.body.user;
     const projectname = req.body.projectName;
 
-    res.json();
+    res.json({
+        output: output.stdout,
+        code: output.code,
+    });
 });
 
 app.post(root + '/getNormExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getNormExecution');
 
+    const output = shell.exec("echo test");
+
     const user = req.body.user;
     const projectname = req.body.projectName;
 
-    res.json();
+    res.json({
+        output: output.stdout,
+        code: output.code,
+    });
 });
 
 app.listen(8080);
