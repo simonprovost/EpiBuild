@@ -8,12 +8,12 @@ export class OutputRenderer extends Component {
         <ScrollView contentContainerStyle={{flexGrow: 1}}>
             <View style={{
                 flex: 1,
-                backgroundColor: '#E8E8E8',
+                //E8E8E8
+                backgroundColor: '#282c34',
                 borderRadius: 10,
-                borderColor: '#DCDCDC',
                 borderWidth: 2,
             }}>
-                <Text>
+                <Text style={{marginLeft:10, marginTop:10, marginBottom:10, marginRight:10, color:'#c5a5c5', fontFamily:'Roboto', textAlign: 'auto'}}>
                     {this.props.output}
                 </Text>
             </View>
