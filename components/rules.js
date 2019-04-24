@@ -1,8 +1,8 @@
 import {Button, Text, View, TouchableOpacity, TouchableNativeFeedback} from "react-native";
-import {sendServerInformation} from "../App"
 import React, { Component } from 'react';
-import Markdown from 'react-native-markdown-renderer';
 import {OutputRenderer} from './OutputRenderer';
+import axios from 'axios';
+import {apiRoot} from '../apiRoot';
 
 export class Rules extends Component {
 	constructor () {
@@ -13,8 +13,15 @@ export class Rules extends Component {
 		}
     }
     
-    runRules = async () => {
-        
+    runRules = () => {
+        axios.get(apiRoot + '/getMakefileRulesExecution').then((response) => {
+            if (response.request.readyState === 4
+            && (response.request.status === 200 || response.request.status === 0)) {
+                alert(response.data.output);
+            }
+        }).catch((reason) => {
+            alert(reason);
+        })
     }
 
 	render() {
