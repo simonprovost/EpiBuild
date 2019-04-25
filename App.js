@@ -1,53 +1,101 @@
-// import React, {Component} from 'react';
-// import {Modal, Text, TouchableHighlight, View, Alert} from 'react-native';
+/*
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  View,
+  Modal,
+  ActivityIndicator, TouchableOpacity, Text,
+} from 'react-native';
+import {Button} from "react-native-elements";
 
-// class ModalExample extends Component {
-//   state = {
-//     modalVisible: false,
-//   };
+const styles = StyleSheet.create({
+  modalBackground: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    backgroundColor: '#00000040',
+  },
+  activityIndicatorHolder: {
+    backgroundColor: '#FFFFFF',
+    height: 100,
+    width: 100,
+    borderRadius: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+});
 
-//   setModalVisible(visible) {
-//     this.setState({modalVisible: visible});
-//   }
+class App extends React.Component {
+  constructor () {
+    super();
 
-//   render() {
-//     return (
-//       <View style={{marginTop: 22}}>
-//         <Modal
-//           animationType="slide"
-//           transparent={false}
-//           visible={this.state.modalVisible}
-//           onRequestClose={() => {
-//             Alert.alert('Modal has been closed.');
-//           }}>
-//           <View style={{marginTop: 22}}>
-//             <View>
-//               <Text>Hello World!</Text>
-
-//               <TouchableHighlight
-//                 onPress={() => {
-//                   this.setModalVisible(!this.state.modalVisible);
-//                 }}>
-//                 <Text>Hide Modal</Text>
-//               </TouchableHighlight>
-//             </View>
-//           </View>
-//         </Modal>
-
-//         <TouchableHighlight
-//           onPress={() => {
-//             this.setModalVisible(true);
-//           }}>
-//           <Text>Show Modal</Text>
-//         </TouchableHighlight>
-//       </View>
-//     );
-//   }
-// }
-
+    this.state = {
+      visible: false,
+    }
+  }
+  render() {
+    if (this.state.visible) {
+      return (
+          <Modal
+              transparent
+              animationType={'none'}
+              visible={this.state.visible}
+              onRequestClose={() => { console.log('Noop'); }}
+          >
+            <View style={styles.modalBackground}>
+              <View style={styles.activityIndicatorHolder}>
+                <ActivityIndicator
+                    animating={true}
+                    size="large"
+                />
+              </View>
+            </View>
+          </Modal>
+      );
+    }
+    return (
+        <View>
+          <TouchableOpacity
+              style={{
+                alignItems:'center',
+                justifyContent:'center',
+                width:75,
+                height:75,
+                backgroundColor:'#fc929e',
+                borderRadius:50,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 3,
+                },
+                shadowOpacity: 0.27,
+                shadowRadius: 4.65,
+                elevation: 6,
+              }}
+              onPress={() =>  {
+                this.setState({visible: true})
+              }}
+          >
+            <Text style={{color: '#FFFFFF'}}>Run</Text>
+          </TouchableOpacity>
+        </View>
+    );
+  }
+}
+export default App;
+*/
 
 import React, { Component } from 'react';
-import {Button, StyleSheet, View, Text} from 'react-native';
+import {Button,
+	StyleSheet,
+	View,
+	Text,
+	Modal,
+	ActivityIndicator
+} from 'react-native';
+
 import {
 	MaterialTopTabBar,
 	SafeAreaView,
@@ -61,7 +109,6 @@ import {Norminette} from './components/norminette'
 import {UnitTests} from './components/unitTests'
 import {Settings} from './components/settings'
 import * as Constants from "react-native-paper";
-import { grey } from 'ansi-colors';
 
 class App extends Component {
 
