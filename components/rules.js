@@ -29,7 +29,7 @@ export class Rules extends Component {
 
 		this.state = {
 			visible: false,
-			output: 'Lorem IpSOU dolor sit ametsdf, consectetur adipiscing elit. Suspendisse vitae velit suscipit, lacinia ipsum eget, aliquam urna. Fusce eget molestie leo, scelerisque dignissim eros. Praesent pellentesque diam ac justo dictum, tempor posuere est ornare. Curabitur sit amet semper nisl, sed hendrerit arcu. Mauris laoreet vehicula congue. Pellentesque id sollicitudin tellus, eget ullamcorper augue. Sed nunc est, feugiat vel ipsum ac, posuere ullamcorper urna.\n\n\n Proin feugiat urna id libero molestie, et dapibus dui dapibus. Curabitur ac eros ut metus vestibulum faucibus vestibulum at nisi. Mauris gravida mauris eu neque accumsan imperdiet. Praesent pharetra orci non imperdiet volutpat. Morbi massa justo, suscipit sed nisi sit amet, placerat finibus enim. Phasellus vel porttitor orci, non ultrices felis. Duis semper tortor quis pulvinar molestie. Curabitur vel imperdiet nisi. Etiam odio massa, mollis non iaculis ut, aliquam vitae sem. Cras a interdum risus, sit amet faucibus elit. Donec vehicula pretium erat vitae volutpat. Donec porta libero ac mi eleifend pretium. Vivamus mattis non sem vitae tristique. Etiam ut est convallis, tincidunt tellus vel, aliquet odio. Morbi mattis eu nibh ac sagittis.',
+			output: 'Lorem dolor sit ametsdf, consectetur adipiscing elit. Suspendisse vitae velit suscipit, lacinia ipsum eget, aliquam urna. Fusce eget molestie leo, scelerisque dignissim eros. Praesent pellentesque diam ac justo dictum, tempor posuere est ornare. Curabitur sit amet semper nisl, sed hendrerit arcu. Mauris laoreet vehicula congue. Pellentesque id sollicitudin tellus, eget ullamcorper augue. Sed nunc est, feugiat vel ipsum ac, posuere ullamcorper urna.\n\n\n Proin feugiat urna id libero molestie, et dapibus dui dapibus. Curabitur ac eros ut metus vestibulum faucibus vestibulum at nisi. Mauris gravida mauris eu neque accumsan imperdiet. Praesent pharetra orci non imperdiet volutpat. Morbi massa justo, suscipit sed nisi sit amet, placerat finibus enim. Phasellus vel porttitor orci, non ultrices felis. Duis semper tortor quis pulvinar molestie. Curabitur vel imperdiet nisi. Etiam odio massa, mollis non iaculis ut, aliquam vitae sem. Cras a interdum risus, sit amet faucibus elit. Donec vehicula pretium erat vitae volutpat. Donec porta libero ac mi eleifend pretium. Vivamus mattis non sem vitae tristique. Etiam ut est convallis, tincidunt tellus vel, aliquet odio. Morbi mattis eu nibh ac sagittis.',
 		}
 	}
 
@@ -43,6 +43,7 @@ export class Rules extends Component {
 			}
 		}).catch((reason) => {
 			alert(reason);
+			this.setState({visible: false});
 		})
 	};
 
@@ -63,47 +64,25 @@ export class Rules extends Component {
 			shadowRadius: 4.65,
 			elevation: 6,
 		};
+		let modal;
 
 		if (this.state.visible) {
-			return (
-				<View style={{ flex: 1, alignItems: 'center' }}>
-					<View style={{
-						marginTop: '5%',
-						flex: 0.85,
-						width: '85%'
-					}}>
-						<OutputRenderer
-							output={this.state.output}
+			modal = 	<Modal
+				transparent
+				animationType={'none'}
+				visible={this.state.visible}
+				onRequestClose={() => { console.log('Noop'); }}
+			>
+				<View style={styles.modalBackground}>
+					<View style={styles.activityIndicatorHolder}>
+						<ActivityIndicator
+							animating={true}
+							size="large"
+							color={"#fc929e"}
 						/>
 					</View>
-					<View style={{
-						flex: 0.15
-					}}>
-						<TouchableOpacity
-							style={buttonStyle}
-							onPress={this.runRules}
-						>
-							<Text style={{color: '#FFFFFF'}}>Run</Text>
-						</TouchableOpacity>
-					</View>
-					<Modal
-						transparent
-						animationType={'none'}
-						visible={this.state.visible}
-						onRequestClose={() => { console.log('Noop'); }}
-					>
-						<View style={styles.modalBackground}>
-							<View style={styles.activityIndicatorHolder}>
-								<ActivityIndicator
-									animating={true}
-									size="large"
-									color={"#fc929e"}
-								/>
-							</View>
-						</View>
-					</Modal>
 				</View>
-			);
+			</Modal>
 		}
 
 		return (
@@ -127,6 +106,7 @@ export class Rules extends Component {
 						<Text style={{color: '#FFFFFF'}}>Run</Text>
 					</TouchableOpacity>
 				</View>
+				{modal}
 			</View>
 		);
 	}

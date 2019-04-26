@@ -8,10 +8,9 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getMakefileRulesExecution');
 
     const output = shell.exec("./../../Script/verif_repo.sh simon1.provost PSU_minishell1_2017 mysh master");
-    //todo /*we need to get the login / name project / bynary name plus branch choice */
 
     res.json({
-        output: output.stdout,npm install pm2 -g
+        output: output.stdout,
         code: output.code,
     });
 });
