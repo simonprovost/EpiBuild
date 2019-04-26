@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {OutputRenderer} from './OutputRenderer';
 import axios from 'axios';
 import {apiRoot} from '../apiRoot';
-import {global} from '../global';
+import '../global';
 
 const styles = StyleSheet.create({
 	modalBackground: {
@@ -35,7 +35,10 @@ export class Rules extends Component {
 	}
 
 	runRules = () => {
-		this.setState({visible: true});
+        this.setState({
+            visible: true,
+            output: '',
+        });
         axios.get(apiRoot + '/getMakefileRulesExecution?'
         + 'userName=' + global.userName
         + '&projectName=' + global.projectName
@@ -43,7 +46,7 @@ export class Rules extends Component {
         + '&branchName=' + global.branchName).then((response) => {
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
-				this.setState({output: response.data.output});
+                this.setState({output: response.data.output});
 				this.setState({visible: false});
 			}
 		}).catch((reason) => {
