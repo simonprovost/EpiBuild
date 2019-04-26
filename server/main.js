@@ -12,7 +12,7 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     const binaryName = req.query.binaryName;
     const branchName = req.query.branchName;
 
-    if (userName === undefined || projectName === undefined || binaryName === undefined)
+    if (!userName || !projectName || !binaryName)
         return res.json({
             output: "Missing Argument",
             code: 1,
