@@ -17,7 +17,7 @@ echo $description
 
 login=$1
 nameProject=$2
-branch_name=$4
+branch_name=$3
 
 ################################## GLOBAL VARIABLE
 #nameProject=NULL
