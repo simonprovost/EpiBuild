@@ -46,6 +46,8 @@ make tests_run
 if [[ $? == 84 ]]; then
     exitError 'Error with tests_run rules or your unit tests, make sure your tests_run exist or run correctly.'
 fi
+cd ../../
+rm -rf temp_verif
 # folder tests which contain all the tests created by the user.
 # If this folder doesn't exist, we couldn't run the series of unit tests.
 #if [[ -d "tests" ]]; then
