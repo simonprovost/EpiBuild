@@ -71,16 +71,16 @@ export class Settings extends Component {
 				<View style={{alignItems: 'stretch', marginLeft: 10, marginBottom: 10, marginTop: 20}}>
 					<Text style={material.headline}>Login Name</Text>
 				</View>
-				<View style={{flexDirection:'row'}}>
+				<View style={{flexDirection:'row', alignItems: 'center', alignSelf: 'center', alignContent: 'center'}}>
 					<View style={{
-						marginLeft:10,
 						width:300,
 					}}>
 
 						<TextInput
 							returnKeyType={"next"}
+							onSubmitEditing={() => { this.textInputNameProject.focus(); }}
 							autoFocus={true}
-							placeholder={this.state.getValueLogin || "Enter your login name here."}
+							placeholder={this.state.getValueLogin || "lucas.mayol"}
 							onChangeText={ data => this.setState({textInputDataLogin : data}) }
 							underlineColorAndroid='transparent'
 							style={styles.TextInputStyle}
@@ -122,7 +122,9 @@ export class Settings extends Component {
 					<TextInput
 						returnKeyType={"next"}
 						autoFocus={true}
-						placeholder={this.state.getValueNameProject || "Enter your project name here."}
+						ref={(input) => { this.textInputNameProject = input; }}
+						onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
+						placeholder={this.state.getValueNameProject || "CPE_corewar_2017"}
 						onChangeText={ data => this.setState({textInputNameProject : data}) }
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
@@ -152,7 +154,9 @@ export class Settings extends Component {
 					<TextInput
 						returnKeyType={"next"}
 						autoFocus={true}
-						placeholder={this.state.getValueBinaryname || "Enter your Binary name here."}
+						onSubmitEditing={() => { this.textInputBranchName.focus(); }}
+						ref={(input) => { this.textInputBinaryname = input; }}
+						placeholder={this.state.getValueBinaryname || "corewar"}
 						onChangeText={ data => this.setState({textInputBinaryname : data}) }
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
@@ -180,9 +184,10 @@ export class Settings extends Component {
 
 				<View style={styles.MainContainer}>
 					<TextInput
-						returnKeyType={"next"}
+						returnKeyType={"done"}
 						autoFocus={true}
-						placeholder={this.state.getValueBranchName || "Enter your Branch name here."}
+						ref={(input) => { this.textInputBranchName = input; }}
+						placeholder={this.state.getValueBranchName || "master"}
 						onChangeText={ data => this.setState({textInputBranchName : data}) }
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
