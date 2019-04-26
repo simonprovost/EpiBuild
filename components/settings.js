@@ -1,6 +1,7 @@
 import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import React, {Component} from 'react';
-import { material } from 'react-native-typography'
+import { material } from 'react-native-typography';
+import {global} from '../global';
 
 
 export class Settings extends Component {
@@ -11,16 +12,16 @@ export class Settings extends Component {
 		this.state={
 
 			textInputDataLogin : '',
-			getValueLogin : '',
+			storageValueLogin : '',
 
 			textInputNameProject : '',
-			getValueNameProject : '',
+			storageValueNameProject : '',
 
 			textInputBinaryname : '',
-			getValueBinaryname: '',
+			storageValueBinaryname: '',
 
 			textInputBranchName : '',
-			getValueBranchName: '',
+			storageValueBranchName: '',
 
 		}
 	}
@@ -44,22 +45,22 @@ export class Settings extends Component {
 	componentDidMount = async () => {
 		const lastLogin = await AsyncStorage.getItem("KeyLogin");
 		if (lastLogin) {
-			this.setState({ getValueLogin: lastLogin });
+			this.setState({ storageValueLogin: lastLogin });
 		}
 
 		const lastNameProject = await AsyncStorage.getItem("KeyNameProject");
 		if (lastLogin) {
-			this.setState({ getValueNameProject: lastNameProject });
+			this.setState({ storageValueNameProject: lastNameProject });
 		}
 
 		const lastBinaryName = await AsyncStorage.getItem("KeyBinaryName");
 		if (lastLogin) {
-			this.setState({ getValueBinaryname: lastBinaryName });
+			this.setState({ storageValueBinaryname: lastBinaryName });
 		}
 
 		const lastBranchName = await AsyncStorage.getItem("KeyBranchName");
 		if (lastLogin) {
-			this.setState({ getValueBranchName: lastBranchName });
+			this.setState({ storageValueBranchName: lastBranchName });
 		}
 	};
 
@@ -80,8 +81,11 @@ export class Settings extends Component {
 						<TextInput
 							returnKeyType={"next"}
 							autoFocus={true}
-							placeholder={this.state.getValueLogin || "Enter your login name here."}
-							onChangeText={ data => this.setState({textInputDataLogin : data}) }
+							placeholder={this.state.storageValueLogin || "Enter your login name here."}
+							onChangeText={ data => {
+                                this.setState({textInputDataLogin : data});
+                                global.userName = data;
+                            }}
 							underlineColorAndroid='transparent'
 							style={styles.TextInputStyle}
 							value={this.state.textInputDataLogin}
@@ -102,7 +106,7 @@ export class Settings extends Component {
 						async () => {
 							try {
 								this.setState({textInputDataLogin : ''});
-								this.setState({getValueLogin : ''});
+								this.setState({storageValueLogin : ''});
 								await AsyncStorage.removeItem('KeyLogin');
 							} catch (error) {
 								Alert.alert("Value that you need to remove is an Error. KeyLogin.");
@@ -122,8 +126,11 @@ export class Settings extends Component {
 					<TextInput
 						returnKeyType={"next"}
 						autoFocus={true}
-						placeholder={this.state.getValueNameProject || "Enter your project name here."}
-						onChangeText={ data => this.setState({textInputNameProject : data}) }
+						placeholder={this.state.storageValueNameProject || "Enter your project name here."}
+                        onChangeText={ data => {
+                            this.setState({textInputNameProject : data});
+                            global.projectName = data;
+                        }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
 						value={this.state.textInputNameProject}
@@ -133,7 +140,7 @@ export class Settings extends Component {
 							try {
 								await AsyncStorage.removeItem('KeyNameProject');
 								this.setState({textInputNameProject : ''});
-								this.setState({getValueNameProject : ''})
+								this.setState({storageValueNameProject : ''})
 							} catch (error) {
 								Alert.alert("Value that you need to remove is an Error. KeyNameProject.");
 							}
@@ -152,8 +159,11 @@ export class Settings extends Component {
 					<TextInput
 						returnKeyType={"next"}
 						autoFocus={true}
-						placeholder={this.state.getValueBinaryname || "Enter your Binary name here."}
-						onChangeText={ data => this.setState({textInputBinaryname : data}) }
+						placeholder={this.state.storageValueBinaryname || "Enter your Binary name here."}
+						onChangeText={ data => { 
+                            this.setState({textInputBinaryname : data});
+                            global.binaryName;
+                        }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
 						value={this.state.textInputBinaryname}
@@ -163,7 +173,7 @@ export class Settings extends Component {
 							try {
 								await AsyncStorage.removeItem('KeyBinaryName');
 								this.setState({textInputBinaryname : ''});
-								this.setState({getValueBinaryname : ''})
+								this.setState({storageValueBinaryname : ''})
 							} catch (error) {
 								Alert.alert("Value that you need to remove is an Error. KeyBinaryName.");
 							}
@@ -182,8 +192,11 @@ export class Settings extends Component {
 					<TextInput
 						returnKeyType={"next"}
 						autoFocus={true}
-						placeholder={this.state.getValueBranchName || "Enter your Branch name here."}
-						onChangeText={ data => this.setState({textInputBranchName : data}) }
+						placeholder={this.state.storageValueBranchName || "Enter your Branch name here."}
+                        onChangeText={ data => {
+                            this.setState({textInputBranchName : data});
+                            global.branchName;
+                        }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
 						value={this.state.textInputBranchName}
@@ -193,7 +206,7 @@ export class Settings extends Component {
 							try {
 								await AsyncStorage.removeItem('KeyBranchName');
 								this.setState({textInputBranchName : ''});
-								this.setState({getValueBranchName : ''})
+								this.setState({storageValueBranchName : ''})
 							} catch (error) {
 								Alert.alert("Value that you need to remove is an Error. KeyBranchName.");
 							}

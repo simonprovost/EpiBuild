@@ -10,6 +10,7 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     const userName = req.query.userName;
     const projectName = req.query.projectName;
     const binaryName = req.query.binaryName;
+    const branchName = req.query.branchName;
 
     if (userName === undefined || projectName === undefined || binaryName === undefined)
         return res.json({
@@ -17,8 +18,7 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
             code: 1,
         });
 
-
-    console.log("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " master");
+    console.log("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " " + branchName);
 
     const output = shell.exec("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " master");
 
