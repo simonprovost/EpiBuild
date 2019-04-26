@@ -110,6 +110,7 @@ export class Norminette extends Component {
 						selectedValue={this.state.PickerSelectedVal}
 						onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} >
 
+						<Picker.Item label="Choose a norminette" value="null" />
 						<Picker.Item label="normEZ" value="normEZ" />
 						<Picker.Item label="Gegel85" value="Gegel85" />
 					</Picker>
