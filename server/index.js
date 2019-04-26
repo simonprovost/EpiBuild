@@ -18,9 +18,7 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
             code: 1,
         });
 
-    console.log("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " " + branchName);
-
-    const output = shell.exec("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " master");
+    const output = shell.exec("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " " + branchName);
 
     return res.json({
         output: output.stdout,
@@ -28,32 +26,32 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     });
 });
 
-app.post(root + '/getTestsRunExecution', (req, res) => {
-    console.log(req.ip + ' is connecting to getTestsRunExecution');
+// app.post(root + '/getTestsRunExecution', (req, res) => {
+//     console.log(req.ip + ' is connecting to getTestsRunExecution');
 
-    const output = shell.exec("echo test");
+//     const output = shell.exec("echo test");
 
-    const user = req.body.user;
-    const projectname = req.body.projectName;
+//     const user = req.body.user;
+//     const projectname = req.body.projectName;
 
-    res.json({
-        output: output.stdout,
-        code: output.code,
-    });
-});
+//     res.json({
+//         output: output.stdout,
+//         code: output.code,
+//     });
+// });
 
-app.post(root + '/getNormExecution', (req, res) => {
-    console.log(req.ip + ' is connecting to getNormExecution');
+// app.post(root + '/getNormExecution', (req, res) => {
+//     console.log(req.ip + ' is connecting to getNormExecution');
 
-    const output = shell.exec("echo test");
+//     const output = shell.exec("echo test");
 
-    const user = req.body.user;
-    const projectname = req.body.projectName;
+//     const user = req.body.user;
+//     const projectname = req.body.projectName;
 
-    res.json({
-        output: output.stdout,
-        code: output.code,
-    });
-});
+//     res.json({
+//         output: output.stdout,
+//         code: output.code,
+//     });
+// });
 
 app.listen(8080);
