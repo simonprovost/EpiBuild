@@ -21,7 +21,7 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     const output = shell.exec("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " " + branchName);
 
     return res.json({
-        output: output.stdout,
+        output: output.stdout + "##### Stderr: " + output.stderr,
         code: output.code,
     });
 });

@@ -32,6 +32,10 @@ export class Settings extends Component {
 			await AsyncStorage.setItem('KeyNameProject', this.state.textInputNameProject);
 			await AsyncStorage.setItem('KeyBinaryName', this.state.textInputBinaryname);
 			await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
+			global.userName = this.state.textInputDataLogin;
+			global.projectName = this.state.textInputNameProject;
+			global.branchName = this.state.textInputBranchName;
+			global.binaryName = this.state.textInputBinaryname;
 			Alert.alert("Value Stored Successfully.",
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
 			+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
