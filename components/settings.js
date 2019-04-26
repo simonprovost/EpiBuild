@@ -1,7 +1,7 @@
 import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import React, {Component} from 'react';
 import { material } from 'react-native-typography';
-import {global} from '../global';
+import '../global';
 
 
 export class Settings extends Component {
@@ -166,7 +166,7 @@ export class Settings extends Component {
 						placeholder={this.state.getValueBinaryname || "corewar"}
 						onChangeText={ data => {
                             this.setState({textInputBinaryname : data});
-                            global.binaryName;
+                            global.binaryName = data;
                         }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
@@ -200,7 +200,7 @@ export class Settings extends Component {
 						placeholder={this.state.getValueBranchName || "master"}
                         onChangeText={ data => {
                             this.setState({textInputBranchName : data});
-                            global.branchName;
+                            global.branchName = data;
                         }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}

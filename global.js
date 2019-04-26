@@ -1,3 +1,4 @@
+global = {};
 global.userName = '';
 global.binaryName = '';
 global.projectName = '';
