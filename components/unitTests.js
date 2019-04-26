@@ -119,6 +119,7 @@ export class UnitTests extends Component {
 						<Text style={{color: '#FFFFFF'}}>Run</Text>
 					</TouchableOpacity>
 				</View>
+				{modal}
 			</View>
 		);
 	}

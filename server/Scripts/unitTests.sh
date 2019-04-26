@@ -8,7 +8,7 @@ function exitError() {
     echo "########################"
 	echo -ne "$colorred error : $1. ${code}0m\n"
     echo "########################"
-	exit 1
+	#exit 1
 }
 
 ################################## MAIN
