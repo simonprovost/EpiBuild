@@ -39,7 +39,7 @@ app.get(root + '/getNormExecution', (req, res) => {
             code: 1,
         });
 
-    const output = shell.exec("./Scripts/norminette.sh " + userName + " " + projectName + " " + branchName);
+    const output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
 
     return res.json({
         output: output.stdout,
