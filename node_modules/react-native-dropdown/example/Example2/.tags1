@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+constructor	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  constructor(props) {$/;"	function	line:24
+state.value	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^    this.state = {$/;"	property	line:40
+_currentPosition	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  _currentPosition(pageX, pageY) {$/;"	function	line:45
+_onPress	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  _onPress() {$/;"	function	line:50
+render	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  render() {$/;"	function	line:62
+Select.propTypes.width	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^Select.propTypes = {$/;"	property	line:76
+Select.defaultProps.width	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^Select.defaultProps = {$/;"	property	line:83
+Select.defaultProps.height	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  width: 200,$/;"	property	line:84
+Select.defaultProps.onSelect	/Users/ali/projects/react-native-dropdown/example/Example2/dropdown/select.js	/^  height: 40,$/;"	property	line:85

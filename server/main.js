@@ -32,15 +32,19 @@ app.get(root + '/getNormExecution', (req, res) => {
     const userName = req.query.userName;
     const projectName = req.query.projectName;
     const branchName = req.query.branchName;
+    const normiChoice = req.query.normiChoice;
 
     if (!userName || !projectName || !branchName)
         return res.json({
             output: "Missing Argument",
             code: 1,
         });
+    let output = '';
 
-    const output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
-
+    if (normiChoice === 0)
+        output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
+    else
+        output = "normi " + normiChoice + "isn't be allowed to be executed.";
     return res.json({
         output: output.stdout,
         code: output.code,
