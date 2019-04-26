@@ -1,8 +1,9 @@
-import {Button, Text, View, TouchableOpacity, TouchableNativeFeedback, Modal, ActivityIndicator, StyleSheet} from "react-native";
+import {Text, View, TouchableOpacity, Modal, ActivityIndicator, StyleSheet} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from './OutputRenderer';
 import axios from 'axios';
 import {apiRoot} from '../apiRoot';
+import {global} from '../global';
 
 const styles = StyleSheet.create({
 	modalBackground: {
@@ -35,7 +36,11 @@ export class Rules extends Component {
 
 	runRules = () => {
 		this.setState({visible: true});
-		axios.get(apiRoot + '/getMakefileRulesExecution').then((response) => {
+        axios.get(apiRoot + '/getMakefileRulesExecution?'
+        + 'userName=' + global.userName
+        + '&projectName=' + global.projectName
+        + '&binaryName=' + global.binaryName
+        + '&branchName=' + global.branchName).then((response) => {
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});

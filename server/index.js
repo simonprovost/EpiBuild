@@ -7,9 +7,22 @@ const root = '/api/v1';
 app.get(root + '/getMakefileRulesExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getMakefileRulesExecution');
 
-    const output = shell.exec("./../../Script/verif_repo.sh simon1.provost PSU_minishell1_2017 mysh master");
+    const userName = req.query.userName;
+    const projectName = req.query.projectName;
+    const binaryName = req.query.binaryName;
+    const branchName = req.query.branchName;
 
-    res.json({
+    if (userName === undefined || projectName === undefined || binaryName === undefined)
+        return res.json({
+            output: "Missing Argument",
+            code: 1,
+        });
+
+    console.log("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " " + branchName);
+
+    const output = shell.exec("./Scripts/verif_repo.sh " + userName + " " + projectName + " " + binaryName + " master");
+
+    return res.json({
         output: output.stdout,
         code: output.code,
     });
