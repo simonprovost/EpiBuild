@@ -16,11 +16,11 @@ function exitError() {
 description="This script, clone the repo and run a norminette on the project."
 echo $description
 
-login = $1
-nameProject = $2
-branch_name = $3
-pathToNorminette = $4
-normiName = $5
+login=$1
+nameProject=$2
+branch_name=$3
+pathToNorminette=$4
+normiName=$5
 
 ################################## GLOBAL VARIABLE
 #nameProject=NULL
@@ -42,7 +42,7 @@ cd ${folder_name} &> /dev/null
 
 cp ${pathToNorminette} ./
 echo ${normiName}
-ruby ${normiName} > outputNorminette
+ruby ${normiName}
 if [[ $? == 84 ]]; then
     exitError 'Error with the norminette $normiName : see the output: outputNorminette [file].'
 fi
