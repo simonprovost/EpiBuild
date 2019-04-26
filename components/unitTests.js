@@ -1,9 +1,29 @@
-import {ActivityIndicator, Button, Modal, Text, TouchableOpacity, View} from "react-native";
+import {ActivityIndicator, Button, Modal, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {sendServerInformation} from "../App"
 import React, { Component } from 'react';
 import {OutputRenderer} from "./OutputRenderer";
 import axios from "axios";
 import {apiRoot} from "../apiRoot";
+
+
+const styles = StyleSheet.create({
+	modalBackground: {
+		flex: 1,
+		alignItems: 'center',
+		flexDirection: 'column',
+		justifyContent: 'space-around',
+		backgroundColor: '#00000040',
+	},
+	activityIndicatorHolder: {
+		backgroundColor: '#FFFFFF',
+		height: 100,
+		width: 100,
+		borderRadius: 10,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'space-around',
+	},
+});
 
 export class UnitTests extends Component {
 	constructor () {

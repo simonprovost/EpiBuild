@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 20400,
+  "packagerPort": 19004,
+  "packagerPid": 28026,
   "expoServerNgrokUrl": "https://gh-ti3.anonymous.epibuild.exp.direct",
   "packagerNgrokUrl": "https://packager.gh-ti3.anonymous.epibuild.exp.direct",
-  "ngrokPid": 20531
+  "ngrokPid": 28101
 }

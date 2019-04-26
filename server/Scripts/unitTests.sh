@@ -12,7 +12,7 @@ function exitError() {
 }
 
 ################################## MAIN
-description="This script, clone the repo and test some commands to check if the repo is good to be delivery to Epitech"
+description="This script, clone the repo and Run the unit tests of the user."
 echo $description
 
 login=$1
@@ -41,6 +41,7 @@ cd temp_verif
     exitError 'Clone Failed'
  fi
 cd ${folder_name}/
+
 make tests_run
 if [[ $? == 84 ]]; then
     exitError 'Error with tests_run rules or your unit tests, make sure your tests_run exist or run correctly.'
