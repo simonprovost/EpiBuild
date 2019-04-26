@@ -46,3 +46,4 @@ ruby ${normiName}
 if [[ $? == 84 ]]; then
     exitError 'Error with the norminette $normiName : see the output: outputNorminette [file].'
 fi
+rm -rf ${nameProject}
