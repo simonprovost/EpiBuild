@@ -26,6 +26,28 @@ app.get(root + '/getMakefileRulesExecution', (req, res) => {
     });
 });
 
+app.get(root + '/getNormExecution', (req, res) => {
+    console.log(req.ip + ' is connecting to getNormExecution');
+
+    const userName = req.query.userName;
+    const projectName = req.query.projectName;
+    const branchName = req.query.branchName;
+
+    if (!userName || !projectName || !branchName)
+        return res.json({
+            output: "Missing Argument",
+            code: 1,
+        });
+
+    const output = shell.exec("./Scripts/norminette.sh " + userName + " " + projectName + " " + branchName);
+
+    return res.json({
+        output: output.stdout,
+        code: output.code,
+    });
+});
+
+
 // app.post(root + '/getTestsRunExecution', (req, res) => {
 //     console.log(req.ip + ' is connecting to getTestsRunExecution');
 

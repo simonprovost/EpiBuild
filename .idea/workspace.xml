@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/norminette.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/norminette.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/rules.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,41 +19,78 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/rules.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-              <folding>
-                <element signature="e#0#129#0" expanded="true" />
-                <element signature="e#2018#2424#0" />
-                <element signature="e#2633#2668#0" />
-                <element signature="e#3895#3918#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/settings.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#102#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/components/norminette.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="453">
+                  <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+                  <folding>
+                    <element signature="e#0#92#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/settings.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="208" column="62" lean-forward="true" selection-start-line="208" selection-start-column="62" selection-end-line="208" selection-end-column="62" />
+                  <folding>
+                    <element signature="e#0#102#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="593">
+                  <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/global.js">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/server/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="341">
+                  <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/rules.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1664">
+                  <caret line="105" column="19" lean-forward="true" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#96#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DashboardTabNavigator</find>
-      <find>epibuild</find>
-      <find>MaterialTopTabBarWrapper</find>
       <find>Colors</find>
       <find>ionicon</find>
       <find>createAppContainer</find>
@@ -82,6 +118,9 @@
       <find>getValueBinaryname</find>
       <find>KeyBinaryName</find>
       <find>placeholder</find>
+      <find>getValueLogin</find>
+      <find>getValueNameProject</find>
+      <find>global</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,11 +136,12 @@
         <option value="$PROJECT_DIR$/screens/norminette.js" />
         <option value="$PROJECT_DIR$/components/OutputRenderer.js" />
         <option value="$PROJECT_DIR$/components/unitTests.js" />
-        <option value="$PROJECT_DIR$/components/norminette.js" />
         <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/components/rules.js" />
         <option value="$PROJECT_DIR$/components/settings.js" />
+        <option value="$PROJECT_DIR$/server/main.js" />
+        <option value="$PROJECT_DIR$/components/norminette.js" />
       </list>
     </option>
   </component>
@@ -111,7 +151,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="-2" />
     <option name="width" value="960" />
     <option name="height" value="1082" />
@@ -128,11 +168,6 @@
             <path>
               <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
               <item name="EpiBuild" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EpiBuild" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EpiBuild" type="b2602c69:ProjectViewProjectNode" />
@@ -208,17 +243,18 @@
       <workItem from="1555571600303" duration="18630000" />
       <workItem from="1556095475881" duration="1282000" />
       <workItem from="1556176807681" duration="15117000" />
-      <workItem from="1556262828256" duration="9171000" />
+      <workItem from="1556262828256" duration="13724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129133000" />
+    <option name="totallyTimeSpent" value="133686000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-2" width="1920" height="1082" extended-state="7" />
+    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1270427" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1270427" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -230,7 +266,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4174654" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.14270501" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.3290735" />
@@ -323,13 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/norminette.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80577">
@@ -385,25 +414,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/rules.js">
+    <entry file="file://$PROJECT_DIR$/global.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="399">
+          <caret line="208" column="62" lean-forward="true" selection-start-line="208" selection-start-column="62" selection-end-line="208" selection-end-column="62" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
-            <element signature="e#2018#2424#0" />
-            <element signature="e#2633#2668#0" />
-            <element signature="e#3895#3918#0" />
+            <element signature="e#0#102#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/settings.js">
+    <entry file="file://$PROJECT_DIR$/components/rules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="1664">
+          <caret line="105" column="19" lean-forward="true" selection-start-line="105" selection-start-column="19" selection-end-line="105" selection-end-column="19" />
           <folding>
-            <element signature="e#0#102#0" expanded="true" />
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/norminette.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="45" column="66" lean-forward="true" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#92#0" expanded="true" />
           </folding>
         </state>
       </provider>

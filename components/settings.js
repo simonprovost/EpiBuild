@@ -62,6 +62,10 @@ export class Settings extends Component {
 		if (lastLogin) {
 			this.setState({ storageValueBranchName: lastBranchName });
 		}
+		global.userName = this.state.storageValueLogin;
+		global.projectName = this.state.storageValueNameProject;
+		global.branchName = this.state.storageValueBranchName;
+		global.binaryName = this.state.storageValueBinaryname;
 	};
 
 	render() {
@@ -78,13 +82,13 @@ export class Settings extends Component {
 					}}>
 
 						<TextInput
+							autoCapitalize = 'none'
 							returnKeyType={"next"}
 							onSubmitEditing={() => { this.textInputNameProject.focus(); }}
 							autoFocus={true}
-							placeholder={this.state.getValueLogin || "lucas.mayol"}
+							placeholder={this.state.storageValueLogin || "lucas.mayol"}
 							onChangeText={ data => {
                                 this.setState({textInputDataLogin : data});
-                                global.userName = data;
                             }}
 							underlineColorAndroid='transparent'
 							style={styles.TextInputStyle}
@@ -128,10 +132,9 @@ export class Settings extends Component {
 						autoFocus={true}
 						ref={(input) => { this.textInputNameProject = input; }}
 						onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
-						placeholder={this.state.getValueNameProject || "CPE_corewar_2017"}
+						placeholder={this.state.storageValueNameProject || "CPE_corewar_2017"}
                         onChangeText={ data => {
                             this.setState({textInputNameProject : data});
-                            global.projectName = data;
                         }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
@@ -163,10 +166,9 @@ export class Settings extends Component {
 						autoFocus={true}
 						onSubmitEditing={() => { this.textInputBranchName.focus(); }}
 						ref={(input) => { this.textInputBinaryname = input; }}
-						placeholder={this.state.getValueBinaryname || "corewar"}
+						placeholder={this.state.storageValueBinaryname || "corewar"}
 						onChangeText={ data => {
                             this.setState({textInputBinaryname : data});
-                            global.binaryName = data;
                         }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
@@ -195,12 +197,12 @@ export class Settings extends Component {
 				<View style={styles.MainContainer}>
 					<TextInput
 						returnKeyType={"done"}
+						autoCapitalize = 'none'
 						autoFocus={true}
 						ref={(input) => { this.textInputBranchName = input; }}
-						placeholder={this.state.getValueBranchName || "master"}
+						placeholder={this.state.storageValueBranchName || "master"}
                         onChangeText={ data => {
                             this.setState({textInputBranchName : data});
-                            global.branchName = data;
                         }}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}

@@ -88,6 +88,10 @@ export class Rules extends Component {
 							size="large"
 							color={"#fc929e"}
 						/>
+					{/*	<Text>Login : {global.userName}</Text>
+						<Text>ProjectName : {global.projectName}</Text>
+						<Text>BinaryName : {global.binaryName}</Text>
+						<Text>branch Name : {global.branchName}</Text>*/}
 					</View>
 				</View>
 			</Modal>
