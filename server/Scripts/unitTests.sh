@@ -19,6 +19,9 @@ login=$1
 nameProject=$2
 branch_name=$3
 
+echo 'login : ${login}'
+echo 'nameProject : ${nameProject}'
+echo 'branch_name : ${branch_name}'
 ################################## GLOBAL VARIABLE
 #nameProject=NULL
 folder_name=${nameProject}
