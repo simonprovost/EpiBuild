@@ -43,7 +43,7 @@ app.get(root + '/getNormExecution', (req, res) => {
 
     if (normiChoice === "normEZ")
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
-    else if (normiChoice === "Cerfio")
+    else if (normiChoice === "cerfio")
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/cerfio/cerfio.rb" + " " + "cerfio.rb");
     else
         output = shell.exec("echo \"Norminette that you've chosen has  not allowed to be executed.\"");
