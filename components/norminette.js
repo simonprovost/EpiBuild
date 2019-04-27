@@ -112,7 +112,7 @@ export class Norminette extends Component {
 
 						<Picker.Item label="Choose a norminette" value="null" />
 						<Picker.Item label="normEZ" value="normEZ" />
-						<Picker.Item label={"Cerfio"} value={"cerfio"} />
+						<Picker.Item label={"Doom"} value={"doom"} />
 						<Picker.Item label="Gegel85" value="Gegel85" />
 					</Picker>
 				</View>

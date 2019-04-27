@@ -39,10 +39,15 @@ link_clone=git@git.epitech.eu:/${login}@epitech.eu/${nameProject}
   fi
 
 cd ${folder_name} &> /dev/null
-
 cp ${pathToNorminette} ./
 echo ${normiName}
-ruby ${normiName}
+if [[ ${normiName} == "normEZ.rb" ]]: then
+    ruby ${normiName}
+else
+    ./${normiName}
+fi
+
+
 if [[ $? == 84 ]]; then
     exitError 'Error with the norminette $normiName : see the output: outputNorminette [file].'
 fi
