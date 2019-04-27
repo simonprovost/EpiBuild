@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
 	},
 });
 
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
+
 export class Rules extends Component {
 	constructor () {
 		super();
@@ -35,22 +38,28 @@ export class Rules extends Component {
 	}
 
 	runRules = () => {
-        this.setState({
-            visible: true,
-            output: '',
-        });
-        axios.get(apiRoot + '/getMakefileRulesExecution?'
-        + 'userName=' + global.userName
-        + '&projectName=' + global.projectName
-        + '&binaryName=' + global.binaryName
-        + '&branchName=' + global.branchName).then((response) => {
+		this.setState({
+			visible: true,
+			output: '',
+		});
+		axios.get(apiRoot + '/getMakefileRulesExecution?'
+			+ 'userName=' + global.userName
+			+ '&projectName=' + global.projectName
+			+ '&binaryName=' + global.binaryName
+			+ '&branchName=' + global.branchName, {
+			cancelToken: source.token
+		}).then((response) => {
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
-                this.setState({output: response.data.output});
+				this.setState({output: response.data.output});
 				this.setState({visible: false});
 			}
 		}).catch((reason) => {
-			alert(reason);
+			if (axios.isCancel(reason)) {
+				console.log('request cancelled');
+			} else {
+				alert(reason);
+			}
 			this.setState({visible: false});
 		})
 	};
@@ -72,6 +81,22 @@ export class Rules extends Component {
 			shadowRadius: 4.65,
 			elevation: 6,
 		};
+		const ButtonExitLoading = {
+			alignItems:'center',
+			justifyContent:'center',
+			backgroundColor:'#79b6f2',
+			width: 50,
+			height: 30,
+			shadowColor: "#000",
+			shadowOffset: {
+				width: 0,
+				height: 3,
+			},
+			shadowOpacity: 0.27,
+			shadowRadius: 4.65,
+			elevation: 6,
+			marginTop: 10,
+		};
 		let modal;
 
 		if (this.state.visible) {
@@ -88,7 +113,16 @@ export class Rules extends Component {
 							size="large"
 							color={"#fc929e"}
 						/>
-					{/*	<Text>Login : {global.userName}</Text>
+						<TouchableOpacity
+							style={ButtonExitLoading}
+							onPress={() => {
+								source.cancel('Axios Request canceled by the user.');
+								this.setState({			output: '###### 🎉Welcome to the Rules Screen🎉\n\n###### 📌Description📌: \n\nThis Screen will be able to scan your project and show you if your Epitech project can be delivered to the Epitech Server.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Binary name\n\t🔸Branch Name\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',});
+							}}
+						>
+							<Text style={{color: '#FFFFFF'}}>Exit</Text>
+						</TouchableOpacity>
+						{/*	<Text>Login : {global.userName}</Text>
 						<Text>ProjectName : {global.projectName}</Text>
 						<Text>BinaryName : {global.binaryName}</Text>
 						<Text>branch Name : {global.branchName}</Text>*/}
