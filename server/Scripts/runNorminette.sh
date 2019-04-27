@@ -43,7 +43,7 @@ cp ${pathToNorminette} ./
 echo ${normiName}
 if [ ${normiName} == "normEZ.rb" ]: then
     ruby ${normiName}
-else
+else:
     ./${normiName}
 fi
 
