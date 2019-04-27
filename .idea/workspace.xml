@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/norminette.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/norminette.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/rules.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/unitTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/unitTests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +21,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/components/norminette.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="87">
-                  <caret line="87" column="4" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="102" selection-end-column="10" />
+                <state relative-caret-position="402">
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
                   <folding>
                     <element signature="e#0#129#0" expanded="true" />
                   </folding>
@@ -52,8 +50,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/rules.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="143">
-                  <caret line="89" column="27" lean-forward="true" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+                <state relative-caret-position="353">
+                  <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#96#0" expanded="true" />
                   </folding>
@@ -79,11 +77,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/unitTests.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="125" column="63" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="63" />
+                <state relative-caret-position="315">
+                  <caret line="41" selection-start-line="41" selection-end-line="42" />
                 </state>
               </provider>
             </entry>
@@ -96,7 +94,7 @@
             <entry file="file://$PROJECT_DIR$/components/rules.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="437">
-                  <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="123" selection-end-column="43" />
+                  <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="124" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#96#0" expanded="true" />
                   </folding>
@@ -160,9 +158,9 @@
         <option value="$PROJECT_DIR$/components/settings.js" />
         <option value="$PROJECT_DIR$/server/main.js" />
         <option value="$PROJECT_DIR$/server/Scripts/runNorminette.sh" />
-        <option value="$PROJECT_DIR$/components/norminette.js" />
-        <option value="$PROJECT_DIR$/components/rules.js" />
         <option value="$PROJECT_DIR$/components/unitTests.js" />
+        <option value="$PROJECT_DIR$/components/rules.js" />
+        <option value="$PROJECT_DIR$/components/norminette.js" />
       </list>
     </option>
   </component>
@@ -270,12 +268,12 @@
       <workItem from="1555571600303" duration="18630000" />
       <workItem from="1556095475881" duration="1282000" />
       <workItem from="1556176807681" duration="15117000" />
-      <workItem from="1556262828256" duration="37851000" />
+      <workItem from="1556262828256" duration="38619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157813000" />
+    <option name="totallyTimeSpent" value="158581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -493,30 +491,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/norminette.js">
+    <entry file="file://$PROJECT_DIR$/components/unitTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="87" column="4" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="102" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#129#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="41" selection-start-line="41" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/rules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="89" column="27" lean-forward="true" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        <state relative-caret-position="353">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
           <folding>
             <element signature="e#0#96#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/unitTests.js">
+    <entry file="file://$PROJECT_DIR$/components/norminette.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="125" column="63" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="63" />
+        <state relative-caret-position="402">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

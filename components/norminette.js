@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 const CancelToken = axios.CancelToken;
-const source = CancelToken.source();
+let source = CancelToken.source();
 
 export class Norminette extends Component {
 	constructor () {
@@ -42,6 +42,7 @@ export class Norminette extends Component {
 
 
 	runNorm = () => {
+		source = CancelToken.source();
 		this.setState({
 			visible: true,
 			output: '',

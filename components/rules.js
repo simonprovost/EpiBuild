@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 });
 
 const CancelToken = axios.CancelToken;
-const source = CancelToken.source();
+let source = CancelToken.source();
 
 export class Rules extends Component {
 	constructor () {
@@ -38,6 +38,7 @@ export class Rules extends Component {
 	}
 
 	runRules = () => {
+		source = CancelToken.source();
 		this.setState({
 			visible: true,
 			output: '',
