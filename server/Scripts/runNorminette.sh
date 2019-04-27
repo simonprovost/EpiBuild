@@ -41,9 +41,10 @@ link_clone=git@git.epitech.eu:/${login}@epitech.eu/${nameProject}
 cd ${folder_name} &> /dev/null
 cp ${pathToNorminette} ./
 echo ${normiName}
-if [ ${normiName} == "normEZ.rb" ]: then
+
+if [ $normiName == "normEZ.rb" ]; then
     ruby ${normiName}
-else:
+else
     ./${normiName}
 fi
 
