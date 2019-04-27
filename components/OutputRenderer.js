@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         color:'#c5a5c5',
         fontFamily:'monospace',
         textAlign: 'auto',
-        fontSize: 10,
+        fontSize: 11,
     },
     rendererStyle: {
         flex: 1,
@@ -25,6 +25,7 @@ export class OutputRenderer extends Component {
                 <Text style={styles.output}>
                     {this.props.output}
                 </Text>
+
             </View>
         </ScrollView>
     );

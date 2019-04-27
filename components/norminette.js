@@ -36,12 +36,16 @@ export class Norminette extends Component {
 		this.state = {
 			PickerSelectedVal : '',
 			visible: false,
-			output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### 📌Description📌: \n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',
+			output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### ✍🏼Description:✍🏼\n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',
 		}
 	}
 
 
 	runNorm = () => {
+		if (!global.userName || !global.projectName || !global.branchName) {
+			alert("One of the field requested are empty. Check your settings.");
+			return;
+		}
 		source = CancelToken.source();
 		this.setState({
 			visible: true,

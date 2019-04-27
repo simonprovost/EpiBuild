@@ -23,6 +23,7 @@ import * as Constants from "react-native-paper";
 
 class App extends Component {
 
+
 	render() {
 
 		return (
@@ -85,23 +86,6 @@ class MaterialTopTabBarWrapper extends React.Component {
 					inactiveTintColor={'gray'}
 				/>
 			</SafeAreaView>
-		);
-	}
-}
-
-class GenericTabScreen extends React.Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				<Text style={styles.paragraph}>
-					{this.props.navigation.state.routeName}
-				</Text>
-				<Button
-					title="Go back"
-					onPress={() => this.props.navigation.goBack()}
-				/>
-				<StatusBar barStyle="light-content" />
-			</View>
 		);
 	}
 }

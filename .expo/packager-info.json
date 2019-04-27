@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://gh-ti3.anonymous.epibuild.exp.direct",
+  "packagerNgrokUrl": "https://packager.gh-ti3.anonymous.epibuild.exp.direct",
+  "ngrokPid": 20502
 }
