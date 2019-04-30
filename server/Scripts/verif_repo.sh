@@ -6,10 +6,10 @@ description="   This script, clone the repo and test some commands to check if t
 bold="\033[1m"
 normal="\033[0m"
 
-echo -e '${bold}Description:${normal}'
+echo -e ' ${bold} Description: ${normal} '
 echo -e $description
 echo -e ''
-echo -e '${bold}Output Tests:${normal}'
+echo -e ' ${bold} Output Tests: ${normal} '
 
 login=$1
 nameProject=$2
