@@ -61,7 +61,6 @@ function progress()
 
     echo -ne "$colorgreen ${code}0m $colorred (${PARAM_PROGRESS}%)  ${code}0m $colorpurple $PARAM_PHASE ${code}0m\r\n"
     CURRENT_PROGRESS=$PARAM_PROGRESS;
-
 }
 
 ################################## MAIN
