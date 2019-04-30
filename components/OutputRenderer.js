@@ -1,5 +1,6 @@
 import {Text, View, ScrollView, StyleSheet} from "react-native";
 import React, { Component } from 'react';
+import Ansi from "./ansiReactNative";
 
 const styles = StyleSheet.create({
     output : {
@@ -18,16 +19,21 @@ const styles = StyleSheet.create({
 });
 
 export class OutputRenderer extends Component {
-  render() {
-    return (
-        <ScrollView contentContainerStyle={{flexGrow: 1}}>
-            <View style={styles.rendererStyle}>
-                <Text style={styles.output}>
-                    {this.props.output}
-                </Text>
+    ainsiOutput = (output) => {
+        return <Ansi>
+            {output}
+        </Ansi>;
+    };
 
-            </View>
-        </ScrollView>
-    );
-  }
+    render() {
+        return (
+            <ScrollView contentContainerStyle={{flexGrow: 1}}>
+                <View style={styles.rendererStyle}>
+                    <View style={{margin:10}}>
+                        {this.ainsiOutput(this.props.output)}
+                    </View>
+                </View>
+            </ScrollView>
+        );
+    }
 }
