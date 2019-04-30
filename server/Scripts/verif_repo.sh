@@ -21,11 +21,10 @@ link_clone=git@git.epitech.eu:/${login}@epitech.eu/${nameProject}
 ################################## FUNCS
 function exitError() {
     local code="\033["
-    colorred="${code}1;31m"
+    colorgreen="${code}1;31m"
 
-    echo "########################"
-	echo "$colorred error : $1. ${code}0m\n"
-    echo "########################"
+    echo "_____________________________________"
+	echo -ne "$colorgreen Error : $1.${code}0m\n"
 	exit 1
 }
 
@@ -78,7 +77,6 @@ progress 10 "Clone..."
      git clone -b ${branch_name} --single-branch ${link_clone} &> /dev/null
      if [[ $? -ne 0 ]]; then
         git clone -b ${branch_name} --single-branch ${link_clone}
-        echo ${link_clone}
         exitError 'Clone Failed'
      fi
 progress 20 "Clone success."
