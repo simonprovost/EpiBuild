@@ -2,203 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/OutputRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/OutputRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/norminette.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/norminette.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/axios-cancel/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/axios-cancel/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.bundle/config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.flowconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.idea/codeStyleSettings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.jscodeshiftignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/.watchmanconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/Gemfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/Gemfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/callout.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/circle.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/examples-setup.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/installation.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/mapview.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/marker.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/overlay.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/polygon.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/docs/polyline.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/enable-google-maps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/bin/src/main/java/com/airbnb/android/react/maps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradle-maven-push.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/assets/ula.kml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapCallout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapCalloutManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapCircle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapCircleManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapFeature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapLiteManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapLocalTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapLocalTileManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapMarker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapMarkerManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapOverlay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapOverlayManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapPolygon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapPolygonManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapPolyline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapPolylineManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapUrlTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapUrlTileManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/AirMapView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/FileUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/ImageReadable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/ImageReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/ImageUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/LatLngBoundsUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/MapsPackage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/RegionChangeEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/SizeReportingShadowNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/ViewAttacherGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/android/src/main/java/com/airbnb/android/react/maps/ViewChangesTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/AnimatedRegion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapCallout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapCircle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapLocalTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapMarker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapOverlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapPolygon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapPolyline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapUrlTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/MapView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/ProviderConstants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/components/decorateMapComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRDummyView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRDummyView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSMarker.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSMarker.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSPolygon.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSPolygon.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSPolyline.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGMSPolyline.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMap.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMap.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCallout.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCallout.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCalloutManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCalloutManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCircle.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCircle.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCircleManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapCircleManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapMarker.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapMarker.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapMarkerManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapMarkerManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapOverlay.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapOverlay.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapOverlayManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapOverlayManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolygon.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolygon.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolygonManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolygonManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolyline.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolyline.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolylineManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapPolylineManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapURLTileManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapUrlTile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapUrlTile.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/AIRGoogleMapUrlTileManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/RCTConvert+GMSMapViewType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirGoogleMaps/RCTConvert+GMSMapViewType.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMap.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMap.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCalloutManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCalloutManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCircle.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCircle.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCircleManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCircleManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCoordinate.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCoordinate.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTile.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTileManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTileManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTileOverlay.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapLocalTileOverlay.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapMarker.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapMarker.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapMarkerManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapMarkerManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlay.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlay.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlayManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlayManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlayRenderer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapOverlayRenderer.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolygon.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolygon.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolygonManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolygonManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolyline.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolyline.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolylineManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolylineManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolylineRenderer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapPolylineRenderer.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapSnapshot.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapUrlTile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapUrlTile.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapUrlTileManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapUrlTileManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/Callout/SMCalloutView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/Callout/SMCalloutView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/RCTConvert+AirMap.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/AirMaps/RCTConvert+AirMap.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/lib/ios/User.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/react-native-google-maps.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/react-native-maps.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/rn-cli.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/scripts/update-version.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/react-native-maps/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Scripts/verif_repo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server/Scripts/verif_repo.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -245,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/components/OutputRenderer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -265,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/ansiReactNative.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="163">
               <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
@@ -277,11 +83,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/Scripts/verif_repo.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Run</find>
       <find>run</find>
       <find>EpiBUild</find>
       <find>material.</find>
@@ -311,6 +125,7 @@
       <find>Exit</find>
       <find>exit</find>
       <find>margin</find>
+      <find>\r</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -337,6 +152,7 @@
         <option value="$PROJECT_DIR$/components/norminette.js" />
         <option value="$PROJECT_DIR$/components/OutputRenderer.js" />
         <option value="$PROJECT_DIR$/components/ansiReactNative.ts" />
+        <option value="$PROJECT_DIR$/server/Scripts/verif_repo.sh" />
       </list>
     </option>
   </component>
@@ -445,12 +261,12 @@
       <workItem from="1556095475881" duration="1282000" />
       <workItem from="1556176807681" duration="15117000" />
       <workItem from="1556262828256" duration="41544000" />
-      <workItem from="1556624741304" duration="12804000" />
+      <workItem from="1556624741304" duration="15633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174310000" />
+    <option name="totallyTimeSpent" value="177139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -468,7 +284,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1629393" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.54419595" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.3290735" />
@@ -585,13 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Scripts/verif_repo.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="102" column="22" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/Scripts/unitTests.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -687,7 +496,7 @@
     <entry file="file://$PROJECT_DIR$/components/OutputRenderer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
@@ -696,11 +505,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/ansiReactNative.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="163">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Scripts/verif_repo.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
         </state>
       </provider>
     </entry>
