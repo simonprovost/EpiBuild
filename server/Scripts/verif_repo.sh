@@ -84,12 +84,12 @@ progress 10 "Clone..."
 progress 20 "Clone success."
     cd ${folder_name}/
     binary ${binary_name}
-progress 40 "$binary_name Binary : OK. Make rules in processing...     "
+progress 40 "{$binary_name} Binary : OK."
     make &> /dev/null
 	if [[ $? -ne 0 ]]; then
 		exitError 'make failed, make sure that Makefile exist'
 	fi
-progress 50 "$binary_name Binary : OK. Make rules in processing...     "
+progress 50 "$binary_name Binary : OK."
     make clean &> /dev/null
 	if [[ $? -ne 0 ]]; then
 		exitError 'make clean failed, make sure that clean rules exist'
