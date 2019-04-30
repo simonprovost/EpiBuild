@@ -24,7 +24,7 @@ function exitError() {
     colorgreen="${code}1;31m"
 
     echo "_____________________________________"
-	echo -ne "$colorgreen Error : $1.${code}0m\n"
+	echo -ne "$colorgreen Error : $1.${code}0m\n\n"
 	exit 1
 }
 
@@ -85,21 +85,25 @@ progress 20 "Clone success."
 progress 40 "{$binary_name} Binary : OK."
     make &> /dev/null
 	if [[ $? -ne 0 ]]; then
+	    make
 		exitError 'make failed, make sure that Makefile exist'
 	fi
 progress 50 "$binary_name Binary : OK."
     make clean &> /dev/null
 	if [[ $? -ne 0 ]]; then
+	    make clean
 		exitError 'make clean failed, make sure that clean rules exist'
 	fi
 progress 60 "Test Make clean rules OK."
 	make fclean &> /dev/null
     if [[ $? -ne 0 ]]; then
+        make fclean
 		exitError 'make fclean failed, make sure that fclean rules exist'
 	fi
 progress 70 "Test Make fclean rules OK."
 	make re &> /dev/null
     if [[ $? -ne 0 ]]; then
+        make re
 		exitError 'make re failed, make sure that re rules exist'
 	fi
 progress 90 "All make_* rules : OK.                                           "
