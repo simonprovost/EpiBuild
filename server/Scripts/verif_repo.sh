@@ -2,10 +2,14 @@
 
 ################################## MAIN
 description="   This script, clone the repo and test some commands to check if the repo is good to be delivered to Epitech"
-echo -e 'Description:'
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo -e '${bold}Description:${normal}'
 echo -e $description
 echo -e ''
-echo -e 'Output Tests:'
+echo -e '${bold}Output Tests:${normal}'
 
 login=$1
 nameProject=$2
