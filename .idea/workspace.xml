@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Scripts/verif_repo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server/Scripts/verif_repo.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -84,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/Scripts/verif_repo.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state relative-caret-position="21">
+              <caret line="3" column="123" lean-forward="true" selection-start-line="3" selection-start-column="123" selection-end-line="3" selection-end-column="123" />
             </state>
           </provider>
         </entry>
@@ -94,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/server/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -268,12 +269,12 @@
       <workItem from="1556095475881" duration="1282000" />
       <workItem from="1556176807681" duration="15117000" />
       <workItem from="1556262828256" duration="41544000" />
-      <workItem from="1556624741304" duration="16940000" />
+      <workItem from="1556624741304" duration="17306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178446000" />
+    <option name="totallyTimeSpent" value="178812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -496,7 +497,7 @@
     <entry file="file://$PROJECT_DIR$/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -522,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Scripts/verif_repo.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="21">
+          <caret line="3" column="123" lean-forward="true" selection-start-line="3" selection-start-column="123" selection-end-line="3" selection-end-column="123" />
         </state>
       </provider>
     </entry>
