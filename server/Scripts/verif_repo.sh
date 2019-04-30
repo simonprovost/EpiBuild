@@ -3,8 +3,8 @@
 ################################## MAIN
 description="   This script, clone the repo and test some commands to check if the repo is good to be delivered to Epitech"
 
-bold=$(tput bold)
-normal=$(tput sgr0)
+bold="\033[1m"
+normal="\033[0m"
 
 echo -e '${bold}Description:${normal}'
 echo -e $description
