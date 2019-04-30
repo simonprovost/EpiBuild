@@ -1,12 +1,11 @@
-import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView} from 'react-native';
 import React, {Component} from 'react';
 import { material } from 'react-native-typography';
 import '../global';
 
 
 export class Settings extends Component {
-	constructor()
-	{
+	constructor() {
 		super();
 
 		this.state={
@@ -73,16 +72,16 @@ export class Settings extends Component {
 	};
 
 	render() {
-
 		return (
-			<React.Fragment>
-
-				<View style={{alignItems: 'stretch', marginLeft: 10, marginBottom: 10, marginTop: 20}}>
-					<Text style={material.headline}>Login Name</Text>
+			<ScrollView style={{flex: 1}}>
+				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
+                    <Text style={styles.title}>Login Name</Text>
 				</View>
 				<View style={{flexDirection:'row', alignItems: 'center', alignSelf: 'center', alignContent: 'center'}}>
 					<View style={{
-						width:300,
+                        alignContent: 'center',
+                        alignItems: 'center',
+                        width: '70%',
 					}}>
 
 						<TextInput
@@ -102,7 +101,8 @@ export class Settings extends Component {
 					<View style={{
 						alignContent: 'center',
 						alignItems: 'center',
-						alignSelf: 'center',
+                        alignSelf: 'center',
+                        width: '30%',
 					}}>
 						<Text style={{color:'#D3D3D3', fontSize:16, fontStyle: 'italic', fontFamily: 'Roboto'}}>@epitech.eu</Text>
 					</View>
@@ -125,25 +125,24 @@ export class Settings extends Component {
 					</TouchableOpacity>
 				</View>
 
-				<View style={{alignItems: 'stretch', marginLeft: 10, marginBottom: 10, marginTop: 25}}>
-					<Text style={material.headline}>Project Name</Text>
+				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
+					<Text style={styles.title}>Project Name</Text>
 				</View>
 
 				<View style={styles.MainContainer}>
-
-					<TextInput
-						returnKeyType={"next"}
-						autoFocus={true}
-						ref={(input) => { this.textInputNameProject = input; }}
-						onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
-						placeholder={this.state.storageValueNameProject || "CPE_corewar_2017"}
-                        onChangeText={ data => {
-                            this.setState({textInputNameProject : data});
-                        }}
-						underlineColorAndroid='transparent'
-						style={styles.TextInputStyle}
-						value={this.state.textInputNameProject}
-					/>
+                        <TextInput
+                            returnKeyType={"next"}
+                            autoFocus={true}
+                            ref={(input) => { this.textInputNameProject = input; }}
+                            onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
+                            placeholder={this.state.storageValueNameProject || "CPE_corewar_2017"}
+                            onChangeText={ data => {
+                                this.setState({textInputNameProject : data});
+                            }}
+                            underlineColorAndroid='transparent'
+                            style={styles.TextInputStyle}
+                            value={this.state.textInputNameProject}
+                        />
 					<TouchableOpacity onPress={
 						async () => {
 							try {
@@ -160,8 +159,8 @@ export class Settings extends Component {
 				</View>
 
 
-				<View style={{alignItems: 'stretch', marginLeft: 10, marginBottom: 10, marginTop: 25}}>
-					<Text style={material.headline}>Binary Name</Text>
+				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
+					<Text style={styles.title}>Binary Name</Text>
 				</View>
 
 				<View style={styles.MainContainer}>
@@ -194,8 +193,8 @@ export class Settings extends Component {
 				</View>
 
 
-				<View style={{alignItems: 'stretch', marginLeft: 10, marginBottom: 10, marginTop: 25}}>
-					<Text style={material.headline}>Branch Name</Text>
+				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
+					<Text style={styles.title}>Branch Name</Text>
 				</View>
 
 				<View style={styles.MainContainer}>
@@ -223,28 +222,38 @@ export class Settings extends Component {
 							}
 						}
 					} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}> Reset Binary Name </Text>
+						<Text style={styles.buttonText}>Reset Binary Name</Text>
 					</TouchableOpacity>
 				</View>
 
 
 				<View style = {{
-					borderWidth: 0.5,
-					borderColor:'black',
-					margin:20,
-					elevation: 10,
+                    backgroundColor: 'grey',
+					borderWidth: 0.3,
+					borderColor: 'grey',
+					margin: 15,
+					shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 5,
+                    },
+                    shadowOpacity: 0.34,
+                    shadowRadius: 6.27,
+
+                    elevation: 10,
 				}} />
 
 				<View style={{
 					justifyContent: 'center',
 					alignItems: 'center',
-					flex: 0.5
+                    flex: 0.5,
+                    marginBottom: 25,
 				}}>
 					<TouchableOpacity onPress={this.setValueLocally} activeOpacity={0.7} style={styles.button} >
 						<Text style={styles.buttonText}> Save Informations </Text>
 					</TouchableOpacity>
 				</View>
-			</React.Fragment>
+			</ScrollView>
 		)
 	}
 }
@@ -258,35 +267,38 @@ const styles = StyleSheet.create({
 
 	TextInputStyle:{
 
-		textAlign: 'center',
-		height: 40,
-		width: '90%',
+        textAlign: 'center',
+        width: '90%',
+        padding: 5,
 		borderWidth: 1,
 		borderColor: '#f2c468',
 		borderRadius: 10,
 	},
 
 	button: {
-
 		width: '70%',
-		height: 40,
-		padding: 10,
+		padding: 6,
 		backgroundColor: '#fac863',
 		borderRadius:7,
-		marginTop:10,
-		elevation: 10
+		marginTop: 10,
+		elevation: 10,
 	},
 
 	buttonText:{
 		color:'#fff',
 		textAlign:'center',
-		fontFamily: 'Roboto'
+		fontFamily: 'Roboto',
 	},
 
 	text:{
 		fontSize: 20,
 		marginTop: 20,
-		fontFamily: 'Roboto'
-	}
+		fontFamily: 'Roboto',
+    },
+
+    title: {
+        color: '#404040',
+        fontSize: 20,
+    }
 
 });
