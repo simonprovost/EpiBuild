@@ -1,5 +1,5 @@
-import {ActivityIndicator, Modal, StyleSheet, Text, TouchableOpacity, View,
-	Platform, Button, Picker, Alert} from "react-native";
+import {Animated, ActivityIndicator, Modal, StyleSheet, Text, TouchableOpacity, View,
+Platform, Button, Picker, Alert} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from "./OutputRenderer";
 import axios from "axios";
@@ -25,7 +25,55 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-	},
+    },
+    buttonStyle: {
+        alignItems:'center',
+        justifyContent:'center',
+        width:75,
+        height:75,
+        backgroundColor:'#79b6f2',
+        borderRadius:50,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        elevation: 6,
+    },
+    ButtonExitLoading: {
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:'#79b6f2',
+        width: 50,
+        height: 30,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        elevation: 6,
+        marginTop: 10,
+    },
+    buttonSplit: {
+        alignItems:'center',
+        justifyContent:'center',
+        width:50,
+        height:50,
+        backgroundColor:'#79b6f2',
+        borderRadius:50,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+        elevation: 6,
+    },
 });
 
 const CancelToken = axios.CancelToken;
@@ -39,7 +87,9 @@ export class Norminette extends Component {
 			PickerSelectedVal : '',
 			visible: false,
 			output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### ✍🏼Description:✍🏼\n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',
-		}
+            sizeOutputRenderer: new Animated.Value(0.82),
+            splitted: false,
+        }
 	}
 
 
@@ -73,48 +123,22 @@ export class Norminette extends Component {
 			}
 			this.setState({visible: false});
 		})
-	};
+    };
+    
+    split = () => {
+        Animated.spring(this.state.sizeOutputRenderer, {
+            toValue: this.state.splitted ? 0.81 : 0.4,
+            duration: 300,
+        }).start();
+        this.setState({splitted: !this.state.splitted});
+    }
 
 	render() {
-		const buttonStyle = {
-			alignItems:'center',
-			justifyContent:'center',
-			width:75,
-			height:75,
-			backgroundColor:'#79b6f2',
-			borderRadius:50,
-			shadowColor: "#000",
-			shadowOffset: {
-				width: 0,
-				height: 3,
-			},
-			shadowOpacity: 0.27,
-			shadowRadius: 4.65,
-			elevation: 6,
-		};
-		const ButtonExitLoading = {
-			alignItems:'center',
-			justifyContent:'center',
-			backgroundColor:'#79b6f2',
-			width: 50,
-			height: 30,
-			shadowColor: "#000",
-			shadowOffset: {
-				width: 0,
-				height: 3,
-			},
-			shadowOpacity: 0.27,
-			shadowRadius: 4.65,
-			elevation: 6,
-			marginTop: 10,
-		};
 
 		axiosCancel(axios, {
 			debug: false // default
-		});
-
-
-
+        });
+        
 		let modal;
 
 		if (this.state.visible) {
@@ -141,10 +165,6 @@ export class Norminette extends Component {
 						>
 							<Text style={{color: '#FFFFFF'}}>Exit</Text>
 						</TouchableOpacity>
-						{/*<Text>Login : {global.userName}</Text>
-						<Text>ProjectName : {global.projectName}</Text>
-						<Text>BinaryName : {global.binaryName}</Text>
-						<Text>branch Name : {global.branchName}</Text>*/}
 					</View>
 				</View>
 			</Modal>
@@ -152,34 +172,61 @@ export class Norminette extends Component {
 
 		return (
 			<React.Fragment>
-				<View style={{marginTop: 1, justifyContent: 'center'}}>
-					<Picker
-						selectedValue={this.state.PickerSelectedVal}
-						onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})} >
+                <View style={{
+                    flex: 0.15,
+                    marginTop: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection:'row',
+                }}>
+                    <View style={{
+                        flex: 0.7,
+                    }} >
+                        <Picker
+                            selectedValue={this.state.PickerSelectedVal}
+                            onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})}
+                        >
 
-						<Picker.Item label="Choose a norminette" value="null" />
-						<Picker.Item label="normEZ" value="normEZ" />
-						<Picker.Item label={"Doom"} value={"doom"} />
-						<Picker.Item label="Gegel85" value="Gegel85" />
-					</Picker>
+                            <Picker.Item label="Choose a norminette" value="null" />
+                            <Picker.Item label="normEZ" value="normEZ" />
+                            <Picker.Item label={"Doom"} value={"doom"} />
+                            <Picker.Item label="Gegel85" value="Gegel85" />
+                        </Picker>
+
+                    </View>
+                    <View style={{
+                        flex: 0.3,
+                        alignItems: 'center',
+                    }} >
+                        <TouchableOpacity
+                            style={styles.buttonSplit}
+                            onPress={() => {this.split()}}>
+                            <Text style={{
+                                color: 'white',
+                            }}>
+                                Split
+                            </Text>
+                        </TouchableOpacity>
+
+                    </View>
 				</View>
 
-				<View style={{ flex: 1, alignItems: 'center' }}>
+				<View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
 
-					<View style={{
-						marginTop: '5%',
-						flex: 0.85,
-						width: '85%'
+					<Animated.View style={{
+						flex: this.state.sizeOutputRenderer,
+                        width: '85%',
 					}}>
 						<OutputRenderer
 							output={this.state.output}
 						/>
-					</View>
+					</Animated.View>
 					<View style={{
-						flex: 0.15
+                        flex: 0.18,
+                        justifyContent: 'center',
 					}}>
 						<TouchableOpacity
-							style={buttonStyle}
+							style={styles.buttonStyle}
 							onPress={this.runNorm}
 						>
 							<Text style={{color: '#FFFFFF'}}>Run</Text>

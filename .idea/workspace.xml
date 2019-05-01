@@ -2,230 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2839b435-9e6c-4f9d-945d-5a02e11e642e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/norminette.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/norminette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.gitmodules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/RNSVG.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/Brush.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/CircleView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/ClipPathView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/DefinitionView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/DefsView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/EllipseView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/FontData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/GlyphContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/GlyphPathBag.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/GroupView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/ImageView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/LineView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/LinearGradientView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/MaskView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/PathView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/PatternView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/PropHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/RadialGradientView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/RectView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/RenderableView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/RenderableViewManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SVGLength.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SvgPackage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SvgView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SvgViewManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SvgViewModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/SymbolView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/TSpanView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/TextLayoutAlgorithm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/TextPathView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/TextProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/TextView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/UseView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/ViewBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/VirtualView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Circle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/ClipPath.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Defs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Ellipse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/G.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Line.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/LinearGradient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Mask.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Pattern.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Polygon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Polyline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/RadialGradient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Rect.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Shape.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Stop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Svg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Symbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/TSpan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Text.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/TextPath.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/elements/Use.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/index.web.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGBrush.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGBrush.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGBrushType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGPainter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGPainter.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGPainterBrush.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGPainterBrush.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGSolidColorBrush.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Brushes/RNSVGSolidColorBrush.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGClipPath.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGClipPath.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGDefs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGDefs.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGGroup.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGGroup.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGImage.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGImage.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGLinearGradient.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGLinearGradient.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGMask.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGMask.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGPath.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGPath.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGPattern.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGRadialGradient.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGRadialGradient.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGSvgView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGSvgView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGSymbol.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGSymbol.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGUse.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Elements/RNSVGUse.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVG.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGContainer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGNode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGNode.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGPattern.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGRenderable.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/RNSVGRenderable.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGCircle.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGCircle.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGEllipse.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGEllipse.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGLine.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGLine.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGRect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Shapes/RNSVGRect.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGFontData.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGFontData.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGGlyphContext.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGGlyphContext.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGPropHelper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGPropHelper.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTSpan.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTSpan.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGText.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGText.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTextPath.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTextPath.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTextProperties.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Text/RNSVGTextProperties.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RCTConvert+RNSVG.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RCTConvert+RNSVG.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGBezierElement.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGBezierElement.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGCGFCRule.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGLength.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGLength.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGPathParser.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGPathParser.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGPercentageConverter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGPercentageConverter.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGUnits.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGVBMOS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGVectorEffect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGViewBox.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/Utils/RNSVGViewBox.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGCircleManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGCircleManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGClipPathManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGClipPathManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGDefsManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGDefsManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGEllipseManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGEllipseManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGGroupManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGGroupManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGImageManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGImageManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGLineManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGLineManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGLinearGradientManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGLinearGradientManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGMaskManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGMaskManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGNodeManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGNodeManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGPathManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGPathManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGPatternManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGPatternManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRadialGradientManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRadialGradientManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRectManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRectManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRenderableManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGRenderableManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGSvgViewManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGSvgViewManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGSymbolManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGSymbolManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTSpanManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTSpanManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTextManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTextManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTextPathManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGTextPathManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGUseManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/ios/ViewManagers/RNSVGUseManager.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/Matrix2D.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/SvgTouchableMixin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractBrush.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractClipPath.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractColor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractFill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractGradient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractLengthList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractOpacity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractPolyPoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractProps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractResponder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractStroke.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractText.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/extractViewBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/extract/transform.peg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/resolve.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/units.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/react-native-svg/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -280,8 +60,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/norminette.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+            <state relative-caret-position="210">
+              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding>
+                <element signature="e#13#143#0" expanded="true" />
+                <element signature="e#152#291#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -503,12 +287,12 @@
       <workItem from="1556095475881" duration="1282000" />
       <workItem from="1556176807681" duration="15117000" />
       <workItem from="1556262828256" duration="41544000" />
-      <workItem from="1556624741304" duration="20780000" />
+      <workItem from="1556624741304" duration="21386000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182286000" />
+    <option name="totallyTimeSpent" value="182892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -765,8 +549,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/norminette.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="210">
+          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#13#143#0" expanded="true" />
+            <element signature="e#152#291#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

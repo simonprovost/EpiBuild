@@ -77,7 +77,12 @@ export class Settings extends Component {
 				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
                     <Text style={styles.title}>Login Name</Text>
 				</View>
-				<View style={{flexDirection:'row', alignItems: 'center', alignSelf: 'center', alignContent: 'center'}}>
+				<View style={{
+                    flexDirection:'row',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                    alignContent: 'center'
+                }}>
 					<View style={{
                         alignContent: 'center',
                         alignItems: 'center',
