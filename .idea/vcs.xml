@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PSU_minishell1_2017" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react-native-circular-progress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/temp_verif/PSU_minishell1_2017" vcs="Git" />
   </component>
 </project>

@@ -1,13 +1,12 @@
 import {Animated, ActivityIndicator, Modal, StyleSheet, Text, TouchableOpacity, View,
-Platform, Button, Picker, Alert} from "react-native";
+	Platform, Button, Picker, Alert, AppState, Easing, ViewPropTypes} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from "./OutputRenderer";
 import axios from "axios";
 import {apiRoot} from "../apiRoot";
 import '../global';
 import axiosCancel from 'axios-cancel';
-import { Svg } from 'expo'
-
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const styles = StyleSheet.create({
 	modalBackground: {
@@ -25,72 +24,82 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-    },
-    buttonStyle: {
-        alignItems:'center',
-        justifyContent:'center',
-        width:75,
-        height:75,
-        backgroundColor:'#79b6f2',
-        borderRadius:50,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 6,
-    },
-    ButtonExitLoading: {
-        alignItems:'center',
-        justifyContent:'center',
-        backgroundColor:'#79b6f2',
-        width: 50,
-        height: 30,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 6,
-        marginTop: 10,
-    },
-    buttonSplit: {
-        alignItems:'center',
-        justifyContent:'center',
-        width:50,
-        height:50,
-        backgroundColor:'#79b6f2',
-        borderRadius:50,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-        elevation: 6,
-    },
+	},
+	buttonStyle: {
+		alignItems:'center',
+		justifyContent:'center',
+		width:75,
+		height:75,
+		backgroundColor:'#79b6f2',
+		borderRadius:50,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 3,
+		},
+		shadowOpacity: 0.27,
+		shadowRadius: 4.65,
+		elevation: 6,
+	},
+	ButtonExitLoading: {
+		alignItems:'center',
+		justifyContent:'center',
+		backgroundColor:'#79b6f2',
+		width: 50,
+		height: 30,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 3,
+		},
+		shadowOpacity: 0.27,
+		shadowRadius: 4.65,
+		elevation: 6,
+		marginTop: 10,
+	},
+	buttonSplit: {
+		alignItems:'center',
+		justifyContent:'center',
+		width:50,
+		height:50,
+		backgroundColor:'#79b6f2',
+		borderRadius:50,
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 3,
+		},
+		shadowOpacity: 0.27,
+		shadowRadius: 4.65,
+		elevation: 6,
+	},
 });
 
 const CancelToken = axios.CancelToken;
 let source = CancelToken.source();
 
 export class Norminette extends Component {
+
 	constructor () {
 		super();
 
 		this.state = {
 			PickerSelectedVal : '',
+			fill : 100,
 			visible: false,
 			output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### ✍🏼Description:✍🏼\n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',
-            sizeOutputRenderer: new Animated.Value(0.82),
-            splitted: false,
-        }
+			sizeOutputRenderer: new Animated.Value(0.82),
+			splitted: false,
+		}
 	}
+
+/*
+	componentDidMount() {
+		Font.loadAsync({
+			'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
+		});
+	}
+*/
 
 
 	runNorm = () => {
@@ -123,22 +132,22 @@ export class Norminette extends Component {
 			}
 			this.setState({visible: false});
 		})
-    };
-    
-    split = () => {
-        Animated.spring(this.state.sizeOutputRenderer, {
-            toValue: this.state.splitted ? 0.81 : 0.4,
-            duration: 300,
-        }).start();
-        this.setState({splitted: !this.state.splitted});
-    }
+	};
+
+	split = () => {
+		Animated.spring(this.state.sizeOutputRenderer, {
+			toValue: this.state.splitted ? 0.81 : 0.4,
+			duration: 300,
+		}).start();
+		this.setState({splitted: !this.state.splitted});
+	}
 
 	render() {
 
 		axiosCancel(axios, {
 			debug: false // default
-        });
-        
+		});
+
 		let modal;
 
 		if (this.state.visible) {
@@ -156,11 +165,11 @@ export class Norminette extends Component {
 							color={"#fc929e"}
 						/>
 						<TouchableOpacity
-							style={ButtonExitLoading}
+							style={styles.ButtonExitLoading}
 							onPress={() => {
 								console.log("EXIT BUTTON");
 								source.cancel('Axios Request canceled by the user.');
-								this.setState({output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### 📌Description📌: \n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',});
+								this.setState({output: '###### 🎉Welcomee to the Norminette Screen🎉\n\n###### 📌Description📌: \n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',});
 							}}
 						>
 							<Text style={{color: '#FFFFFF'}}>Exit</Text>
@@ -170,60 +179,88 @@ export class Norminette extends Component {
 			</Modal>
 		}
 
+		let visibleCircularProgress;
+
+		if (this.state.splitted) {
+
+			visibleCircularProgress =
+				<View style={{flex:0.4}}>
+					<AnimatedCircularProgress
+					size={200}
+					width={5}
+					fill={this.state.fill}
+					tintColor="#00e0ff"
+					duration={2000}
+					rotation={0}
+					backgroundColor="#3d5875">
+					{
+						(fill) => (
+							<Text style={{fontSize: 26, fontFamily:'Roboto'}}>
+								{this.state.fill + "%"}
+							</Text>
+						)
+					}
+				</AnimatedCircularProgress>
+				</View>;
+		}
+
 		return (
 			<React.Fragment>
-                <View style={{
-                    flex: 0.15,
-                    marginTop: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection:'row',
-                }}>
-                    <View style={{
-                        flex: 0.7,
-                    }} >
-                        <Picker
-                            selectedValue={this.state.PickerSelectedVal}
-                            onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})}
-                        >
+				<View style={{
+					flex: 0.15,
+					marginTop: 1,
+					justifyContent: 'center',
+					alignItems: 'center',
+					flexDirection:'row',
+				}}>
+					<View style={{
+						flex: 0.7,
+					}} >
+						<Picker
+							selectedValue={this.state.PickerSelectedVal}
+							onValueChange={(itemValue, itemIndex) => this.setState({PickerSelectedVal: itemValue})}
+						>
 
-                            <Picker.Item label="Choose a norminette" value="null" />
-                            <Picker.Item label="normEZ" value="normEZ" />
-                            <Picker.Item label={"Doom"} value={"doom"} />
-                            <Picker.Item label="Gegel85" value="Gegel85" />
-                        </Picker>
+							<Picker.Item label="Choose a norminette" value="null" />
+							<Picker.Item label="normEZ" value="normEZ" />
+							<Picker.Item label={"Doom"} value={"doom"} />
+							<Picker.Item label={"Gegel85"} value="Gegel85" />
+						</Picker>
 
-                    </View>
-                    <View style={{
-                        flex: 0.3,
-                        alignItems: 'center',
-                    }} >
-                        <TouchableOpacity
-                            style={styles.buttonSplit}
-                            onPress={() => {this.split()}}>
-                            <Text style={{
-                                color: 'white',
-                            }}>
-                                Split
-                            </Text>
-                        </TouchableOpacity>
+					</View>
 
-                    </View>
+					<View style={{
+						flex: 0.3,
+						alignItems: 'center',
+					}} >
+						<TouchableOpacity
+							style={styles.buttonSplit}
+							onPress={() => {this.split()}}>
+							<Text style={{
+								color: 'white',
+							}}>
+								Split
+							</Text>
+						</TouchableOpacity>
+
+					</View>
 				</View>
 
 				<View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
 
+					{visibleCircularProgress}
+
 					<Animated.View style={{
 						flex: this.state.sizeOutputRenderer,
-                        width: '85%',
+						width: '85%',
 					}}>
 						<OutputRenderer
 							output={this.state.output}
 						/>
 					</Animated.View>
 					<View style={{
-                        flex: 0.18,
-                        justifyContent: 'center',
+						flex: 0.18,
+						justifyContent: 'center',
 					}}>
 						<TouchableOpacity
 							style={styles.buttonStyle}

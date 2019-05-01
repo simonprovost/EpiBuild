@@ -3,10 +3,11 @@
 import React from 'react';
 import SwitchRouter from '../SwitchRouter';
 import StackRouter from '../StackRouter';
-import NavigationActions from '../../NavigationActions';
+import * as SwitchActions from '../SwitchActions';
+import * as NavigationActions from '../../NavigationActions';
 
 describe('SwitchRouter', () => {
-  test('resets the route when unfocusing a tab by default', () => {
+  it('resets the route when unfocusing a tab by default', () => {
     const router = getExampleRouter();
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     const state2 = router.getStateForAction(
@@ -25,7 +26,7 @@ describe('SwitchRouter', () => {
     expect(state3.routes[0].routes.length).toEqual(1);
   });
 
-  test('does not reset the route on unfocus if resetOnBlur is false', () => {
+  it('does not reset the route on unfocus if resetOnBlur is false', () => {
     const router = getExampleRouter({ resetOnBlur: false });
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     const state2 = router.getStateForAction(
@@ -44,11 +45,11 @@ describe('SwitchRouter', () => {
     expect(state3.routes[0].routes.length).toEqual(2);
   });
 
-  test('ignores back by default', () => {
+  it('ignores back by default', () => {
     const router = getExampleRouter();
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     const state2 = router.getStateForAction(
-      { type: NavigationActions.NAVIGATE, routeName: 'B' },
+      { type: SwitchActions.JUMP_TO, routeName: 'B' },
       state
     );
     expect(state2.index).toEqual(1);
@@ -61,14 +62,14 @@ describe('SwitchRouter', () => {
     expect(state3.index).toEqual(1);
   });
 
-  test('handles initialRoute backBehavior', () => {
+  it('handles initialRoute backBehavior', () => {
     const router = getExampleRouter({ backBehavior: 'initialRoute' });
 
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     expect(state.routeKeyHistory).toBeUndefined();
 
     const state2 = router.getStateForAction(
-      { type: NavigationActions.NAVIGATE, routeName: 'B' },
+      { type: SwitchActions.JUMP_TO, routeName: 'B' },
       state
     );
     expect(state2.index).toEqual(1);
@@ -81,13 +82,13 @@ describe('SwitchRouter', () => {
     expect(state3.index).toEqual(0);
   });
 
-  test('handles order backBehavior', () => {
+  it('handles order backBehavior', () => {
     const routerHelper = new ExampleRouterHelper({ backBehavior: 'order' });
     expect(routerHelper.getCurrentState().routeKeyHistory).toBeUndefined();
 
     expect(
       routerHelper.applyAction({
-        type: NavigationActions.NAVIGATE,
+        type: SwitchActions.JUMP_TO,
         routeName: 'C',
       })
     ).toMatchObject({ index: 2 });
@@ -105,7 +106,7 @@ describe('SwitchRouter', () => {
     ).toMatchObject({ index: 0 });
   });
 
-  test('handles history backBehavior', () => {
+  it('handles history backBehavior', () => {
     const routerHelper = new ExampleRouterHelper({ backBehavior: 'history' });
     expect(routerHelper.getCurrentState().routeKeyHistory).toMatchObject(['A']);
 
@@ -150,7 +151,7 @@ describe('SwitchRouter', () => {
     ).toMatchObject({ index: 1, routeKeyHistory: ['B'] });
   });
 
-  test('handles nested actions', () => {
+  it('handles nested actions', () => {
     const router = getExampleRouter();
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     const state2 = router.getStateForAction(
@@ -166,7 +167,7 @@ describe('SwitchRouter', () => {
     expect(activeGrandChildRoute.routeName).toEqual('B2');
   });
 
-  test('handles nested actions and params simultaneously', () => {
+  it('handles nested actions and params simultaneously', () => {
     const router = getExampleRouter();
     const state = router.getStateForAction({ type: NavigationActions.INIT });
     const state2 = router.getStateForAction(
@@ -184,7 +185,7 @@ describe('SwitchRouter', () => {
     expect(activeGrandChildRoute.routeName).toEqual('B2');
   });
 
-  test('order of handling navigate action is correct for nested switchrouters', () => {
+  it('order of handling navigate action is correct for nested switchrouters', () => {
     // router = switch({ Nested: switch({ Foo, Bar }), Other: switch({ Foo }), Bar })
     // if we are focused on Other and navigate to Bar, what should happen?
 
@@ -240,7 +241,7 @@ describe('SwitchRouter', () => {
   });
 
   // https://github.com/react-navigation/react-navigation.github.io/issues/117#issuecomment-385597628
-  test('order of handling navigate action is correct for nested stackrouters', () => {
+  it('order of handling navigate action is correct for nested stackrouters', () => {
     const Screen = () => <div />;
     const MainStack = () => <div />;
     const LoginStack = () => <div />;
@@ -263,7 +264,7 @@ describe('SwitchRouter', () => {
 
     const state2 = router.getStateForAction(
       {
-        type: NavigationActions.NAVIGATE,
+        type: SwitchActions.JUMP_TO,
         routeName: 'Home',
       },
       state
