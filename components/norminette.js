@@ -1,11 +1,13 @@
 import {ActivityIndicator, Modal, StyleSheet, Text, TouchableOpacity, View,
-Platform, Button, Picker, Alert} from "react-native";
+	Platform, Button, Picker, Alert} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from "./OutputRenderer";
 import axios from "axios";
 import {apiRoot} from "../apiRoot";
 import '../global';
 import axiosCancel from 'axios-cancel';
+import { Svg } from 'expo'
+
 
 const styles = StyleSheet.create({
 	modalBackground: {

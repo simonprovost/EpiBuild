@@ -1,0 +1,41 @@
+import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
+import { Theme } from '../../style';
+export interface ListStyle {
+    underlayColor: ViewStyle;
+    Header: TextStyle;
+    Footer: TextStyle;
+    Body: ViewStyle;
+    BodyBottomLine: ViewStyle;
+    Item: ViewStyle;
+    Line: ViewStyle;
+    Thumb: ImageStyle;
+    Content: TextStyle;
+    Extra: TextStyle;
+    Brief: ViewStyle;
+    BriefText: TextStyle;
+    Arrow: ViewStyle;
+    ArrowV: ViewStyle;
+    multipleLine: ViewStyle;
+    multipleThumb: ImageStyle;
+    column: ViewStyle;
+}
+declare const _default: (variables: Theme) => {
+    underlayColor: import("react-native").RegisteredStyle<ViewStyle>;
+    Header: import("react-native").RegisteredStyle<TextStyle>;
+    Footer: import("react-native").RegisteredStyle<TextStyle>;
+    Body: import("react-native").RegisteredStyle<ViewStyle>;
+    BodyBottomLine: import("react-native").RegisteredStyle<ViewStyle>;
+    Item: import("react-native").RegisteredStyle<ViewStyle>;
+    Line: import("react-native").RegisteredStyle<ViewStyle>;
+    Thumb: import("react-native").RegisteredStyle<ImageStyle>;
+    Content: import("react-native").RegisteredStyle<TextStyle>;
+    Extra: import("react-native").RegisteredStyle<TextStyle>;
+    Brief: import("react-native").RegisteredStyle<ViewStyle>;
+    BriefText: import("react-native").RegisteredStyle<TextStyle>;
+    Arrow: import("react-native").RegisteredStyle<ViewStyle>;
+    ArrowV: import("react-native").RegisteredStyle<ViewStyle>;
+    multipleLine: import("react-native").RegisteredStyle<ViewStyle>;
+    multipleThumb: import("react-native").RegisteredStyle<ImageStyle>;
+    column: import("react-native").RegisteredStyle<ViewStyle>;
+};
+export default _default;

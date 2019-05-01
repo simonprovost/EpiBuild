@@ -1,0 +1,6 @@
+import React from 'react';
+export default class LocaleProviderExample extends React.Component<any, any> {
+    constructor(props: any);
+    onChange: (value: any) => void;
+    render(): JSX.Element;
+}
