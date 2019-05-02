@@ -27,21 +27,29 @@ export class Settings extends Component {
 
 	setValueLocally = async () => {
 		try {
-			await AsyncStorage.setItem('KeyLogin', this.state.textInputDataLogin);
-			await AsyncStorage.setItem('KeyNameProject', this.state.textInputNameProject);
-			await AsyncStorage.setItem('KeyBinaryName', this.state.textInputBinaryname);
-			await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
-			global.userName = this.state.textInputDataLogin;
-			global.projectName = this.state.textInputNameProject;
-			global.branchName = this.state.textInputBranchName;
-			global.binaryName = this.state.textInputBinaryname;
+			if (this.state.textInputDataLogin !== '') {
+				await AsyncStorage.setItem('KeyLogin', this.state.textInputDataLogin);
+				global.userName = this.state.textInputDataLogin;
+			}
+			if (this.state.textInputNameProject !== '') {
+				await AsyncStorage.setItem('KeyNameProject', this.state.textInputNameProject);
+				global.projectName = this.state.textInputNameProject;
+			}
+			if (this.state.textInputBinaryname !== '') {
+				await AsyncStorage.setItem('KeyBinaryName', this.state.textInputBinaryname);
+				global.binaryName = this.state.textInputBinaryname;
+			}
+			if (this.state.textInputBranchName !== '') {
+				await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
+				global.branchName = this.state.textInputBranchName;
+			}
 			Alert.alert("Value Stored Successfully.",
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-			+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
 		} catch (error) {
 			Alert.alert("Value Stored Unsuccessfully.",
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-			+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
 		}
 	};
 
