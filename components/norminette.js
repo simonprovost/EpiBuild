@@ -185,13 +185,13 @@ export class Norminette extends Component {
 
 		if (this.state.splitted) {
 			if (this.state.normError === 0) {
-				this.state.fill = 100;
+				this.state.fill = 10;
 			}
 			if (this.state.normError > 0 && this.state.normError <= 20) {
-				this.state.fill = 80;
+				this.state.fill = 20;
 
-			} else if (this.state.normError > 20 && this.state.normError <= 50) {
-				this.state.fill = 50;
+			} else if (this.state.normError > 20) {
+				this.state.fill = 100;
 
 			} else {
 				this.state.fill = 0;

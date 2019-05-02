@@ -50,9 +50,9 @@ app.get(root + '/getNormExecution', (req, res) => {
         }
     } else if (normiChoice === "doom") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/Doom/doom" + " " + "doom");
-        const arrayOutput = output.split("\n");
-        const latestElem = arrayOutput[arrayOutput.length - 1].split(" ");
-        nbNormError = Number(latestElem[3]);
+        const arrayOutput = output.split(" ");
+        const latestElem = arrayOutput[arrayOutput.length - 4];
+        nbNormError = Number(latestElem);
     } else {
         output = shell.exec("echo \"Norminette that you've chosen has  not allowed to be executed.\"");
         nbNormError = 0;
