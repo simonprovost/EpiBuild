@@ -113,6 +113,9 @@ export class Norminette extends Component {
 			visible: true,
 			output: '',
 		});
+		console.log("name: " + global.userName);
+		console.log("name: " + global.projectName);
+		console.log("name: " + global.branchName);
 		axios.get(apiRoot + '/getNormExecution?'
 			+ 'userName=' + global.userName
 			+ '&projectName=' + global.projectName
@@ -184,10 +187,9 @@ export class Norminette extends Component {
 		let visibleCircularProgress;
 
 		if (this.state.splitted) {
-			console.log("debug normError: " + this.state.normError);
-			if (this.state.normError === 0)
+			if (this.state.normError <= 1)
 				this.state.fill = 100;
-			if (this.state.normError > 0 && this.state.normError <= 20)
+			else if (this.state.normError > 1 && this.state.normError <= 20)
 				this.state.fill = 50;
 			else if (this.state.normError > 20 && this.state.normError < 50)
 				this.state.fill = 20;
@@ -234,7 +236,7 @@ export class Norminette extends Component {
 							<Picker.Item label="Choose a norminette" value="null" />
 							<Picker.Item label="normEZ" value="normEZ" />
 							<Picker.Item label={"Doom"} value={"doom"} />
-							<Picker.Item label={"Gegel85"} value="Gegel85" />
+							<Picker.Item label={"Gegel42"} value="Gegel85" />
 						</Picker>
 
 					</View>

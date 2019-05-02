@@ -27,21 +27,29 @@ export class Settings extends Component {
 
 	setValueLocally = async () => {
 		try {
-			await AsyncStorage.setItem('KeyLogin', this.state.textInputDataLogin);
-			await AsyncStorage.setItem('KeyNameProject', this.state.textInputNameProject);
-			await AsyncStorage.setItem('KeyBinaryName', this.state.textInputBinaryname);
-			await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
-			global.userName = this.state.textInputDataLogin;
-			global.projectName = this.state.textInputNameProject;
-			global.branchName = this.state.textInputBranchName;
-			global.binaryName = this.state.textInputBinaryname;
+			if (this.state.textInputDataLogin !== '') {
+				await AsyncStorage.setItem('KeyLogin', this.state.textInputDataLogin);
+				global.userName = this.state.textInputDataLogin;
+			}
+			if (this.state.textInputNameProject !== '') {
+				await AsyncStorage.setItem('KeyNameProject', this.state.textInputNameProject);
+				global.projectName = this.state.textInputNameProject;
+			}
+			if (this.state.textInputBinaryname !== '') {
+				await AsyncStorage.setItem('KeyBinaryName', this.state.textInputBinaryname);
+				global.binaryName = this.state.textInputBinaryname;
+			}
+			if (this.state.textInputBranchName !== '') {
+				await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
+				global.branchName = this.state.textInputBranchName;
+			}
 			Alert.alert("Value Stored Successfully.",
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-			+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
 		} catch (error) {
 			Alert.alert("Value Stored Unsuccessfully.",
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-			+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
 		}
 	};
 
@@ -75,18 +83,18 @@ export class Settings extends Component {
 		return (
 			<ScrollView style={{flex: 1}}>
 				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
-                    <Text style={styles.title}>Login Name</Text>
+					<Text style={styles.title}>Login Name</Text>
 				</View>
 				<View style={{
-                    flexDirection:'row',
-                    alignItems: 'center',
-                    alignSelf: 'center',
-                    alignContent: 'center'
-                }}>
+					flexDirection:'row',
+					alignItems: 'center',
+					alignSelf: 'center',
+					alignContent: 'center'
+				}}>
 					<View style={{
-                        alignContent: 'center',
-                        alignItems: 'center',
-                        width: '70%',
+						alignContent: 'center',
+						alignItems: 'center',
+						width: '70%',
 					}}>
 
 						<TextInput
@@ -96,8 +104,8 @@ export class Settings extends Component {
 							autoFocus={true}
 							placeholder={this.state.storageValueLogin || "lucas.mayol"}
 							onChangeText={ data => {
-                                this.setState({textInputDataLogin : data});
-                            }}
+								this.setState({textInputDataLogin : data});
+							}}
 							underlineColorAndroid='transparent'
 							style={styles.TextInputStyle}
 							value={this.state.textInputDataLogin}
@@ -106,8 +114,8 @@ export class Settings extends Component {
 					<View style={{
 						alignContent: 'center',
 						alignItems: 'center',
-                        alignSelf: 'center',
-                        width: '30%',
+						alignSelf: 'center',
+						width: '30%',
 					}}>
 						<Text style={{color:'#D3D3D3', fontSize:16, fontStyle: 'italic', fontFamily: 'Roboto'}}>@epitech.eu</Text>
 					</View>
@@ -135,19 +143,19 @@ export class Settings extends Component {
 				</View>
 
 				<View style={styles.MainContainer}>
-                        <TextInput
-                            returnKeyType={"next"}
-                            autoFocus={true}
-                            ref={(input) => { this.textInputNameProject = input; }}
-                            onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
-                            placeholder={this.state.storageValueNameProject || "CPE_corewar_2017"}
-                            onChangeText={ data => {
-                                this.setState({textInputNameProject : data});
-                            }}
-                            underlineColorAndroid='transparent'
-                            style={styles.TextInputStyle}
-                            value={this.state.textInputNameProject}
-                        />
+					<TextInput
+						returnKeyType={"next"}
+						autoFocus={true}
+						ref={(input) => { this.textInputNameProject = input; }}
+						onSubmitEditing={() => { this.textInputBinaryname.focus(); }}
+						placeholder={this.state.storageValueNameProject || "CPE_corewar_2017"}
+						onChangeText={ data => {
+							this.setState({textInputNameProject : data});
+						}}
+						underlineColorAndroid='transparent'
+						style={styles.TextInputStyle}
+						value={this.state.textInputNameProject}
+					/>
 					<TouchableOpacity onPress={
 						async () => {
 							try {
@@ -176,8 +184,8 @@ export class Settings extends Component {
 						ref={(input) => { this.textInputBinaryname = input; }}
 						placeholder={this.state.storageValueBinaryname || "corewar"}
 						onChangeText={ data => {
-                            this.setState({textInputBinaryname : data});
-                        }}
+							this.setState({textInputBinaryname : data});
+						}}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
 						value={this.state.textInputBinaryname}
@@ -209,9 +217,9 @@ export class Settings extends Component {
 						autoFocus={true}
 						ref={(input) => { this.textInputBranchName = input; }}
 						placeholder={this.state.storageValueBranchName || "master"}
-                        onChangeText={ data => {
-                            this.setState({textInputBranchName : data});
-                        }}
+						onChangeText={ data => {
+							this.setState({textInputBranchName : data});
+						}}
 						underlineColorAndroid='transparent'
 						style={styles.TextInputStyle}
 						value={this.state.textInputBranchName}
@@ -233,26 +241,26 @@ export class Settings extends Component {
 
 
 				<View style = {{
-                    backgroundColor: 'grey',
+					backgroundColor: 'grey',
 					borderWidth: 0.3,
 					borderColor: 'grey',
 					margin: 15,
 					shadowColor: "#000",
-                    shadowOffset: {
-                        width: 0,
-                        height: 5,
-                    },
-                    shadowOpacity: 0.34,
-                    shadowRadius: 6.27,
+					shadowOffset: {
+						width: 0,
+						height: 5,
+					},
+					shadowOpacity: 0.34,
+					shadowRadius: 6.27,
 
-                    elevation: 10,
+					elevation: 10,
 				}} />
 
 				<View style={{
 					justifyContent: 'center',
 					alignItems: 'center',
-                    flex: 0.5,
-                    marginBottom: 25,
+					flex: 0.5,
+					marginBottom: 25,
 				}}>
 					<TouchableOpacity onPress={this.setValueLocally} activeOpacity={0.7} style={styles.button} >
 						<Text style={styles.buttonText}> Save Informations </Text>
@@ -272,9 +280,9 @@ const styles = StyleSheet.create({
 
 	TextInputStyle:{
 
-        textAlign: 'center',
-        width: '90%',
-        padding: 5,
+		textAlign: 'center',
+		width: '90%',
+		padding: 5,
 		borderWidth: 1,
 		borderColor: '#f2c468',
 		borderRadius: 10,
@@ -299,11 +307,11 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		marginTop: 20,
 		fontFamily: 'Roboto',
-    },
+	},
 
-    title: {
-        color: '#404040',
-        fontSize: 20,
-    }
+	title: {
+		color: '#404040',
+		fontSize: 20,
+	}
 
 });
