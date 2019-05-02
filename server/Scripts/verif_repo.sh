@@ -2,10 +2,6 @@
 
 ################################## MAIN
 description="   This script, clone the repo and test some commands to check if the repo is good to be delivered to Epitech"
-echo -e 'Description:'
-echo -e $description
-echo -e ''
-echo -e 'Output Tests:'
 
 login=$1
 nameProject=$2
@@ -39,7 +35,7 @@ colorgreen="${code}1;32m"
 function binary() {
     ls ./$1 &> /dev/null
     if [[ $? == 0 ]]; then
-		exitError 'Before pushed you need to delete your binary with make fclean'
+	exitError 'Before pushing, you must delete your binary with make fclean.'
 	fi
 }
 
@@ -110,4 +106,4 @@ progress 90 "All make_* rules : OK.                                           "
     cd ../../
     rm -rf temp_verif
 
-success "All verif are OK. Thanks.\n                                         "
+success "All verif are OK. You are sure that you'll compile on the Epitech server.\n   "

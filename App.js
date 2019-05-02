@@ -23,7 +23,6 @@ import * as Constants from "react-native-paper";
 
 class App extends Component {
 
-
 	render() {
 
 		return (

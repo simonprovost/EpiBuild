@@ -33,6 +33,7 @@ app.get(root + '/getNormExecution', (req, res) => {
     const projectName = req.query.projectName;
     const branchName = req.query.branchName;
     const normiChoice = req.query.normiChoice;
+    let nbNormError = 0;
 
     if (!userName || !projectName || !branchName)
         return res.json({
@@ -41,16 +42,21 @@ app.get(root + '/getNormExecution', (req, res) => {
         });
     let output = '';
 
-    if (normiChoice === "normEZ")
+    if (normiChoice === "normEZ") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
-    else if (normiChoice === "doom")
+    } else if (normiChoice === "doom") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/Doom/doom" + " " + "doom");
-    else
+    } else {
         output = shell.exec("echo \"Norminette that you've chosen has  not allowed to be executed.\"");
-
+    }
+    for (let i = 0; i < output.length; i++) {
+        if (output.charAt(i) === '[')
+            nbNormError++;
+    }
     return res.json({
         output: output.stdout,
         code: output.code,
+        normError: nbNormError,
     });
 });
 

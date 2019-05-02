@@ -90,16 +90,17 @@ export class Norminette extends Component {
 			output: '###### 🎉Welcome to the Norminette Screen🎉\n\n###### ✍🏼Description:✍🏼\n\nThis Screen will be able to scan your project and show you where is your errors norms.\n\n###### ⚠️How to⚠️: \n\nYou must filled the following fields to be able run this screen correctly:\n\t🔸Login Name\n\t🔸Project name\n\t🔸Branch Name\n\nDon\'t forget to choose a Norminette like normEZ in the top of this screen.\n\n###### ☢️Support☢️ :\nPlease contact us if you encountered any problems.\n\n ###### 📬Contact📬️ :\n\t📌lucas.sanchez@epitech.eu\n\t📌simon1.provost@epitech.eu',
 			sizeOutputRenderer: new Animated.Value(0.82),
 			splitted: false,
+			normError: 0,
 		}
 	}
 
-/*
-	componentDidMount() {
-		Font.loadAsync({
-			'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
-		});
-	}
-*/
+	/*
+		componentDidMount() {
+			Font.loadAsync({
+				'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
+			});
+		}
+	*/
 
 
 	runNorm = () => {
@@ -123,6 +124,7 @@ export class Norminette extends Component {
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});
 				this.setState({visible: false});
+				this.setState({normError: response.data.normError});
 			}
 		}).catch((reason) => {
 			if (axios.isCancel(reason)) {
@@ -182,25 +184,35 @@ export class Norminette extends Component {
 		let visibleCircularProgress;
 
 		if (this.state.splitted) {
-
+			this.state.fill = () => {
+				if (this.state.normError === 0)
+					return (100);
+				if (this.state.normError > 0 && this.state.normError <= 20) {
+					return (50);
+				} else if (this.state.normError > 20 && this.state.normError <= 50) {
+					return (20);
+				} else {
+					return (0);
+				}
+			};
 			visibleCircularProgress =
 				<View style={{flex:0.4}}>
 					<AnimatedCircularProgress
-					size={200}
-					width={5}
-					fill={this.state.fill}
-					tintColor="#00e0ff"
-					duration={2000}
-					rotation={0}
-					backgroundColor="#3d5875">
-					{
-						(fill) => (
-							<Text style={{fontSize: 26, fontFamily:'Roboto'}}>
-								{this.state.fill + "%"}
-							</Text>
-						)
-					}
-				</AnimatedCircularProgress>
+						size={200}
+						width={5}
+						fill={this.state.fill}
+						tintColor="#00e0ff"
+						duration={2000}
+						rotation={0}
+						backgroundColor="#3d5875">
+						{
+							(fill) => (
+								<Text style={{fontSize: 26, fontFamily:'Roboto'}}>
+									{this.state.fill + "%"}
+								</Text>
+							)
+						}
+					</AnimatedCircularProgress>
 				</View>;
 		}
 
