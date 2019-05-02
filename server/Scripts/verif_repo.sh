@@ -106,4 +106,4 @@ progress 90 "All make_* rules : OK.                                           "
     cd ../../
     rm -rf temp_verif
 
-success "All verif are OK. You are sure that you'll compile on the Epitech server.\n   "
+success "All verif are OK. You are sure that you'll compile on the Epitech server.\n"

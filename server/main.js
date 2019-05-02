@@ -44,14 +44,18 @@ app.get(root + '/getNormExecution', (req, res) => {
 
     if (normiChoice === "normEZ") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
+        for (let i = 0; i < output.length; i++) {
+            if (output.charAt(i) === '[')
+                nbNormError++;
+        }
     } else if (normiChoice === "doom") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/Doom/doom" + " " + "doom");
+        const arrayOutput = output.split("\n");
+        const latestElem = arrayOutput[arrayOutput.length - 1].split(" ");
+        nbNormError = Number(latestElem[3]);
     } else {
         output = shell.exec("echo \"Norminette that you've chosen has  not allowed to be executed.\"");
-    }
-    for (let i = 0; i < output.length; i++) {
-        if (output.charAt(i) === '[')
-            nbNormError++;
+        nbNormError = 0;
     }
     return res.json({
         output: output.stdout,

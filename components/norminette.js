@@ -184,17 +184,18 @@ export class Norminette extends Component {
 		let visibleCircularProgress;
 
 		if (this.state.splitted) {
-			this.state.fill = () => {
-				if (this.state.normError === 0)
-					return (100);
-				if (this.state.normError > 0 && this.state.normError <= 20) {
-					return (50);
-				} else if (this.state.normError > 20 && this.state.normError <= 50) {
-					return (20);
-				} else {
-					return (0);
-				}
-			};
+			if (this.state.normError === 0) {
+				this.state.fill = 100;
+			}
+			if (this.state.normError > 0 && this.state.normError <= 20) {
+				this.state.fill = 80;
+
+			} else if (this.state.normError > 20 && this.state.normError <= 50) {
+				this.state.fill = 50;
+
+			} else {
+				this.state.fill = 0;
+			}
 			visibleCircularProgress =
 				<View style={{flex:0.4}}>
 					<AnimatedCircularProgress
