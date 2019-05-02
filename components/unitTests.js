@@ -153,12 +153,14 @@ export class UnitTests extends Component {
 				<View style={{
 					flex: 0.15
 				}}>
-					<TouchableOpacity
-						style={buttonStyle}
-						onPress={this.runUnits}
+					<Button
+                        // style={buttonStyle}
+                        title='Run'
+						onPress={() => {
+                            alert('Work In Progress')
+                        }}
 					>
-						<Text style={{color: '#FFFFFF'}}>Run</Text>
-					</TouchableOpacity>
+					</Button>
 				</View>
 				{modal}
 			</View>

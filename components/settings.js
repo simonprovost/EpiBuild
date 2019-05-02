@@ -1,4 +1,4 @@
-import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView} from 'react-native';
+import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView, Button} from 'react-native';
 import React, {Component} from 'react';
 import { material } from 'react-native-typography';
 import '../global';
@@ -86,7 +86,7 @@ export class Settings extends Component {
 					<View style={{
                         alignContent: 'center',
                         alignItems: 'center',
-                        width: '70%',
+                        width: '50%',
 					}}>
 
 						<TextInput
@@ -104,9 +104,9 @@ export class Settings extends Component {
 						/>
 					</View>
 					<View style={{
-						alignContent: 'center',
-						alignItems: 'center',
-                        alignSelf: 'center',
+						// alignContent: 'center',
+						// alignItems: 'center',
+                        // alignSelf: 'center',
                         width: '30%',
 					}}>
 						<Text style={{color:'#D3D3D3', fontSize:16, fontStyle: 'italic', fontFamily: 'Roboto'}}>@epitech.eu</Text>
@@ -115,7 +115,7 @@ export class Settings extends Component {
 
 				<View style={styles.MainContainer}>
 
-					<TouchableOpacity onPress={
+					<Button onPress={
 						async () => {
 							try {
 								this.setState({textInputDataLogin : ''});
@@ -125,9 +125,8 @@ export class Settings extends Component {
 								Alert.alert("Value that you need to remove is an Error. KeyLogin.");
 							}
 						}
-					} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}> Reset Login </Text>
-					</TouchableOpacity>
+					} title='Reset Login' style={styles.button} >
+					</Button>
 				</View>
 
 				<View style={{marginLeft: 10, marginBottom: 10, marginTop: 15}}>
@@ -148,7 +147,7 @@ export class Settings extends Component {
                             style={styles.TextInputStyle}
                             value={this.state.textInputNameProject}
                         />
-					<TouchableOpacity onPress={
+					<Button onPress={
 						async () => {
 							try {
 								await AsyncStorage.removeItem('KeyNameProject');
@@ -158,9 +157,8 @@ export class Settings extends Component {
 								Alert.alert("Value that you need to remove is an Error. KeyNameProject.");
 							}
 						}
-					} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}> Reset name project </Text>
-					</TouchableOpacity>
+					} title='Reset Project Name' style={styles.button} >
+					</Button>
 				</View>
 
 
@@ -182,7 +180,7 @@ export class Settings extends Component {
 						style={styles.TextInputStyle}
 						value={this.state.textInputBinaryname}
 					/>
-					<TouchableOpacity onPress={
+					<Button onPress={
 						async () => {
 							try {
 								await AsyncStorage.removeItem('KeyBinaryName');
@@ -192,9 +190,8 @@ export class Settings extends Component {
 								Alert.alert("Value that you need to remove is an Error. KeyBinaryName.");
 							}
 						}
-					} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}> Reset Binary Name </Text>
-					</TouchableOpacity>
+					} title='Reset Binary Name' style={styles.button} >
+					</Button>
 				</View>
 
 
@@ -216,7 +213,7 @@ export class Settings extends Component {
 						style={styles.TextInputStyle}
 						value={this.state.textInputBranchName}
 					/>
-					<TouchableOpacity onPress={
+					<Button onPress={
 						async () => {
 							try {
 								await AsyncStorage.removeItem('KeyBranchName');
@@ -226,9 +223,8 @@ export class Settings extends Component {
 								Alert.alert("Value that you need to remove is an Error. KeyBranchName.");
 							}
 						}
-					} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}>Reset Binary Name</Text>
-					</TouchableOpacity>
+					} title='Reset Branch Name' style={styles.button} >
+					</Button>
 				</View>
 
 
@@ -254,9 +250,8 @@ export class Settings extends Component {
                     flex: 0.5,
                     marginBottom: 25,
 				}}>
-					<TouchableOpacity onPress={this.setValueLocally} activeOpacity={0.7} style={styles.button} >
-						<Text style={styles.buttonText}> Save Informations </Text>
-					</TouchableOpacity>
+					<Button onPress={this.setValueLocally} title='Save' style={styles.button} >
+					</Button>
 				</View>
 			</ScrollView>
 		)
@@ -267,26 +262,20 @@ const styles = StyleSheet.create({
 
 	MainContainer :{
 		justifyContent: 'center',
-		alignItems: 'center',
+        alignItems: 'center',
 	},
 
 	TextInputStyle:{
-
-        textAlign: 'center',
-        width: '90%',
         padding: 5,
 		borderWidth: 1,
-		borderColor: '#f2c468',
-		borderRadius: 10,
+        borderColor: '#f2c468',
+        marginBottom: 10,
 	},
 
 	button: {
 		width: '70%',
 		padding: 6,
-		backgroundColor: '#fac863',
-		borderRadius:7,
-		marginTop: 10,
-		elevation: 10,
+		marginTop: 40,
 	},
 
 	buttonText:{

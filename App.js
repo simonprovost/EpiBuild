@@ -34,7 +34,7 @@ class App extends Component {
 							fontSize: 22,
 							width: 100
 						}}}
-					rightComponent={{ icon: 'home', color: 'gray' }}
+					// rightComponent={{ icon: 'home', color: 'gray' }}
 					containerStyle={{
 						backgroundColor:'#f8f8f8',
 						alignItems: 'center',
@@ -56,17 +56,6 @@ const stylesHeader = StyleSheet.create({
 	},
 });
 export default App;
-
-
-export const sendServerInformation = (message) => {
-	alert(
-		message,
-		[
-			{text: 'OK', onPress: () => console.log('OK Pressed')},
-		],
-		{cancelable: false},
-	);
-};
 
 class MaterialTopTabBarWrapper extends React.Component {
 	render() {
@@ -96,63 +85,63 @@ let Tabs = createMaterialTopTabNavigator(
 	{
 		Rules: {
 			screen: Rules,
-			navigationOptions: ({ navigation }) => ({
-				tabBarIcon: ({ tintColor }) => {
-					return <Icon
-						name='ios-hammer'
-						type='ionicon'
-						color='#000000'
-					/>
-				},
-			}),
+			// navigationOptions: ({ navigation }) => ({
+			// 	tabBarIcon: ({ tintColor }) => {
+			// 		return <Icon
+			// 			name='ios-hammer'
+			// 			type='ionicon'
+			// 			color='#000000'
+			// 		/>
+			// 	},
+			// }),
 			showIcon: true
 		},
 		Norminette: {
 			screen: Norminette,
-			navigationOptions: ({ navigation }) => ({
-				tabBarIcon: ({ tintColor }) => {
-					return <Icon
-						name='ios-code'
-						type='ionicon'
-						color='#000000'
-					/>
-				},
-			}),
+			// navigationOptions: ({ navigation }) => ({
+			// 	tabBarIcon: ({ tintColor }) => {
+			// 		return <Icon
+			// 			name='ios-code'
+			// 			type='ionicon'
+			// 			color='#000000'
+			// 		/>
+			// 	},
+			// }),
 			showIcon: true
 		},
 		'Unit Tests': {
 			screen: UnitTests,
-			navigationOptions: ({ navigation }) => ({
-				tabBarIcon: ({ tintColor }) => {
-					return <Icon
-						name='ios-flask'
-						type='ionicon'
-						color='#000000'
-					/>
-				},
-			}),
+			// navigationOptions: ({ navigation }) => ({
+			// 	tabBarIcon: ({ tintColor }) => {
+			// 		return <Icon
+			// 			name='ios-flask'
+			// 			type='ionicon'
+			// 			color='#000000'
+			// 		/>
+			// 	},
+			// }),
 			showIcon: true
 		},
 		Settings: {
 			screen: Settings,
-			navigationOptions: ({ navigation }) => ({
-				tabBarIcon: ({ tintColor }) => {
-					return <Icon
-						name='ios-settings'
-						type='ionicon'
-						color='#000000'
-					/>
-				},
-			}),
+			// navigationOptions: ({ navigation }) => ({
+			// 	tabBarIcon: ({ tintColor }) => {
+			// 		return <Icon
+			// 			name='ios-settings'
+			// 			type='ionicon'
+			// 			color='#000000'
+			// 		/>
+			// 	},
+			// }),
 			showIcon: true
 		},
 	},
 	{
-		showIcon: true,
+		// showIcon: true,
 		tabBarPosition: 'bottom',
 		tabBarOptions: {
 			pressColor: '#F5F5F5',
-			showIcon: true,
+			// showIcon: true,
 			activeTintColor: '#000',
 			inactiveTintColor: '#696969',
 			style: {

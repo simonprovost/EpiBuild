@@ -1,4 +1,4 @@
-import {Text, View, TouchableOpacity, Modal, ActivityIndicator, StyleSheet, Alert} from "react-native";
+import {Text, View, TouchableOpacity, Modal, ActivityIndicator, StyleSheet, Button} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from './OutputRenderer';
 import axios from 'axios';
@@ -150,12 +150,11 @@ export class Rules extends Component {
 				<View style={{
 					flex: 0.15
 				}}>
-					<TouchableOpacity
-						style={buttonStyle}
+					<Button
+                        // style={buttonStyle}
+                        title={'Run'}
 						onPress={this.runRules}
-					>
-						<Text style={{color: '#FFFFFF'}}>Run</Text>
-					</TouchableOpacity>
+					/>
 				</View>
 				{modal}
 			</View>

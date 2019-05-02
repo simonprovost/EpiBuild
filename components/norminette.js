@@ -238,22 +238,6 @@ export class Norminette extends Component {
 						</Picker>
 
 					</View>
-
-					<View style={{
-						flex: 0.3,
-						alignItems: 'center',
-					}} >
-						<TouchableOpacity
-							style={styles.buttonSplit}
-							onPress={() => {this.split()}}>
-							<Text style={{
-								color: 'white',
-							}}>
-								Split
-							</Text>
-						</TouchableOpacity>
-
-					</View>
 				</View>
 
 				<View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
@@ -272,12 +256,15 @@ export class Norminette extends Component {
 						flex: 0.18,
 						justifyContent: 'center',
 					}}>
-						<TouchableOpacity
-							style={styles.buttonStyle}
-							onPress={this.runNorm}
+						<Button
+                            // style={styles.buttonStyle}
+                            title='Run'
+							onPress={() => {
+                                alert('Work In Progress');
+                            }}
 						>
-							<Text style={{color: '#FFFFFF'}}>Run</Text>
-						</TouchableOpacity>
+							{/* <Text style={{color: '#FFFFFF'}}>Run</Text> */}
+						</Button>
 					</View>
 					{modal}
 				</View>
