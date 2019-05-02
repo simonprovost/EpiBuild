@@ -45,7 +45,7 @@ app.get(root + '/getNormExecution', (req, res) => {
     if (normiChoice === "normEZ") {
         output = shell.exec("./Scripts/runNorminette.sh " + userName + " " + projectName + " " + branchName + " " + "./../../../norminette/NormEZ/NormEZ.rb" + " " + "NormEZ.rb");
         for (let i = 0; i < output.length; i++) {
-            if (output.charAt(i) === '[')
+            if (output[i] === '\n')
                 nbNormError++;
         }
     } else if (normiChoice === "doom") {

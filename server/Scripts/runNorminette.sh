@@ -14,7 +14,6 @@ function exitError() {
 
 ################################## MAIN
 description="This script, clone the repo and run a norminette on the project."
-echo $description
 
 login=$1
 nameProject=$2
@@ -40,9 +39,8 @@ link_clone=git@git.epitech.eu:/${login}@epitech.eu/${nameProject}
 
 cd ${folder_name} &> /dev/null
 cp ${pathToNorminette} ./
-echo ${normiName}
 
-if [ $normiName == "normEZ.rb" ]; then
+if [[ $normiName == "normEZ.rb" ]]; then
     ruby ${normiName}
 else
     ./${normiName}
