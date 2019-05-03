@@ -86,6 +86,13 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
     //const latestElem = arrayTests[arrayTests.length - 1];
 
     //########## GOOGLE TESTS
+    
+    const crashPosition = () => {
+        if (output.code !== 0)
+            return arrayTestsErr.length - 7;
+        else
+            return arrayTestsErr.length - 3;  
+    }
 
     if (arrayTests[arrayTests.length - 4] === 'PASSED' || arrayTests[arrayTests.length - 2] === 'FAILED') {
         /* we are with google tests here */
@@ -109,16 +116,21 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
         } else {
             percentUnits = 0;
         }
-    } else if (arrayTestsErr[arrayTestsErr.length - 3] === 'Crashing:') {
-        // const positionPassing = () => {
-        //     if (output.code !== 0)
-        //         return 
-        // }
-        arrayTestsErr.forEach((value, index) => {
-            console.log("[" + index + "] = " + value);
-        })
-        const passing = stripAnsi(arrayTestsErr[arrayTestsErr.length - 8]);
-        const tested = stripAnsi(arrayTestsErr[arrayTestsErr.length - 11]);
+    } else if (arrayTestsErr[crashPosition] === 'Crashing:') {
+        const positionPassing = () => {
+            if (output.code !== 0)
+                return arrayTestsErr.length - 12;
+            else
+                return arrayTestsErr.length - 8;
+        }
+        const positionTested = () => {
+            if (output.code !== 0)
+                return arrayTestsErr.length - 15;
+            else
+                return arrayTestsErr.length - 11;
+        }
+        const passing = stripAnsi(arrayTestsErr[positionPassing]);
+        const tested = stripAnsi(arrayTestsErr[positionTested]);
 
         const nbPassing = Number(passing);
         const nbTested = Number(tested);
@@ -128,7 +140,6 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
 	    else
 	        percentUnits = nbPassing * 100 / nbTested;
     }
-    console.log("percent = " + percentUnits);
 
     return res.json({
         output: "##### Stdout: \n\n" + output.stdout + "##### Stderr: \n\n" + output.stderr,
