@@ -1,6 +1,7 @@
 const express = require('express');
 const shell = require('shelljs');
 const app = express();
+//const stripAnsi = require('strip-ansi');
 
 const root = '/api/v1';
 
@@ -70,18 +71,73 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
     const userName = req.query.userName;
     const projectName = req.query.projectName;
     const branchName = req.query.branchName;
+    const rulesName = req.query.rulesName;
+    let percentUnits = 0;
 
-    if (!userName || !projectName || !branchName)
+    if (!userName || !projectName || !branchName || !rulesName)
         return res.json({
             output: "Missing Argument",
             code: 1,
         });
 
-    const output = shell.exec("./Scripts/unitTests.sh " + userName + " " + projectName + " " + branchName);
+    const output = shell.exec("./Scripts/unitTests.sh " + userName + " " + projectName + " " + branchName + " " + rulesName);
+    const arrayTests = output.split(" ");
+    const arrayTestsErr = output.stderr.split(" ");
+    //const latestElem = arrayTests[arrayTests.length - 1];
+
+    //########## GOOGLE TESTS
+    console.log("DEBUG ALL:" + arrayTestsErr);
+    console.log("debug arr:" + arrayTestsErr[arrayTestsErr.length - 2]);
+
+    if (arrayTests[arrayTests.length - 4] === 'PASSED' || arrayTests[arrayTests.length - 2] === 'FAILED') {
+        /* we are with google tests here */
+        /*
+        * 1 FAILED TEST
+        * [  PASSED  ] 50 tests.
+        * */
+
+        if (arrayTests[arrayTests.length - 4] === 'PASSED')
+            percentUnits = 100;
+        else if (arrayTests[arrayTests.length - 2] === 'FAILED') {
+            const nbFailed = Number(arrayTests[arrayTests.length - 3]);
+            let nbPassed = 0;
+            let searchIndexPassed = 0;
+
+            for (let i = 0 ; i < arrayTests.length ; i++)
+                if (arrayTests[i] === ("PASSED"))
+                    searchIndexPassed = i;
+            nbPassed  = Number(arrayTests[searchIndexPassed + 3]);
+            percentUnits = (nbPassed / (nbPassed + nbFailed)) * 100;
+        } else {
+            percentUnits = 0;
+        }
+    } else if (arrayTestsErr[arrayTestsErr.length - 3] === 'Crashing:') {
+        console.log("YOP");
+        /* We are in Criterion */
+            /*[====] Synthesis: Tested: 19 | Passing: 19 | Failing: 0 | Crashing: 0 */
+        //      const passing = Number(arrayTestsErr[arrayTestsErr.length - 8]);
+        //      const failing = Number(arrayTestsErr[arrayTestsErr.length - 5]);
+        //      let crashing = Number(arrayTests[arrayTests.length - 1]);
+        console.log("debugpassing: " + arrayTestsErr[arrayTestsErr.length - 8] + "]]]]");
+        let passing = (arrayTestsErr[arrayTestsErr.length - 8]);
+        let failing = (arrayTestsErr[arrayTestsErr.length - 5]);
+    /*
+        passing = passing.replace(/\033\[[0-9;]*m/,"");
+        failing = failing.replace(/\033\[[0-9;]*m/,"");*/
+        //stripAnsi(passing);
+        //stripAnsi(failing);
+        const nbPassing = Number(passing);
+        const nbFailing = Number(failing);
+        console.log("debug : " + nbPassing);
+        console.log("debug1: " + nbFailing);
+        console.log("debugres: " + (nbPassing + nbFailing));
+        percentUnits = (nbPassing / (nbPassing + nbFailing)) * 100;
+    }
 
     return res.json({
         output: output.stdout,
         code: output.code,
+        percentUnitTests: percentUnits,
     });
 });
 
