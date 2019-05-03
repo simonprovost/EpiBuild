@@ -86,8 +86,6 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
     //const latestElem = arrayTests[arrayTests.length - 1];
 
     //########## GOOGLE TESTS
-    console.log("DEBUG ALL:" + arrayTestsErr);
-    console.log("debug arr:" + arrayTestsErr[arrayTestsErr.length - 2]);
 
     if (arrayTests[arrayTests.length - 4] === 'PASSED' || arrayTests[arrayTests.length - 2] === 'FAILED') {
         /* we are with google tests here */
@@ -112,11 +110,6 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
             percentUnits = 0;
         }
     } else if (arrayTestsErr[arrayTestsErr.length - 3] === 'Crashing:') {
-        /* We are in Criterion */
-            /*[====] Synthesis: Tested: 19 | Passing: 19 | Failing: 0 | Crashing: 0 */
-        //      const passing = Number(arrayTestsErr[arrayTestsErr.length - 8]);
-        //      const failing = Number(arrayTestsErr[arrayTestsErr.length - 5]);
-        //      let crashing = Number(arrayTests[arrayTests.length - 1]);
         const passing = stripAnsi(arrayTestsErr[arrayTestsErr.length - 8]);
         const tested = stripAnsi(arrayTestsErr[arrayTestsErr.length - 11]);
 
@@ -128,40 +121,13 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
 	    else
 	        percentUnits = nbPassing * 100 / nbTested;
     }
+    console.log("percent = " + percentUnits);
 
     return res.json({
-        output: output.stdout,
+        output: "##### Stdout: \n\n" + output.stdout + "##### Stderr: \n\n" + output.stderr,
         code: output.code,
         percentUnitTests: percentUnits,
     });
 });
-
-// app.post(root + '/getTestsRunExecution', (req, res) => {
-//     console.log(req.ip + ' is connecting to getTestsRunExecution');
-
-//     const output = shell.exec("echo test");
-
-//     const user = req.body.user;
-//     const projectname = req.body.projectName;
-
-//     res.json({
-//         output: output.stdout,
-//         code: output.code,
-//     });
-// });
-
-// app.post(root + '/getNormExecution', (req, res) => {
-//     console.log(req.ip + ' is connecting to getNormExecution');
-
-//     const output = shell.exec("echo test");
-
-//     const user = req.body.user;
-//     const projectname = req.body.projectName;
-
-//     res.json({
-//         output: output.stdout,
-//         code: output.code,
-//     });
-// });
 
 app.listen(8080);
