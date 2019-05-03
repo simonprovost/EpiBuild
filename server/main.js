@@ -1,7 +1,7 @@
 const express = require('express');
 const shell = require('shelljs');
 const app = express();
-//const stripAnsi = require('strip-ansi');
+const stripAnsi = require('strip-ansi');
 
 const root = '/api/v1';
 
@@ -124,8 +124,8 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
     /*
         passing = passing.replace(/\033\[[0-9;]*m/,"");
         failing = failing.replace(/\033\[[0-9;]*m/,"");*/
-        //stripAnsi(passing);
-        //stripAnsi(failing);
+        stripAnsi(passing);
+        stripAnsi(failing);
         const nbPassing = Number(passing);
         const nbFailing = Number(failing);
         console.log("debug : " + nbPassing);
