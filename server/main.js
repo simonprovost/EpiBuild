@@ -110,6 +110,13 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
             percentUnits = 0;
         }
     } else if (arrayTestsErr[arrayTestsErr.length - 3] === 'Crashing:') {
+        // const positionPassing = () => {
+        //     if (output.code !== 0)
+        //         return 
+        // }
+        arrayTestsErr.forEach((value, index) => {
+            console.log("[" + index + "] = " + value);
+        })
         const passing = stripAnsi(arrayTestsErr[arrayTestsErr.length - 8]);
         const tested = stripAnsi(arrayTestsErr[arrayTestsErr.length - 11]);
 
