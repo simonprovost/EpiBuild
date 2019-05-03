@@ -151,7 +151,7 @@ export class UnitTests extends Component {
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});
 				this.setState({visible: false});
-				this.setState({percentUnits: response.data.percentUnitTests});
+				this.setState({percentUnits: parseFloat(response.data.percentUnitTests.toFixed(1))});
 			}
 		}).catch((reason) => {
 			if (axios.isCancel(reason)) {
