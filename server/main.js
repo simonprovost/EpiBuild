@@ -112,26 +112,21 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
             percentUnits = 0;
         }
     } else if (arrayTestsErr[arrayTestsErr.length - 3] === 'Crashing:') {
-        console.log("YOP");
         /* We are in Criterion */
             /*[====] Synthesis: Tested: 19 | Passing: 19 | Failing: 0 | Crashing: 0 */
         //      const passing = Number(arrayTestsErr[arrayTestsErr.length - 8]);
         //      const failing = Number(arrayTestsErr[arrayTestsErr.length - 5]);
         //      let crashing = Number(arrayTests[arrayTests.length - 1]);
-        console.log("debugpassing: " + arrayTestsErr[arrayTestsErr.length - 8] + "]]]]");
-        let passing = (arrayTestsErr[arrayTestsErr.length - 8]);
-        let failing = (arrayTestsErr[arrayTestsErr.length - 5]);
-    /*
-        passing = passing.replace(/\033\[[0-9;]*m/,"");
-        failing = failing.replace(/\033\[[0-9;]*m/,"");*/
-        stripAnsi(passing);
-        stripAnsi(failing);
+        const passing = stripAnsi(arrayTestsErr[arrayTestsErr.length - 8]);
+        const tested = stripAnsi(arrayTestsErr[arrayTestsErr.length - 11]);
+
         const nbPassing = Number(passing);
-        const nbFailing = Number(failing);
-        console.log("debug : " + nbPassing);
-        console.log("debug1: " + nbFailing);
-        console.log("debugres: " + (nbPassing + nbFailing));
-        percentUnits = (nbPassing / (nbPassing + nbFailing)) * 100;
+        const nbTested = Number(tested);
+
+        if (nbTested === 0)
+    	    percentUnits = 0;
+	    else
+	        percentUnits = nbPassing * 100 / nbTested;
     }
 
     return res.json({
