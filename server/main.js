@@ -5,6 +5,14 @@ const stripAnsi = require('strip-ansi');
 
 const root = '/api/v1';
 
+function isCriterion(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (stripAnsi(arr[i]) === 'Synthesis:')
+            return i;
+    }
+    return 0;
+}
+
 app.get(root + '/getMakefileRulesExecution', (req, res) => {
     console.log(req.ip + ' is connecting to getMakefileRulesExecution');
 
@@ -83,18 +91,11 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
     const output = shell.exec("./Scripts/unitTests.sh " + userName + " " + projectName + " " + branchName + " " + rulesName);
     const arrayTests = output.split(" ");
     const arrayTestsErr = output.stderr.split(" ");
-    //const latestElem = arrayTests[arrayTests.length - 1];
 
     //########## GOOGLE TESTS
     
-    const crashPosition = () => {
-        if (output.code !== 0)
-            return arrayTestsErr.length - 7;
-        else
-            return arrayTestsErr.length - 3;  
-    }
-
     if (arrayTests[arrayTests.length - 4] === 'PASSED' || arrayTests[arrayTests.length - 2] === 'FAILED') {
+	    console.log('Google Test found');
         /* we are with google tests here */
         /*
         * 1 FAILED TEST
@@ -116,19 +117,10 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
         } else {
             percentUnits = 0;
         }
-    } else if (arrayTestsErr[crashPosition] === 'Crashing:') {
-        const positionPassing = () => {
-            if (output.code !== 0)
-                return arrayTestsErr.length - 12;
-            else
-                return arrayTestsErr.length - 8;
-        }
-        const positionTested = () => {
-            if (output.code !== 0)
-                return arrayTestsErr.length - 15;
-            else
-                return arrayTestsErr.length - 11;
-        }
+    } else if (isCriterion(arrayTestsErr)) {
+        console.log('Criterion found');
+        const positionPassing = isCriterion(arrayTestsErr) + 5;
+        const positionTested = isCriterion(arrayTestsErr) + 2;
         const passing = stripAnsi(arrayTestsErr[positionPassing]);
         const tested = stripAnsi(arrayTestsErr[positionTested]);
 
@@ -140,6 +132,7 @@ app.get(root + '/getTestsRunExecution', (req, res) => {
 	    else
 	        percentUnits = nbPassing * 100 / nbTested;
     }
+    console.log(percentUnits);
 
     return res.json({
         output: "##### Stdout: \n\n" + output.stdout + "##### Stderr: \n\n" + output.stderr,
