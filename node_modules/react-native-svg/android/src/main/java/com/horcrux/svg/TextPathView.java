@@ -44,7 +44,7 @@ class TextPathView extends TextView {
 
     @ReactProp(name = "startOffset")
     public void setStartOffset(Dynamic startOffset) {
-        mStartOffset = SVGLength.from(startOffset);
+        mStartOffset = getLengthFromDynamic(startOffset);
         invalidate();
     }
 

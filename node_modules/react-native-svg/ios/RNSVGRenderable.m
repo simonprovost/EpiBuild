@@ -10,7 +10,6 @@
 #import "RNSVGClipPath.h"
 #import "RNSVGMask.h"
 #import "RNSVGViewBox.h"
-#import "RNSVGVectorEffect.h"
 
 @implementation RNSVGRenderable
 {
@@ -19,7 +18,7 @@
     NSArray<NSString *> *_attributeList;
     NSArray<RNSVGLength *> *_sourceStrokeDashArray;
     CGFloat *_strokeDashArrayData;
-    CGPathRef _srcHitPath;
+    CGPathRef _strokePath;
     CGPathRef _hitArea;
 }
 
@@ -37,12 +36,7 @@
 - (void)invalidate
 {
     _sourceStrokeDashArray = nil;
-    if (self.dirty || self.merging) {
-        return;
-    }
-    _srcHitPath = nil;
     [super invalidate];
-    self.dirty = true;
 }
 
 - (void)setFill:(RNSVGBrush *)fill
@@ -144,15 +138,6 @@
     _strokeDashoffset = strokeDashoffset;
 }
 
-- (void)setVectorEffect:(RNSVGVectorEffect)vectorEffect
-{
-    if (vectorEffect == _vectorEffect) {
-        return;
-    }
-    [self invalidate];
-    _vectorEffect = vectorEffect;
-}
-
 - (void)setPropList:(NSArray<NSString *> *)propList
 {
     if (propList == _propList) {
@@ -165,7 +150,9 @@
 
 - (void)dealloc
 {
+    self.path = nil;
     CGPathRelease(_hitArea);
+    CGPathRelease(_strokePath);
     _sourceStrokeDashArray = nil;
     if (_strokeDashArrayData) {
         free(_strokeDashArrayData);
@@ -179,7 +166,6 @@ UInt32 saturate(CGFloat value) {
 
 - (void)renderTo:(CGContextRef)context rect:(CGRect)rect
 {
-    self.dirty = false;
     // This needs to be painted on a layer before being composited.
     CGContextSaveGState(context);
     CGContextConcatCTM(context, self.matrix);
@@ -296,44 +282,6 @@ UInt32 saturate(CGFloat value) {
 
 - (void)renderLayerTo:(CGContextRef)context rect:(CGRect)rect
 {
-    CGPathRef path = self.path;
-    if (!path) {
-        path = [self getPath:context];
-        if (!self.path) {
-            self.path = CGPathRetain(path);
-        }
-        [self setHitArea:path];
-        const CGRect fillBounds = CGPathGetBoundingBox(path);
-        const CGRect strokeBounds = CGPathGetBoundingBox(self.strokePath);
-        self.pathBounds = CGRectUnion(fillBounds, strokeBounds);
-    }
-    const CGRect pathBounds = self.pathBounds;
-
-    CGAffineTransform current = CGContextGetCTM(context);
-    CGAffineTransform svgToClientTransform = CGAffineTransformConcat(current, self.svgView.invInitialCTM);
-    CGRect clientRect = CGRectApplyAffineTransform(pathBounds, svgToClientTransform);
-
-    self.clientRect = clientRect;
-
-    if (_vectorEffect == kRNSVGVectorEffectNonScalingStroke) {
-        path = CGPathCreateCopyByTransformingPath(path, &svgToClientTransform);
-        CGContextConcatCTM(context, CGAffineTransformInvert(svgToClientTransform));
-    }
-
-    CGAffineTransform vbmatrix = self.svgView.getViewBoxTransform;
-    CGAffineTransform transform = CGAffineTransformConcat(self.matrix, self.transforms);
-    CGAffineTransform matrix = CGAffineTransformConcat(transform, vbmatrix);
-
-    CGRect bounds = CGRectMake(0, 0, CGRectGetWidth(clientRect), CGRectGetHeight(clientRect));
-    CGPoint mid = CGPointMake(CGRectGetMidX(pathBounds), CGRectGetMidY(pathBounds));
-    CGPoint center = CGPointApplyAffineTransform(mid, matrix);
-
-    self.bounds = bounds;
-    if (!isnan(center.x) && !isnan(center.y)) {
-        self.center = center;
-    }
-    self.frame = clientRect;
-
     if (!self.fill && !self.stroke) {
         return;
     }
@@ -341,6 +289,32 @@ UInt32 saturate(CGFloat value) {
     if (self.opacity == 0) {
         return;
     }
+
+    if (!self.path) {
+        self.path = CGPathRetain(CFAutorelease(CGPathCreateCopy([self getPath:context])));
+        [self setHitArea:self.path];
+    }
+
+    const CGRect fillBounds = CGPathGetBoundingBox(self.path);
+    const CGRect strokeBounds = CGPathGetBoundingBox(_strokePath);
+    const CGRect pathBounding = CGRectUnion(fillBounds, strokeBounds);
+
+    CGAffineTransform current = CGContextGetCTM(context);
+    CGAffineTransform svgToClientTransform = CGAffineTransformConcat(current, self.svgView.invInitialCTM);
+    CGRect clientRect = CGRectApplyAffineTransform(pathBounding, svgToClientTransform);
+
+    self.clientRect = clientRect;
+
+    CGAffineTransform vbmatrix = self.svgView.getViewBoxTransform;
+    CGAffineTransform matrix = CGAffineTransformConcat(self.matrix, vbmatrix);
+
+    CGRect bounds = CGRectMake(0, 0, CGRectGetWidth(clientRect), CGRectGetHeight(clientRect));
+    CGPoint mid = CGPointMake(CGRectGetMidX(pathBounding), CGRectGetMidY(pathBounding));
+    CGPoint center = CGPointApplyAffineTransform(mid, matrix);
+
+    self.bounds = bounds;
+    self.center = center;
+    self.frame = clientRect;
 
     CGPathDrawingMode mode = kCGPathStroke;
     BOOL fillColor = NO;
@@ -360,12 +334,12 @@ UInt32 saturate(CGFloat value) {
             mode = evenodd ? kCGPathEOFill : kCGPathFill;
         } else {
             CGContextSaveGState(context);
-            CGContextAddPath(context, path);
+            CGContextAddPath(context, self.path);
             CGContextClip(context);
             [self.fill paint:context
                      opacity:self.fillOpacity
                      painter:[self.svgView getDefinedPainter:self.fill.brushRef]
-                      bounds:pathBounds
+                      bounds:pathBounding
              ];
             CGContextRestoreGState(context);
 
@@ -391,7 +365,7 @@ UInt32 saturate(CGFloat value) {
         }
 
         if (!fillColor) {
-            CGContextAddPath(context, path);
+            CGContextAddPath(context, self.path);
             CGContextReplacePathWithStrokedPath(context);
             CGContextClip(context);
         }
@@ -410,42 +384,38 @@ UInt32 saturate(CGFloat value) {
         } else if (!strokeColor) {
             // draw fill
             if (fillColor) {
-                CGContextAddPath(context, path);
+                CGContextAddPath(context, self.path);
                 CGContextDrawPath(context, mode);
             }
 
             // draw stroke
-            CGContextAddPath(context, path);
+            CGContextAddPath(context, self.path);
             CGContextReplacePathWithStrokedPath(context);
             CGContextClip(context);
 
             [self.stroke paint:context
                        opacity:self.strokeOpacity
                        painter:[self.svgView getDefinedPainter:self.stroke.brushRef]
-                        bounds:pathBounds
+                        bounds:pathBounding
              ];
             return;
         }
     }
 
-    CGContextAddPath(context, path);
+    CGContextAddPath(context, self.path);
     CGContextDrawPath(context, mode);
 }
 
 - (void)setHitArea:(CGPathRef)path
 {
-    if (_srcHitPath == path) {
-        return;
-    }
-    _srcHitPath = path;
     CGPathRelease(_hitArea);
-    CGPathRelease(self.strokePath);
-    _hitArea = CGPathCreateCopy(path);
-    self.strokePath = nil;
+    CGPathRelease(_strokePath);
+    _hitArea = CGPathRetain(CFAutorelease(CGPathCreateCopy(path)));
+    _strokePath = nil;
     if (self.stroke && self.strokeWidth) {
         // Add stroke to hitArea
         CGFloat width = [self relativeOnOther:self.strokeWidth];
-        self.strokePath = CGPathRetain(CFAutorelease(CGPathCreateCopyByStrokingPath(path, nil, width, self.strokeLinecap, self.strokeLinejoin, self.strokeMiterlimit)));
+        _strokePath = CGPathRetain(CFAutorelease(CGPathCreateCopyByStrokingPath(path, nil, width, self.strokeLinecap, self.strokeLinejoin, self.strokeMiterlimit)));
         // TODO add dashing
         // CGPathCreateCopyByDashingPath(CGPathRef  _Nullable path, const CGAffineTransform * _Nullable transform, CGFloat phase, const CGFloat * _Nullable lengths, size_t count)
     }
@@ -473,13 +443,9 @@ UInt32 saturate(CGFloat value) {
     CGPoint transformed = CGPointApplyAffineTransform(point, self.invmatrix);
     transformed = CGPointApplyAffineTransform(transformed, self.invTransform);
 
-    if (!CGRectContainsPoint(self.pathBounds, transformed)) {
-        return nil;
-    }
-
     BOOL evenodd = self.fillRule == kRNSVGCGFCRuleEvenodd;
     if (!CGPathContainsPoint(_hitArea, nil, transformed, evenodd) &&
-        !CGPathContainsPoint(self.strokePath, nil, transformed, NO)) {
+        !CGPathContainsPoint(_strokePath, nil, transformed, NO)) {
         return nil;
     }
 
@@ -513,7 +479,6 @@ UInt32 saturate(CGFloat value) {
     if (targetAttributeList.count == 0) {
         return;
     }
-    self.merging = true;
 
     NSMutableArray* attributeList = [self.propList mutableCopy];
     _originProperties = [[NSMutableDictionary alloc] init];
@@ -528,19 +493,16 @@ UInt32 saturate(CGFloat value) {
 
     _lastMergedList = targetAttributeList;
     _attributeList = [attributeList copy];
-    self.merging = false;
 }
 
 - (void)resetProperties
 {
-    self.merging = true;
     for (NSString *key in _lastMergedList) {
         [self setValue:[_originProperties valueForKey:key] forKey:key];
     }
 
     _lastMergedList = nil;
     _attributeList = _propList;
-    self.merging = false;
 }
 
 @end

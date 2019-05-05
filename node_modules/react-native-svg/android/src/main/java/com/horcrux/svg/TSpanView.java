@@ -21,15 +21,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.view.View;
 import android.view.ViewParent;
 
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.views.text.ReactFontManager;
-
-import java.util.ArrayList;
 
 import javax.annotation.Nullable;
 
@@ -48,11 +44,9 @@ class TSpanView extends TextView {
     private static final String OTF = ".otf";
     private static final String TTF = ".ttf";
 
-    private Path mCachedPath;
+    private Path mCache;
     @Nullable String mContent;
     private TextPathView textPath;
-    ArrayList<String> emoji = new ArrayList<>();
-    ArrayList<Matrix> emojiTransforms = new ArrayList<>();
 
     public TSpanView(ReactContext reactContext) {
         super(reactContext);
@@ -65,33 +59,8 @@ class TSpanView extends TextView {
     }
 
     @Override
-    public void invalidate() {
-        mCachedPath = null;
-        super.invalidate();
-    }
-
-    void clearCache() {
-        mCachedPath = null;
-        super.clearCache();
-    }
-
-    @Override
     void draw(Canvas canvas, Paint paint, float opacity) {
         if (mContent != null) {
-            int numEmoji = emoji.size();
-            if (numEmoji > 0) {
-                GlyphContext gc = getTextRootGlyphContext();
-                FontData font = gc.getFont();
-                applyTextPropertiesToPaint(paint, font);
-                for (int i = 0; i < numEmoji; i++) {
-                    String current = emoji.get(i);
-                    Matrix mid = emojiTransforms.get(i);
-                    canvas.save();
-                    canvas.concat(mid);
-                    canvas.drawText(current, 0, 0, paint);
-                    canvas.restore();
-                }
-            }
             drawPath(canvas, paint, opacity);
         } else {
             clip(canvas, paint);
@@ -100,74 +69,28 @@ class TSpanView extends TextView {
     }
 
     @Override
+    void releaseCachedPath() {
+        mCache = null;
+        mPath = null;
+    }
+
+    @Override
     Path getPath(Canvas canvas, Paint paint) {
-        if (mCachedPath != null) {
-            return mCachedPath;
+        if (mCache != null) {
+            return mCache;
         }
 
         if (mContent == null) {
-            mCachedPath = getGroupPath(canvas, paint);
-            return mCachedPath;
+            return getGroupPath(canvas, paint);
         }
 
         setupTextPath();
 
         pushGlyphContext();
-        mCachedPath = getLinePath(mContent, paint, canvas);
+        mCache = getLinePath(mContent, paint, canvas);
         popGlyphContext();
 
-        return mCachedPath;
-    }
-
-    double getSubtreeTextChunksTotalAdvance(Paint paint) {
-        if (!Double.isNaN(cachedAdvance)) {
-            return cachedAdvance;
-        }
-        double advance = 0;
-
-        if (mContent == null) {
-            for (int i = 0; i < getChildCount(); i++) {
-                View child = getChildAt(i);
-                if (child instanceof TextView) {
-                    TextView text = (TextView)child;
-                    advance += text.getSubtreeTextChunksTotalAdvance(paint);
-                }
-            }
-            cachedAdvance = advance;
-            return advance;
-        }
-
-        String line = mContent;
-        final int length = line.length();
-
-        if (length == 0) {
-            cachedAdvance = 0;
-            return advance;
-        }
-
-        GlyphContext gc = getTextRootGlyphContext();
-        FontData font = gc.getFont();
-        applyTextPropertiesToPaint(paint, font);
-
-        double letterSpacing = font.letterSpacing;
-        final boolean allowOptionalLigatures = letterSpacing == 0 &&
-                font.fontVariantLigatures == FontVariantLigatures.normal;
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            String required = "'rlig', 'liga', 'clig', 'calt', 'locl', 'ccmp', 'mark', 'mkmk',";
-            String defaultFeatures = required + "'kern', ";
-            if (allowOptionalLigatures) {
-                String additionalLigatures = "'hlig', 'cala', ";
-                paint.setFontFeatureSettings(defaultFeatures + additionalLigatures + font.fontFeatureSettings);
-            } else {
-                String disableDiscretionaryLigatures = "'liga' 0, 'clig' 0, 'dlig' 0, 'hlig' 0, 'cala' 0, ";
-                paint.setFontFeatureSettings(defaultFeatures + disableDiscretionaryLigatures + font.fontFeatureSettings);
-            }
-            paint.setLetterSpacing((float)(letterSpacing / (font.fontSize * mScale)));
-        }
-
-        cachedAdvance = paint.measureText(line);
-        return cachedAdvance;
+        return mCache;
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -375,10 +298,8 @@ class TSpanView extends TextView {
             attributes, such as a ‘dx’ attribute value on a ‘tspan’ element.
          */
         final TextAnchor textAnchor = font.textAnchor;
-        TextView anchorRoot = getTextAnchorRoot();
-        final double textMeasure = anchorRoot.getSubtreeTextChunksTotalAdvance(paint);
+        final double textMeasure = paint.measureText(line);
         double offset = getTextAnchorOffset(textAnchor, textMeasure);
-        applyTextPropertiesToPaint(paint, font);
 
         int side = 1;
         double startOfRendering = 0;
@@ -629,7 +550,7 @@ class TSpanView extends TextView {
                     // this will just retrieve the bounding rect for 'x'
                     paint.getTextBounds("x", 0, 1, bounds);
                     int xHeight = bounds.height();
-                    baselineShift = xHeight / 2.0;
+                    baselineShift = xHeight / 2;
                     break;
 
                 case central:
@@ -757,10 +678,8 @@ class TSpanView extends TextView {
         final Matrix end = new Matrix();
 
         final float[] startPointMatrixData = new float[9];
+        final float[] midPointMatrixData = new float[9];
         final float[] endPointMatrixData = new float[9];
-
-        emoji.clear();
-        emojiTransforms.clear();
 
         for (int index = 0; index < length; index++) {
             char currentChar = chars[index];
@@ -941,12 +860,12 @@ class TSpanView extends TextView {
             glyph.computeBounds(bounds, true);
             float width = bounds.width();
             if (width == 0) { // Render unicode emoji
-                canvas.save();
-                canvas.concat(mid);
-                emoji.add(current);
-                emojiTransforms.add(new Matrix(mid));
-                canvas.drawText(current, 0, 0, paint);
-                canvas.restore();
+                mid.getValues(midPointMatrixData);
+                double midX = midPointMatrixData[MTRANS_X];
+                double midY = midPointMatrixData[MTRANS_Y];
+                canvas.rotate((float) r, (float)midX, (float)midY);
+                canvas.drawText(current, (float)midX, (float)midY, paint);
+                canvas.rotate((float) -r, (float)midX, (float)midY);
             } else {
                 glyph.transform(mid);
                 path.addPath(glyph);
@@ -1016,7 +935,7 @@ class TSpanView extends TextView {
                 typeface = Typeface.createFromAsset(assetManager, path);
             } catch (Exception ignored2) {
                 try {
-                    typeface = ReactFontManager.getInstance().getTypeface(fontFamily, fontStyle, assetManager);
+                    typeface = Typeface.create(fontFamily, fontStyle);
                 } catch (Exception ignored3) {
                 }
             }
@@ -1026,9 +945,6 @@ class TSpanView extends TextView {
         paint.setTypeface(typeface);
         paint.setTextSize((float) fontSize);
         paint.setTextAlign(Paint.Align.LEFT);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            paint.setLetterSpacing(0);
-        }
 
         // Do these have any effect for anyone? Not for me (@msand) at least.
         // paint.setUnderlineText(underlineText);
@@ -1067,9 +983,6 @@ class TSpanView extends TextView {
 
         if (mRegion == null && mFillPath != null) {
             mRegion = getRegion(mFillPath);
-        }
-        if (mRegion == null && mPath != null) {
-            mRegion = getRegion(mPath);
         }
         if (mStrokeRegion == null && mStrokePath != null) {
             mStrokeRegion = getRegion(mStrokePath);

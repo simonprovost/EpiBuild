@@ -32,25 +32,25 @@ class EllipseView extends RenderableView {
 
     @ReactProp(name = "cx")
     public void setCx(Dynamic cx) {
-        mCx = SVGLength.from(cx);
+        mCx = getLengthFromDynamic(cx);
         invalidate();
     }
 
     @ReactProp(name = "cy")
     public void setCy(Dynamic cy) {
-        mCy = SVGLength.from(cy);
+        mCy = getLengthFromDynamic(cy);
         invalidate();
     }
 
     @ReactProp(name = "rx")
     public void setRx(Dynamic rx) {
-        mRx = SVGLength.from(rx);
+        mRx = getLengthFromDynamic(rx);
         invalidate();
     }
 
     @ReactProp(name = "ry")
     public void setRy(Dynamic ry) {
-        mRy = SVGLength.from(ry);
+        mRy = getLengthFromDynamic(ry);
         invalidate();
     }
 

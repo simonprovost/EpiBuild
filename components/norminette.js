@@ -7,6 +7,7 @@ import {apiRoot} from "../apiRoot";
 import '../global';
 import axiosCancel from 'axios-cancel';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import {ToastAndroid} from 'react-native';
 
 const styles = StyleSheet.create({
 	modalBackground: {
@@ -123,6 +124,13 @@ export class Norminette extends Component {
 			+ '&normiChoice=' + this.state.PickerSelectedVal, {
 			cancelToken: source.token
 		}).then((response) => {
+			ToastAndroid.showWithGravityAndOffset(
+				"Norminette was finished with success.",
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+  			)
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});
@@ -130,6 +138,13 @@ export class Norminette extends Component {
 				this.setState({normError: response.data.normError});
 			}
 		}).catch((reason) => {
+			ToastAndroid.showWithGravityAndOffset(
+				"Norminette was finished with an error.",
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+  			)
 			if (axios.isCancel(reason)) {
 				console.log('request cancelled');
 			} else {

@@ -2,6 +2,7 @@ import {Alert, AsyncStorage, StyleSheet, Text, TextInput, TouchableOpacity, View
 import React, {Component} from 'react';
 import { material } from 'react-native-typography';
 import '../global';
+import {ToastAndroid} from 'react-native';
 
 
 export class Settings extends Component {
@@ -43,13 +44,26 @@ export class Settings extends Component {
 				await AsyncStorage.setItem('KeyBranchName', this.state.textInputBranchName);
 				global.branchName = this.state.textInputBranchName;
 			}
-			Alert.alert("Value Stored Successfully.",
+			ToastAndroid.showWithGravityAndOffset(
+				"Value Stored Successfully.\n" +
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName,
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+			  )
+			  
 		} catch (error) {
-			Alert.alert("Value Stored Unsuccessfully.",
+			ToastAndroid.showWithGravityAndOffset(
+				"Value Stored Unsuccessfully.\n" +
 				`Login: ` + this.state.textInputDataLogin+ `\nNameProject: ` + this.state.textInputNameProject
-				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName);
+				+ `\n Binary Name: ` + this.state.textInputBinaryname + `\n Branch Name: ` + this.state.textInputBranchName,
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+  			)
 		}
 	};
 

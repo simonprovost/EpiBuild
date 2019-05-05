@@ -23,4 +23,9 @@ RCT_EXPORT_MODULE()
     return [self node];
 }
 
+- (RCTShadowView *)shadowView
+{
+    return nil;
+}
+
 @end

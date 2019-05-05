@@ -7,42 +7,24 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@ant-design/react-native": "^3.1.7",
-    "@expo/vector-icons": "latest",
-    "ansi-to-react": "^5.0.0",
-    "antd": "^3.16.6",
+    "anser": "^1.4.8",
     "axios": "^0.18.0",
     "axios-cancel": "^0.2.2",
     "escape-carriage": "^1.3.0",
+    "events": "^3.0.0",
     "expo": "^32.0.0",
-    "native-base": "^2.12.1",
-    "prop-types": "^15.7.2",
     "react": "16.5.0",
-    "react-bootstrap": "^1.0.0-beta.8",
-    "react-bootstrap-dropdown": "^0.3.0",
-    "react-native-circle-button": "^1.0.9",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-circular-progress": "^1.1.0",
-    "react-native-dropdown": "^0.0.6",
+    "react-native-easy-toast": "^1.2.0",
     "react-native-elements": "^1.1.0",
-    "react-native-loading-spinner-overlay": "^1.0.1",
-    "react-native-markdown-renderer": "^3.2.8",
-    "react-native-material-dropdown": "^0.11.1",
+    "react-native-gesture-handler": "^1.2.1",
     "react-native-paper": "^2.15.2",
-    "react-native-popup-menu": "^0.15.6",
-    "react-native-shadow": "^1.2.2",
-    "react-native-svg": "^9.4.0",
-    "react-navigation": "^3.0.8",
-    "react-navigation-material-bottom-tabs": "^1.0.0"
+    "react-native-typography": "^1.4.0",
+    "react-navigation": "^3.9.1"
   },
   "devDependencies": {
-    "anser": "^1.4.8",
-    "babel-preset-expo": "^5.0.0",
-    "react-native-typography": "^1.4.0"
-  },
-  "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
+    "babel-preset-expo": "^5.0.0"
   },
   "private": true
 }

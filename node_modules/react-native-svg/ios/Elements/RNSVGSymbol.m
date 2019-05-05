@@ -74,7 +74,6 @@
 
 - (void)renderTo:(CGContextRef)context rect:(CGRect)rect
 {
-    self.dirty = false;
     // Do not render Symbol
 }
 

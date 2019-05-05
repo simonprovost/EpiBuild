@@ -8,7 +8,6 @@
 
 #import "RNSVGGroup.h"
 #import "RNSVGClipPath.h"
-#import "RNSVGMask.h"
 
 @implementation RNSVGGroup
 {
@@ -39,9 +38,7 @@
     __block CGRect bounds = CGRectNull;
 
     [self traverseSubviews:^(UIView *node) {
-        if ([node isKindOfClass:[RNSVGMask class]]) {
-            // no-op
-        } else if ([node isKindOfClass:[RNSVGNode class]]) {
+        if ([node isKindOfClass:[RNSVGNode class]]) {
             RNSVGNode* svgNode = (RNSVGNode*)node;
             if (svgNode.responsible && !self.svgView.responsible) {
                 self.svgView.responsible = YES;
@@ -63,8 +60,8 @@
             }
         } else if ([node isKindOfClass:[RNSVGSvgView class]]) {
             RNSVGSvgView* svgView = (RNSVGSvgView*)node;
-            CGFloat width = [self relativeOnWidth:svgView.bbWidth];
-            CGFloat height = [self relativeOnHeight:svgView.bbHeight];
+            CGFloat width = [self relativeOnWidthString:svgView.bbWidth];
+            CGFloat height = [self relativeOnHeightString:svgView.bbHeight];
             CGRect rect = CGRectMake(0, 0, width, height);
             CGContextClipToRect(context, rect);
             [svgView drawToContext:context withRect:rect];
@@ -74,24 +71,18 @@
 
         return YES;
     }];
-    CGPathRef path = [self getPath:context];
-    [self setHitArea:path];
-    if (!CGRectEqualToRect(bounds, CGRectNull)) {
-        self.clientRect = bounds;
-        const CGRect fillBounds = CGPathGetBoundingBox(path);
-        const CGRect strokeBounds = CGPathGetBoundingBox(self.strokePath);
-        self.pathBounds = CGRectUnion(fillBounds, strokeBounds);
+    [self setHitArea:[self getPath:context]];
+    self.clientRect = bounds;
 
-        CGAffineTransform transform = CGAffineTransformConcat(self.matrix, self.transforms);
-        CGPoint mid = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds));
-        CGPoint center = CGPointApplyAffineTransform(mid, transform);
+    CGAffineTransform matrix = self.matrix;
+    CGPoint mid = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds));
+    CGPoint center = CGPointApplyAffineTransform(mid, matrix);
 
-        self.bounds = bounds;
-        if (!isnan(center.x) && !isnan(center.y)) {
-            self.center = center;
-        }
-        self.frame = bounds;
+    self.bounds = bounds;
+    if (!isnan(center.x) && !isnan(center.y)) {
+        self.center = center;
     }
+    self.frame = bounds;
 
     [self popGlyphContext];
 }
@@ -131,32 +122,22 @@
 
 - (CGPathRef)getPath:(CGContextRef)context
 {
-    CGPathRef cached = self.path;
-    if (cached) {
-        return cached;
-    }
     CGMutablePathRef __block path = CGPathCreateMutable();
     [self traverseSubviews:^(RNSVGNode *node) {
-        if ([node isKindOfClass:[RNSVGNode class]] && ![node isKindOfClass:[RNSVGMask class]]) {
+        if ([node isKindOfClass:[RNSVGNode class]]) {
             CGAffineTransform transform = CGAffineTransformConcat(node.matrix, node.transforms);
             CGPathAddPath(path, &transform, [node getPath:context]);
         }
         return YES;
     }];
 
-    cached = CGPathRetain(CFAutorelease(path));
-    self.path = cached;
-    return cached;
+    return (CGPathRef)CFAutorelease(path);
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     CGPoint transformed = CGPointApplyAffineTransform(point, self.invmatrix);
     transformed = CGPointApplyAffineTransform(transformed, self.invTransform);
-
-    if (!CGRectContainsPoint(self.pathBounds, transformed)) {
-        return nil;
-    }
 
     if (self.clipPath) {
         RNSVGClipPath *clipNode = (RNSVGClipPath*)[self.svgView getDefinedClipPath:self.clipPath];
@@ -174,33 +155,27 @@
     }
 
     if (!event) {
-        NSPredicate *const anyActive = [NSPredicate predicateWithFormat:@"self isKindOfClass: %@ AND active == TRUE", [RNSVGNode class]];
+        NSPredicate *const anyActive = [NSPredicate predicateWithFormat:@"active == TRUE"];
         NSArray *const filtered = [self.subviews filteredArrayUsingPredicate:anyActive];
         if ([filtered count] != 0) {
-            return [filtered.lastObject hitTest:transformed withEvent:event];
+            return [filtered.firstObject hitTest:transformed withEvent:event];
         }
     }
 
-    for (UIView *node in [self.subviews reverseObjectEnumerator]) {
-        if ([node isKindOfClass:[RNSVGNode class]]) {
-            if ([node isKindOfClass:[RNSVGMask class]]) {
-                continue;
-            }
-            RNSVGNode* svgNode = (RNSVGNode*)node;
-            if (event) {
-                svgNode.active = NO;
-            }
-            UIView *hitChild = [svgNode hitTest:transformed withEvent:event];
-            if (hitChild) {
-                svgNode.active = YES;
-                return (svgNode.responsible || (svgNode != hitChild)) ? hitChild : self;
-            }
-        } else if ([node isKindOfClass:[RNSVGSvgView class]]) {
-            RNSVGSvgView* svgView = (RNSVGSvgView*)node;
-            UIView *hitChild = [svgView hitTest:transformed withEvent:event];
-            if (hitChild) {
-                return hitChild;
-            }
+    for (RNSVGNode *node in [self.subviews reverseObjectEnumerator]) {
+        if (![node isKindOfClass:[RNSVGNode class]]) {
+            continue;
+        }
+
+        if (event) {
+            node.active = NO;
+        }
+
+        UIView *hitChild = [node hitTest:transformed withEvent:event];
+
+        if (hitChild) {
+            node.active = YES;
+            return (node.responsible || (node != hitChild)) ? hitChild : self;
         }
     }
 
@@ -214,13 +189,12 @@
 
 - (void)parseReference
 {
-    self.dirty = false;
     if (self.name) {
         typeof(self) __weak weakSelf = self;
         [self.svgView defineTemplate:weakSelf templateName:self.name];
     }
 
-    [self traverseSubviews:^(RNSVGNode *node) {
+    [self traverseSubviews:^(__kindof RNSVGNode *node) {
         if ([node isKindOfClass:[RNSVGNode class]]) {
             [node parseReference];
         }

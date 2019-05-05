@@ -16,6 +16,7 @@ import axios from "axios";
 import {apiRoot} from "../apiRoot";
 import '../global';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import {ToastAndroid} from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -147,6 +148,13 @@ export class UnitTests extends Component {
 			+ '&rulesName=' + global.rulesName, {
 			cancelToken: source.token
 		}).then((response) => {
+			ToastAndroid.showWithGravityAndOffset(
+				"UnitTests was finished with success.",
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+  			)
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});
@@ -154,6 +162,13 @@ export class UnitTests extends Component {
 				this.setState({percentUnits: parseFloat(response.data.percentUnitTests.toFixed(1))});
 			}
 		}).catch((reason) => {
+			ToastAndroid.showWithGravityAndOffset(
+				"UnitTests was finished with an error.",
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+  			)
 			if (axios.isCancel(reason)) {
 				console.log('request cancelled');
 			} else {

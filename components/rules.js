@@ -1,9 +1,10 @@
-import {Text, View, TouchableOpacity, Modal, ActivityIndicator, StyleSheet, Alert} from "react-native";
+import {Text, View, TouchableOpacity, Modal, ActivityIndicator, StyleSheet, Alert, TouchableHighlight} from "react-native";
 import React, { Component } from 'react';
 import {OutputRenderer} from './OutputRenderer';
 import axios from 'axios';
 import {apiRoot} from '../apiRoot';
 import '../global';
+import {ToastAndroid} from 'react-native';
 
 const styles = StyleSheet.create({
 	modalBackground: {
@@ -54,14 +55,29 @@ export class Rules extends Component {
 			+ '&branchName=' + global.branchName, {
 			cancelToken: source.token
 		}).then((response) => {
+			ToastAndroid.showWithGravityAndOffset(
+				'Rules process is finished.',
+				500,
+				ToastAndroid.CENTER,
+				10,
+				25,
+			  );
+
 			if (response.request.readyState === 4
 				&& (response.request.status === 200 || response.request.status === 0)) {
 				this.setState({output: response.data.output});
 				this.setState({visible: false});
 			}
 		}).catch((reason) => {
+			ToastAndroid.showWithGravityAndOffset(
+				'Rules process is an error.',
+				ToastAndroid.LONG,
+				ToastAndroid.CENTER,
+				25,
+				50,
+			  );
 			if (axios.isCancel(reason)) {
-				console.log('request cancelled');
+				console.log('Request cancelled');
 			} else {
 				alert(reason);
 			}
@@ -97,7 +113,7 @@ export class Rules extends Component {
 				width: 0,
 				height: 3,
 			},
-			shadowOpacity: 0.27,
+			shadowOpacity: 0.27,				
 			shadowRadius: 4.65,
 			elevation: 6,
 			marginTop: 10,
@@ -159,6 +175,7 @@ export class Rules extends Component {
 				</View>
 				{modal}
 			</View>
+
 		);
 	}
 }

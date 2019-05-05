@@ -107,9 +107,6 @@
 
 @implementation RNSVGGlyphContext
 
-- (NSArray*)getFontContext {
-    return mFontContext_;
-}
 
 - (CTFontRef)getGlyphFont
 {

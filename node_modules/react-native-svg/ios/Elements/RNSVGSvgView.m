@@ -51,31 +51,22 @@
     // Do nothing, as subviews are inserted by insertReactSubview:
 }
 
-- (void)clearChildCache
+- (void)releaseCachedPath
 {
     if (!rendered) {
         return;
     }
     rendered = false;
-    for (__kindof RNSVGNode *node in self.subviews) {
+    for (UIView *node in self.subviews) {
         if ([node isKindOfClass:[RNSVGNode class]]) {
-            [node clearChildCache];
+            RNSVGNode *n = (RNSVGNode *)node;
+            [n releaseCachedPath];
         }
-    }
+    };
 }
 
 - (void)invalidate
 {
-    UIView* parent = self.superview;
-    if ([parent isKindOfClass:[RNSVGNode class]]) {
-        if (!rendered) {
-            return;
-        }
-        RNSVGNode* svgNode = (RNSVGNode*)parent;
-        [svgNode invalidate];
-        rendered = false;
-        return;
-    }
     [self setNeedsDisplay];
 }
 
@@ -86,7 +77,7 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _minX = minX;
 }
 
@@ -97,7 +88,7 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _minY = minY;
 }
 
@@ -108,7 +99,7 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _vbWidth = vbWidth;
 }
 
@@ -119,29 +110,29 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _vbHeight = vbHeight;
 }
 
-- (void)setBbWidth:(RNSVGLength *)bbWidth
+- (void)setBbWidth:(NSString *)bbWidth
 {
-    if ([bbWidth isEqualTo:_bbWidth]) {
+    if ([bbWidth isEqualToString:_bbWidth]) {
         return;
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _bbWidth = bbWidth;
 }
 
-- (void)setBbHeight:(RNSVGLength *)bbHeight
+- (void)setBbHeight:(NSString *)bbHeight
 {
-    if ([bbHeight isEqualTo:_bbHeight]) {
+    if ([bbHeight isEqualToString:_bbHeight]) {
         return;
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _bbHeight = bbHeight;
 }
 
@@ -152,7 +143,7 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _align = align;
 }
 
@@ -163,12 +154,12 @@
     }
 
     [self invalidate];
-    [self clearChildCache];
+    [self releaseCachedPath];
     _meetOrSlice = meetOrSlice;
 }
 
 - (void)drawToContext:(CGContextRef)context withRect:(CGRect)rect {
-    rendered = true;
+
     self.initialCTM = CGContextGetCTM(context);
     self.invInitialCTM = CGAffineTransformInvert(self.initialCTM);
     if (self.align) {
@@ -247,26 +238,11 @@
     return nil;
 }
 
+
 - (NSString *)getDataURL
 {
     UIGraphicsBeginImageContextWithOptions(_boundingBox.size, NO, 0);
-    [self clearChildCache];
     [self drawRect:_boundingBox];
-    [self clearChildCache];
-    [self invalidate];
-    NSData *imageData = UIImagePNGRepresentation(UIGraphicsGetImageFromCurrentImageContext());
-    NSString *base64 = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    UIGraphicsEndImageContext();
-    return base64;
-}
-
-- (NSString *)getDataURLwithBounds:(CGRect)bounds
-{
-    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0);
-    [self clearChildCache];
-    [self drawRect:bounds];
-    [self clearChildCache];
-    [self invalidate];
     NSData *imageData = UIImagePNGRepresentation(UIGraphicsGetImageFromCurrentImageContext());
     NSString *base64 = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     UIGraphicsEndImageContext();

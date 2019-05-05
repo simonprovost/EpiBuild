@@ -45,37 +45,37 @@ class RadialGradientView extends DefinitionView {
 
     @ReactProp(name = "fx")
     public void setFx(Dynamic fx) {
-        mFx = SVGLength.from(fx);
+        mFx = getLengthFromDynamic(fx);
         invalidate();
     }
 
     @ReactProp(name = "fy")
     public void setFy(Dynamic fy) {
-        mFy = SVGLength.from(fy);
+        mFy = getLengthFromDynamic(fy);
         invalidate();
     }
 
     @ReactProp(name = "rx")
     public void setRx(Dynamic rx) {
-        mRx = SVGLength.from(rx);
+        mRx = getLengthFromDynamic(rx);
         invalidate();
     }
 
     @ReactProp(name = "ry")
     public void setRy(Dynamic ry) {
-        mRy = SVGLength.from(ry);
+        mRy = getLengthFromDynamic(ry);
         invalidate();
     }
 
     @ReactProp(name = "cx")
     public void setCx(Dynamic cx) {
-        mCx = SVGLength.from(cx);
+        mCx = getLengthFromDynamic(cx);
         invalidate();
     }
 
     @ReactProp(name = "cy")
     public void setCy(Dynamic cy) {
-        mCy = SVGLength.from(cy);
+        mCy = getLengthFromDynamic(cy);
         invalidate();
     }
 

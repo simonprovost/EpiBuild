@@ -16,6 +16,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.graphics.Region;
 import android.net.Uri;
 
 import com.facebook.common.executors.UiThreadImmediateExecutorService;
@@ -23,11 +24,11 @@ import com.facebook.common.logging.FLog;
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipeline;
 import com.facebook.imagepipeline.datasource.BaseBitmapDataSubscriber;
 import com.facebook.imagepipeline.image.CloseableBitmap;
 import com.facebook.imagepipeline.image.CloseableImage;
 import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.facebook.react.bridge.Dynamic;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableMap;
@@ -60,25 +61,25 @@ class ImageView extends RenderableView {
 
     @ReactProp(name = "x")
     public void setX(Dynamic x) {
-        mX = SVGLength.from(x);
+        mX = getLengthFromDynamic(x);
         invalidate();
     }
 
     @ReactProp(name = "y")
     public void setY(Dynamic y) {
-        mY = SVGLength.from(y);
+        mY = getLengthFromDynamic(y);
         invalidate();
     }
 
     @ReactProp(name = "width")
     public void setWidth(Dynamic width) {
-        mW = SVGLength.from(width);
+        mW = getLengthFromDynamic(width);
         invalidate();
     }
 
     @ReactProp(name = "height")
     public void setHeight(Dynamic height) {
-        mH = SVGLength.from(height);
+        mH = getLengthFromDynamic(height);
         invalidate();
     }
 
@@ -121,15 +122,13 @@ class ImageView extends RenderableView {
     @Override
     void draw(final Canvas canvas, final Paint paint, final float opacity) {
         if (!mLoading.get()) {
-            ImagePipeline imagePipeline = Fresco.getImagePipeline();
-            ImageSource imageSource = new ImageSource(mContext, uriString);
-            ImageRequest request = ImageRequest.fromUri(imageSource.getUri());
-            boolean inMemoryCache = imagePipeline.isInBitmapMemoryCache(request);
+            final ImageSource imageSource = new ImageSource(mContext, uriString);
 
-            if (inMemoryCache) {
-                tryRenderFromBitmapCache(imagePipeline, request, canvas, paint, opacity * mOpacity);
+            final ImageRequest request = ImageRequestBuilder.newBuilderWithSource(imageSource.getUri()).build();
+            if (Fresco.getImagePipeline().isInBitmapMemoryCache(request)) {
+                tryRender(request, canvas, paint, opacity * mOpacity);
             } else {
-                loadBitmap(imagePipeline, request);
+                loadBitmap(request);
             }
         }
     }
@@ -141,29 +140,29 @@ class ImageView extends RenderableView {
         return path;
     }
 
-    private void loadBitmap(final ImagePipeline imagePipeline, final ImageRequest request) {
-        mLoading.set(true);
+    private void loadBitmap(ImageRequest request) {
         final DataSource<CloseableReference<CloseableImage>> dataSource
-                = imagePipeline.fetchDecodedImage(request, mContext);
-        BaseBitmapDataSubscriber subscriber = new BaseBitmapDataSubscriber() {
-            @Override
-            public void onNewResultImpl(Bitmap bitmap) {
-                mLoading.set(false);
-                SvgView view = getSvgView();
-                if (view != null) {
-                    view.invalidate();
-                }
-            }
+            = Fresco.getImagePipeline().fetchDecodedImage(request, mContext);
+        dataSource.subscribe(new BaseBitmapDataSubscriber() {
+                                 @Override
+                                 public void onNewResultImpl(Bitmap bitmap) {
+                                     mLoading.set(false);
+                                     SvgView view = getSvgView();
+                                     if (view != null) {
+                                         view.invalidate();
+                                     }
+                                 }
 
-            @Override
-            public void onFailureImpl(DataSource dataSource) {
-                // No cleanup required here.
-                // TODO: more details about this failure
-                mLoading.set(false);
-                FLog.w(ReactConstants.TAG, dataSource.getFailureCause(), "RNSVG: fetchDecodedImage failed!");
-            }
-        };
-        dataSource.subscribe(subscriber, UiThreadImmediateExecutorService.getInstance());
+                                 @Override
+                                 public void onFailureImpl(DataSource dataSource) {
+                                     // No cleanup required here.
+                                     // TODO: more details about this failure
+                                     mLoading.set(false);
+                                     FLog.w(ReactConstants.TAG, dataSource.getFailureCause(), "RNSVG: fetchDecodedImage failed!");
+                                 }
+                             },
+            UiThreadImmediateExecutorService.getInstance()
+        );
     }
 
     @Nonnull
@@ -179,7 +178,7 @@ class ImageView extends RenderableView {
             h = mImageHeight * mScale;
         }
 
-        return new RectF((float) x, (float) y, (float) (x + w), (float) (y + h));
+        return new RectF((float)x, (float)y, (float)(x + w), (float)(y + h));
     }
 
     private void doRender(Canvas canvas, Paint paint, Bitmap bitmap, float opacity) {
@@ -192,6 +191,13 @@ class ImageView extends RenderableView {
         RectF vbRect = new RectF(0, 0, mImageWidth, mImageHeight);
         Matrix transform = ViewBox.getTransform(vbRect, renderRect, mAlign, mMeetOrSlice);
         transform.mapRect(vbRect);
+
+        if (mMatrix != null) {
+            mMatrix.mapRect(vbRect);
+        }
+        if (mTransform != null) {
+            mTransform.mapRect(vbRect);
+        }
 
         canvas.clipPath(getPath(canvas, paint));
 
@@ -207,37 +213,27 @@ class ImageView extends RenderableView {
         this.setClientRect(vbRect);
     }
 
-    private void tryRenderFromBitmapCache(ImagePipeline imagePipeline, ImageRequest request, Canvas canvas, Paint paint, float opacity) {
+    private void tryRender(ImageRequest request, Canvas canvas, Paint paint, float opacity) {
         final DataSource<CloseableReference<CloseableImage>> dataSource
-                = imagePipeline.fetchImageFromBitmapCache(request, mContext);
+            = Fresco.getImagePipeline().fetchImageFromBitmapCache(request, mContext);
 
         try {
             final CloseableReference<CloseableImage> imageReference = dataSource.getResult();
-            if (imageReference == null) {
-                return;
-            }
+            if (imageReference != null) {
+                try {
+                    if (imageReference.get() instanceof CloseableBitmap) {
+                        final Bitmap bitmap = ((CloseableBitmap) imageReference.get()).getUnderlyingBitmap();
 
-            try {
-                CloseableImage closeableImage = imageReference.get();
-                if (!(closeableImage instanceof CloseableBitmap)) {
-                    return;
+                        if (bitmap != null) {
+                            doRender(canvas, paint, bitmap, opacity);
+                        }
+                    }
+                } catch (Exception e) {
+                    throw new IllegalStateException(e);
+                } finally {
+                    CloseableReference.closeSafely(imageReference);
                 }
-
-                CloseableBitmap closeableBitmap = (CloseableBitmap) closeableImage;
-                final Bitmap bitmap = closeableBitmap.getUnderlyingBitmap();
-
-                if (bitmap == null) {
-                    return;
-                }
-
-                doRender(canvas, paint, bitmap, opacity);
-
-            } catch (Exception e) {
-                throw new IllegalStateException(e);
-            } finally {
-                CloseableReference.closeSafely(imageReference);
             }
-
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {

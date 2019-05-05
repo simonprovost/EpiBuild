@@ -14,7 +14,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Region;
-import android.view.View;
 import android.view.ViewParent;
 
 import com.facebook.react.bridge.Dynamic;
@@ -39,7 +38,6 @@ class TextView extends GroupView {
     @Nullable ArrayList<SVGLength> mRotate;
     @Nullable ArrayList<SVGLength> mDeltaX;
     @Nullable ArrayList<SVGLength> mDeltaY;
-    double cachedAdvance = Double.NaN;
 
     public TextView(ReactContext reactContext) {
         super(reactContext);
@@ -47,21 +45,13 @@ class TextView extends GroupView {
 
     @Override
     public void invalidate() {
-        if (mPath == null) {
-            return;
-        }
         super.invalidate();
-        getTextContainer().clearChildCache();
-    }
-
-    void clearCache() {
-        cachedAdvance = Double.NaN;
-        super.clearCache();
+        releaseCachedPath();
     }
 
     @ReactProp(name = "textLength")
     public void setTextLength(Dynamic length) {
-        mTextLength = SVGLength.from(length);
+        mTextLength = getLengthFromDynamic(length);
         invalidate();
     }
 
@@ -79,7 +69,7 @@ class TextView extends GroupView {
 
     @ReactProp(name = "baselineShift")
     public void setBaselineShift(Dynamic baselineShift) {
-        mBaselineShift = SVGLength.toString(baselineShift);
+        mBaselineShift = getStringFromDynamic(baselineShift);
         invalidate();
     }
 
@@ -107,31 +97,31 @@ class TextView extends GroupView {
 
     @ReactProp(name = "rotate")
     public void setRotate(Dynamic rotate) {
-        mRotate = SVGLength.arrayFrom(rotate);
+        mRotate = getLengthArrayFromDynamic(rotate);
         invalidate();
     }
 
     @ReactProp(name = "dx")
     public void setDeltaX(Dynamic deltaX) {
-        mDeltaX = SVGLength.arrayFrom(deltaX);
+        mDeltaX = getLengthArrayFromDynamic(deltaX);
         invalidate();
     }
 
     @ReactProp(name = "dy")
     public void setDeltaY(Dynamic deltaY) {
-        mDeltaY = SVGLength.arrayFrom(deltaY);
+        mDeltaY = getLengthArrayFromDynamic(deltaY);
         invalidate();
     }
 
     @ReactProp(name = "x")
     public void setPositionX(Dynamic positionX) {
-        mPositionX = SVGLength.arrayFrom(positionX);
+        mPositionX = getLengthArrayFromDynamic(positionX);
         invalidate();
     }
 
     @ReactProp(name = "y")
     public void setPositionY(Dynamic positionY) {
-        mPositionY = SVGLength.arrayFrom(positionY);
+        mPositionY = getLengthArrayFromDynamic(positionY);
         invalidate();
     }
 
@@ -147,9 +137,6 @@ class TextView extends GroupView {
 
     @Override
     Path getPath(Canvas canvas, Paint paint) {
-        if (mPath != null) {
-            return mPath;
-        }
         setupGlyphContext(canvas);
         return getGroupPath(canvas, paint);
     }
@@ -199,60 +186,16 @@ class TextView extends GroupView {
     }
 
     Path getGroupPath(Canvas canvas, Paint paint) {
-        if (mPath != null) {
-            return mPath;
-        }
         pushGlyphContext();
-        mPath = super.getPath(canvas, paint);
+        Path groupPath = super.getPath(canvas, paint);
         popGlyphContext();
 
-        return mPath;
+        return groupPath;
     }
 
     @Override
     void pushGlyphContext() {
         boolean isTextNode = !(this instanceof TextPathView) && !(this instanceof TSpanView);
         getTextRootGlyphContext().pushContext(isTextNode, this, mFont, mPositionX, mPositionY, mDeltaX, mDeltaY, mRotate);
-    }
-
-    TextView getTextAnchorRoot() {
-        GlyphContext gc = getTextRootGlyphContext();
-        ArrayList<FontData> font = gc.mFontContext;
-        TextView node = this;
-        ViewParent parent = this.getParent();
-        for (int i = font.size() - 1; i >= 0; i--) {
-            if (!(parent instanceof TextView) || font.get(i).textAnchor == TextProperties.TextAnchor.start || node.mPositionX != null) {
-                return node;
-            }
-            node = (TextView) parent;
-            parent = node.getParent();
-        }
-        return node;
-    }
-
-    double getSubtreeTextChunksTotalAdvance(Paint paint) {
-        if (!Double.isNaN(cachedAdvance)) {
-            return cachedAdvance;
-        }
-        double advance = 0;
-        for (int i = 0; i < getChildCount(); i++) {
-            View child = getChildAt(i);
-            if (child instanceof TextView) {
-                TextView text = (TextView) child;
-                advance += text.getSubtreeTextChunksTotalAdvance(paint);
-            }
-        }
-        cachedAdvance = advance;
-        return advance;
-    }
-
-    TextView getTextContainer() {
-        TextView node = this;
-        ViewParent parent = this.getParent();
-        while (parent instanceof TextView) {
-            node = (TextView) parent;
-            parent = node.getParent();
-        }
-        return node;
     }
 }

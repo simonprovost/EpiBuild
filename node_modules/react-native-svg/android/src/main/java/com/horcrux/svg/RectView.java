@@ -34,37 +34,37 @@ class RectView extends RenderableView {
 
     @ReactProp(name = "x")
     public void setX(Dynamic x) {
-        mX = SVGLength.from(x);
+        mX = getLengthFromDynamic(x);
         invalidate();
     }
 
     @ReactProp(name = "y")
     public void setY(Dynamic y) {
-        mY = SVGLength.from(y);
+        mY = getLengthFromDynamic(y);
         invalidate();
     }
 
     @ReactProp(name = "width")
     public void setWidth(Dynamic width) {
-        mW = SVGLength.from(width);
+        mW = getLengthFromDynamic(width);
         invalidate();
     }
 
     @ReactProp(name = "height")
     public void setHeight(Dynamic height) {
-        mH = SVGLength.from(height);
+        mH = getLengthFromDynamic(height);
         invalidate();
     }
 
     @ReactProp(name = "rx")
     public void setRx(Dynamic rx) {
-        mRx = SVGLength.from(rx);
+        mRx = getLengthFromDynamic(rx);
         invalidate();
     }
 
     @ReactProp(name = "ry")
     public void setRy(Dynamic ry) {
-        mRy = SVGLength.from(ry);
+        mRy = getLengthFromDynamic(ry);
         invalidate();
     }
 

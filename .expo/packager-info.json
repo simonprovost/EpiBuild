@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 14513,
-  "expoServerNgrokUrl": "https://r7-psh.anonymous.epibuild.exp.direct",
-  "packagerNgrokUrl": "https://packager.r7-psh.anonymous.epibuild.exp.direct",
-  "ngrokPid": 14556
+  "devToolsPort": 19003,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
