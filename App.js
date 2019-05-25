@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import {Button,
+import {
 	StyleSheet,
-	View,
-	Text,
-	Modal,
-	ActivityIndicator
 } from 'react-native';
 
 import {
@@ -56,17 +52,6 @@ const stylesHeader = StyleSheet.create({
 	},
 });
 export default App;
-
-
-export const sendServerInformation = (message) => {
-	alert(
-		message,
-		[
-			{text: 'OK', onPress: () => console.log('OK Pressed')},
-		],
-		{cancelable: false},
-	);
-};
 
 class MaterialTopTabBarWrapper extends React.Component {
 	render() {

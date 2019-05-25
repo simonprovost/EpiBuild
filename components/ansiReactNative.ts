@@ -133,7 +133,6 @@ declare interface Props {
 }
 
 export default function Ansi(props: Props) {
-  console.log("ENRY IN ANSI CONVERTER");
   const { className, useClasses, children, linkify } = props;
   return React.createElement(
       Text,
